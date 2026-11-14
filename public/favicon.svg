@@ -1,5 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <rect width="32" height="32" rx="8" fill="#18181b"/>
-  <path d="M16 6L7 22H11.5L13.5 18H18.5L20.5 22H25L16 6ZM16 12.8L17.3 15.5H14.7L16 12.8Z" fill="#38bdf8"/>
-  <circle cx="23" cy="9" r="2.5" fill="#f43f5e"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <rect width="64" height="64" rx="14" fill="#0B2F63"/>
+  <circle cx="32" cy="32" r="22" stroke="#FFC928" stroke-width="2.5" stroke-dasharray="3 3"/>
+  <!-- Globe Grid Lines -->
+  <ellipse cx="32" cy="32" rx="20" ry="20" stroke="#EEF5FD" stroke-width="2.5" fill="#0757A6"/>
+  <ellipse cx="32" cy="32" rx="9" ry="20" stroke="#EEF5FD" stroke-width="1.75" fill="none" opacity="0.8"/>
+  <line x1="12" y1="32" x2="52" y2="32" stroke="#EEF5FD" stroke-width="1.75" opacity="0.8"/>
+  <line x1="15" y1="22" x2="49" y2="22" stroke="#EEF5FD" stroke-width="1.5" opacity="0.6"/>
+  <line x1="15" y1="42" x2="49" y2="42" stroke="#EEF5FD" stroke-width="1.5" opacity="0.6"/>
+  <!-- Speech Star Accent -->
+  <path d="M42 16L45 22L51 23L46.5 27.5L47.8 33.5L42 30.5L36.2 33.5L37.5 27.5L33 23L39 22Z" fill="#FFC928"/>
 </svg>

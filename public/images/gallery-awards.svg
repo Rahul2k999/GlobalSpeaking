@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" fill="none">
+  <defs>
+    <linearGradient id="gAward" x1="0" y1="0" x2="600" y2="450" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#071D3D"/>
+      <stop offset="100%" stop-color="#0B2F63"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="450" fill="url(#gAward)"/>
+  <!-- Trophy centerpiece -->
+  <circle cx="300" cy="180" r="80" fill="#FFC928" fill-opacity="0.15"/>
+  <text x="300" y="195" font-size="70" text-anchor="middle">🏆</text>
+  <text x="300" y="270" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="28" fill="#FFC928" text-anchor="middle">CONVOCATION &amp; AWARDS</text>
+  <text x="300" y="310" font-family="'Inter', sans-serif" font-weight="600" font-size="18" fill="#FFFFFF" text-anchor="middle">Batch Completion &amp; Certification Ceremony</text>
+  <text x="300" y="345" font-family="'Inter', sans-serif" font-weight="500" font-size="15" fill="#94A3B8" text-anchor="middle">Celebrating 15,000+ Fluent English Speakers</text>
+</svg>

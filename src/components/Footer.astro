@@ -1,62 +1,425 @@
 ---
+import siteData from '../data/site.json';
+import coursesData from '../data/courses.json';
+
 const currentYear = new Date().getFullYear();
+const { contact, name } = siteData;
 ---
 
-<footer class="footer">
-  <div class="container footer__inner">
-    <div class="footer__copy">
-      <p>&copy; {currentYear} Astro Bun Starter. Built for fast, modern web projects.</p>
-    </div>
+<footer class="site-footer">
+  <!-- Main Footer Content -->
+  <div class="site-footer__main">
+    <div class="container site-footer__grid">
+      <!-- Col 1: Institute Brand & Identity -->
+      <div class="footer-col footer-col--brand">
+        <a href="/" class="footer-brand">
+          <svg class="footer-brand__logo" viewBox="0 0 44 44" width="38" height="38" fill="none">
+            <rect width="44" height="44" rx="10" fill="#0757A6"/>
+            <circle cx="22" cy="22" r="14" fill="#0B2F63"/>
+            <ellipse cx="22" cy="22" rx="6" ry="14" stroke="#EEF5FD" stroke-width="1.2" fill="none"/>
+            <line x1="8" y1="22" x2="36" y2="22" stroke="#EEF5FD" stroke-width="1.2"/>
+            <circle cx="31" cy="13" r="3.5" fill="#FFC928"/>
+          </svg>
+          <div class="footer-brand__text">
+            <span class="footer-brand__name">{name}</span>
+            <span class="footer-brand__tagline">Spoken English &amp; Personality</span>
+          </div>
+        </a>
 
-    <div class="footer__meta">
-      <span class="badge">Astro 5</span>
-      <span class="badge">TypeScript</span>
-      <span class="badge">Bun</span>
+        <p class="footer-description">
+          North India's premier spoken English and leadership development academy. We eliminate stage fright, instill spontaneous English fluency, and groom students for global MNC careers.
+        </p>
+
+        <div class="footer-badges">
+          <span class="footer-badge">15,000+ Alumni</span>
+          <span class="footer-badge">1,700+ MNC Placed</span>
+          <span class="footer-badge">4.8★ Google Rating</span>
+        </div>
+      </div>
+
+      <!-- Col 2: Our Programs -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Our Courses</h4>
+        <ul class="footer-links">
+          {coursesData.map((course) => (
+            <li>
+              <a href={`/courses/${course.slug}`} class="footer-link">
+                {course.title}
+                <span class="footer-link__tag">{course.tagline}</span>
+              </a>
+            </li>
+          ))}
+          <li>
+            <a href="/courses" class="footer-link footer-link--highlight">
+              View All 12 Learning Levels &rarr;
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Col 3: Quick Navigation -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="/about" class="footer-link">About Coach Faizan &amp; Institute</a></li>
+          <li><a href="/achievements" class="footer-link">Milestones &amp; Placements</a></li>
+          <li><a href="/gallery" class="footer-link">Campus Life &amp; Events Gallery</a></li>
+          <li><a href="/testimonials" class="footer-link">Video Success Stories</a></li>
+          <li><a href="/reviews" class="footer-link">Google Verified Reviews</a></li>
+          <li><a href="/contact" class="footer-link">Contact &amp; Campus Directions</a></li>
+          <li><a href="/privacy-policy" class="footer-link">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      <!-- Col 4: Contact & Campus Timings -->
+      <div class="footer-col">
+        <h4 class="footer-heading">Visit Our Campus</h4>
+        <div class="footer-contact-info">
+          <div class="contact-item">
+            <svg class="contact-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+              <circle cx="12" cy="10" r="3"/>
+            </svg>
+            <div>
+              <p class="contact-text">{contact.address}</p>
+              <p class="contact-text-sub">{contact.landmark}</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <svg class="contact-icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+              <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.72 11.72 0 003.68.59 1 1 0 011 1v3.5a1 1 0 01-1 1A16 16 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.72 11.72 0 00.59 3.68 1 1 0 01-.24 1.02l-2.22 2.09z"/>
+            </svg>
+            <div>
+              <a href={`tel:${contact.phoneClean}`} class="contact-phone">{contact.phone}</a>
+              <span class="contact-text-sub">Direct Admissions Helpline</span>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <svg class="contact-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+            <div>
+              <p class="contact-text">{contact.timing}</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+
+  <!-- Bottom Legal & Copyright Bar -->
+  <div class="site-footer__bottom">
+    <div class="container site-footer__bottom-inner">
+      <p class="copyright-text">
+        &copy; {currentYear} {name}. All Rights Reserved. Built with pride for aspiring leaders.
+      </p>
+
+      <div class="footer-legal-links">
+        <a href="/privacy-policy" class="legal-link">Privacy Policy</a>
+        <span class="legal-divider">•</span>
+        <a href="/contact" class="legal-link">Student Grievance</a>
+        <span class="legal-divider">•</span>
+        <a href="/contact#enquiry-form" class="legal-link">Free Counselling</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Sticky Floating Contact Bar -->
+  <aside class="mobile-sticky-bar" aria-label="Quick Contact Actions">
+    <a href={`tel:${contact.phoneClean}`} class="mobile-sticky-btn mobile-sticky-btn--call">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+        <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.72 11.72 0 003.68.59 1 1 0 011 1v3.5a1 1 0 01-1 1A16 16 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.72 11.72 0 00.59 3.68 1 1 0 01-.24 1.02l-2.22 2.09z"/>
+      </svg>
+      <span>Call Now</span>
+    </a>
+
+    <a 
+      href={`https://wa.me/${contact.whatsappClean}?text=${encodeURIComponent(contact.whatsappMessage)}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="mobile-sticky-btn mobile-sticky-btn--whatsapp"
+    >
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      <span>WhatsApp</span>
+    </a>
+
+    <a href="/contact#enquiry-form" class="mobile-sticky-btn mobile-sticky-btn--demo">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5">
+        <path d="M5 12h14M12 5l7 7-7 7"/>
+      </svg>
+      <span>Free Demo</span>
+    </a>
+  </aside>
 </footer>
 
 <style>
-  .footer {
+  .site-footer {
+    background-color: var(--color-deep-navy);
+    color: #CBD5E1;
     margin-top: auto;
-    border-top: 1px solid var(--color-border);
-    background-color: var(--color-bg-subtle);
-    padding: var(--space-8) 0;
   }
 
-  .footer__inner {
+  .site-footer__main {
+    padding: var(--space-16) 0 var(--space-12);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .site-footer__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+  }
+
+  @media (min-width: 640px) {
+    .site-footer__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .site-footer__grid {
+      grid-template-columns: 1.4fr 1fr 1fr 1.2fr;
+      gap: var(--space-8);
+    }
+  }
+
+  /* Brand Column */
+  .footer-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-3);
+    text-decoration: none;
+    margin-bottom: var(--space-4);
+  }
+
+  .footer-brand__name {
+    display: block;
+    font-family: var(--font-heading);
+    font-weight: 900;
+    font-size: 1.35rem;
+    color: #FFFFFF;
+    letter-spacing: 0.04em;
+    line-height: 1.1;
+  }
+
+  .footer-brand__tagline {
+    display: block;
+    font-size: 0.72rem;
+    color: var(--color-accent-yellow);
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .footer-description {
+    font-size: var(--text-sm);
+    color: #94A3B8;
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-4);
+  }
+
+  .footer-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .footer-badge {
+    display: inline-block;
+    background-color: rgba(255, 201, 40, 0.12);
+    color: var(--color-accent-yellow);
+    border: 1px solid rgba(255, 201, 40, 0.3);
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 0.25rem 0.6rem;
+    border-radius: var(--radius-sm);
+  }
+
+  /* Headings & Links */
+  .footer-heading {
+    font-size: var(--text-base);
+    font-weight: 800;
+    color: #FFFFFF;
+    margin-bottom: var(--space-4);
+    position: relative;
+    padding-bottom: 0.5rem;
+  }
+
+  .footer-heading::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 28px;
+    height: 3px;
+    background-color: var(--color-accent-yellow);
+    border-radius: 2px;
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+  }
+
+  .footer-link {
+    font-size: var(--text-sm);
+    color: #CBD5E1;
+    text-decoration: none;
+    transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footer-link:hover {
+    color: var(--color-accent-yellow);
+    transform: translateX(3px);
+  }
+
+  .footer-link__tag {
+    font-size: 0.72rem;
+    color: #64748B;
+  }
+
+  .footer-link--highlight {
+    color: var(--color-accent-yellow);
+    font-weight: 700;
+    margin-top: 0.25rem;
+  }
+
+  /* Contact Items */
+  .footer-contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .contact-item {
+    display: flex;
+    gap: var(--space-3);
+    align-items: flex-start;
+  }
+
+  .contact-icon {
+    color: var(--color-accent-yellow);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .contact-text {
+    font-size: var(--text-sm);
+    color: #CBD5E1;
+    line-height: var(--leading-normal);
+  }
+
+  .contact-text-sub {
+    font-size: var(--text-xs);
+    color: #94A3B8;
+  }
+
+  .contact-phone {
+    display: block;
+    font-size: var(--text-base);
+    font-weight: 800;
+    color: #FFFFFF;
+  }
+
+  .contact-phone:hover {
+    color: var(--color-accent-yellow);
+  }
+
+  /* Bottom Bar */
+  .site-footer__bottom {
+    padding: var(--space-6) 0;
+    font-size: var(--text-xs);
+    color: #64748B;
+  }
+
+  .site-footer__bottom-inner {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    gap: var(--space-4);
+    gap: var(--space-3);
     text-align: center;
   }
 
   @media (min-width: 640px) {
-    .footer__inner {
+    .site-footer__bottom-inner {
       flex-direction: row;
       text-align: left;
     }
   }
 
-  .footer__copy p {
-    font-size: var(--text-sm);
-    color: var(--color-text-muted);
-  }
-
-  .footer__meta {
+  .footer-legal-links {
     display: flex;
-    gap: var(--space-2);
+    align-items: center;
+    gap: 0.6rem;
   }
 
-  .badge {
+  .legal-link {
+    color: #94A3B8;
+  }
+
+  .legal-link:hover {
+    color: var(--color-accent-yellow);
+  }
+
+  .legal-divider {
+    color: rgba(255, 255, 255, 0.2);
+  }
+
+  /* Mobile Sticky Floating Quick Actions */
+  .mobile-sticky-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.2fr;
+    background-color: var(--color-deep-navy);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 -4px 16px rgba(0, 0, 0, 0.25);
+  }
+
+  @media (min-width: 768px) {
+    .mobile-sticky-bar {
+      display: none;
+    }
+  }
+
+  .mobile-sticky-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35rem;
+    padding: 0.75rem 0.4rem;
     font-size: var(--text-xs);
-    font-family: var(--font-mono);
-    color: var(--color-text-muted);
-    background-color: var(--color-surface);
-    border: 1px solid var(--color-border);
-    padding: 0.2rem 0.5rem;
-    border-radius: var(--radius-sm);
+    font-weight: 700;
+    color: #FFFFFF;
+    text-align: center;
+    text-decoration: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .mobile-sticky-btn--call {
+    background-color: var(--color-secondary-blue);
+  }
+
+  .mobile-sticky-btn--whatsapp {
+    background-color: var(--color-whatsapp-green);
+  }
+
+  .mobile-sticky-btn--demo {
+    background-color: var(--color-accent-yellow);
+    color: var(--color-deep-navy);
+    border-right: none;
   }
 </style>

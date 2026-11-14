@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <circle cx="50" cy="50" r="50" fill="#0757A6"/>
+  <circle cx="50" cy="40" r="20" fill="#F8C39E"/>
+  <path d="M22 88 C22 68 34 62 50 62 C66 62 78 68 78 88 Z" fill="#20B45B"/>
+  <text x="50" y="46" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="16" fill="#FFFFFF" text-anchor="middle">KC</text>
+</svg>

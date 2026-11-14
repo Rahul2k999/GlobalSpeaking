@@ -1,0 +1,176 @@
+---
+// Interactive Video Player Modal
+---
+
+<div id="video-modal" class="video-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="video-modal-title">
+  <div class="video-modal__overlay" id="video-modal-overlay"></div>
+  <div class="video-modal__dialog">
+    <div class="video-modal__header">
+      <h3 id="video-modal-title" class="video-modal__title">Watch Video</h3>
+      <button type="button" class="video-modal__close" id="video-modal-close" aria-label="Close video player">
+        &times;
+      </button>
+    </div>
+    <div class="video-modal__body">
+      <div class="video-modal__aspect">
+        <iframe
+          id="video-modal-iframe"
+          src=""
+          title="Video Player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  const videoModal = document.getElementById('video-modal');
+  const videoOverlay = document.getElementById('video-modal-overlay');
+  const videoCloseBtn = document.getElementById('video-modal-close');
+  const videoIframe = document.getElementById('video-modal-iframe');
+  const videoTitle = document.getElementById('video-modal-title');
+
+  function openVideoModal(url, title = 'Watch Video') {
+    if (!videoModal || !videoIframe) return;
+    
+    // Add autoplay param safely
+    const autoplayUrl = url.includes('?') ? `${url}&autoplay=1` : `${url}?autoplay=1`;
+    videoIframe.src = autoplayUrl;
+    if (videoTitle) videoTitle.textContent = title;
+    
+    videoModal.classList.add('video-modal--open');
+    videoModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeVideoModal() {
+    if (!videoModal || !videoIframe) return;
+    videoModal.classList.remove('video-modal--open');
+    videoModal.setAttribute('aria-hidden', 'true');
+    videoIframe.src = ''; // stops playing
+    document.body.style.overflow = '';
+  }
+
+  if (videoCloseBtn) videoCloseBtn.addEventListener('click', closeVideoModal);
+  if (videoOverlay) videoOverlay.addEventListener('click', closeVideoModal);
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && videoModal?.classList.contains('video-modal--open')) {
+      closeVideoModal();
+    }
+  });
+
+  // Attach click listeners to all triggers with data-video-url
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('[data-video-url]').forEach((btn) => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const url = btn.getAttribute('data-video-url');
+        const title = btn.getAttribute('data-video-title') || 'Video Showcase';
+        if (url) openVideoModal(url, title);
+      });
+    });
+  });
+</script>
+
+<style>
+  .video-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 300;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+    padding: var(--space-4);
+  }
+
+  .video-modal--open {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .video-modal__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(7, 29, 61, 0.85);
+    backdrop-filter: blur(8px);
+  }
+
+  .video-modal__dialog {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 840px;
+    background-color: var(--color-deep-navy);
+    border: 1px solid rgba(255, 201, 40, 0.3);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+  }
+
+  .video-modal__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-3) var(--space-5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .video-modal__title {
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: #FFFFFF;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: var(--space-4);
+  }
+
+  .video-modal__close {
+    background: transparent;
+    border: none;
+    font-size: 1.75rem;
+    color: #CBD5E1;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0 0.4rem;
+    transition: color 0.2s;
+  }
+
+  .video-modal__close:hover {
+    color: var(--color-accent-yellow);
+  }
+
+  .video-modal__body {
+    padding: 0;
+    background-color: #000000;
+  }
+
+  .video-modal__aspect {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  }
+
+  .video-modal__aspect iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+</style>

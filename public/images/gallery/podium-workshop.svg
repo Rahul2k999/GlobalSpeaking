@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" fill="none">
+  <defs><linearGradient id="g3" x1="0" y1="0" x2="600" y2="450"><stop offset="0%" stop-color="#0B2F63"/><stop offset="100%" stop-color="#0757A6"/></linearGradient></defs>
+  <rect width="600" height="450" rx="16" fill="url(#g3)"/>
+  <rect x="230" y="220" width="140" height="180" rx="8" fill="#071D3D" stroke="#FFC928" stroke-width="2"/>
+  <text x="300" y="160" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="28" fill="#FFC928" text-anchor="middle">STAGE FEAR WORKSHOP</text>
+  <text x="300" y="200" font-family="'Inter', sans-serif" font-weight="600" font-size="18" fill="#FFFFFF" text-anchor="middle">Live Mic &amp; Speech Projection Drill</text>
+  <text x="300" y="300" font-family="'Inter', sans-serif" font-size="16" fill="#93C5FD" text-anchor="middle">Overcoming Fear with Coach Faizan</text>
+</svg>

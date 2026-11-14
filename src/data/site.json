@@ -1,0 +1,104 @@
+{
+  "name": "GLOBAL Institute",
+  "fullName": "GLOBAL Institute – Spoken English & Personality Development Institute",
+  "tagline": "Spoken English & Personality Development Institute",
+  "slogan": "Speak English with Confidence",
+  "subSlogan": "Transform Your Personality, Build a Better Future",
+  "contact": {
+    "phone": "+91 98765 43210",
+    "phoneClean": "+919876543210",
+    "whatsapp": "+91 98765 43210",
+    "whatsappClean": "919876543210",
+    "whatsappMessage": "Hello Global Institute, I want to book a free demo class for Spoken English.",
+    "email": "admissions@globalinstitute.in",
+    "address": "Ground Floor, Landmark Complex, Opposite Metro Pillar 124, Civil Lines Main Road",
+    "city": "Civil Lines, Delhi",
+    "state": "Delhi NCR",
+    "pincode": "110054",
+    "landmark": "Near Civil Lines Metro Station Gate No. 2",
+    "timing": "Monday to Saturday: 8:00 AM – 8:00 PM | Sunday: Special Fast-Track Batches",
+    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14002.392762283086!2d77.21550995!3d28.671754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd21f8a7e0eb%3A0xb35a06705d9571ff!2sCivil%20Lines%2C%20Delhi!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+  },
+  "stats": [
+    {
+      "value": "15,000+",
+      "label": "Students Trained",
+      "icon": "students",
+      "description": "Empowered with fluent spoken English & unshakeable stage confidence"
+    },
+    {
+      "value": "1,700+",
+      "label": "MNC Selections",
+      "icon": "mnc",
+      "description": "Selected at top multinationals, consultancies & corporate tech leaders"
+    },
+    {
+      "value": "1,000+",
+      "label": "Teachers Placed",
+      "icon": "teachers",
+      "description": "Educators trained in international communication & pedagogy"
+    },
+    {
+      "value": "4.8/5",
+      "label": "Google Rating",
+      "icon": "rating",
+      "description": "Based on 850+ verified student reviews on Google Business"
+    }
+  ],
+  "trainer": {
+    "name": "Coach Faizan Khan",
+    "designation": "Director & Communication Skills Expert",
+    "experience": "12+ Years Experience",
+    "shortBio": "Coach Faizan Khan has pioneered a revolutionary 12-level conversational fluency framework that eliminates fear, corrects grammar naturally, and cultivates executive boardroom charisma.",
+    "fullBio": "Coach Faizan Khan is an acclaimed Communication Specialist, Corporate Voice Coach, and Founder-Director of GLOBAL Institute. Over the past 12 years, he has personally trained more than 15,000 students, working professionals, school educators, and corporate executives. His high-impact, activity-based methodology replaces rote grammar drills with instinctive conversation practice, empowering anyone—from complete beginners to ambitious professionals—to speak English with authority, poise, and natural fluency.",
+    "credentials": [
+      "Certified Communication & Soft Skills Specialist",
+      "Master NLP Practitioner & Corporate Trainer",
+      "Keynote Speaker at 80+ Educational Summits",
+      "Mentor to 1,700+ Corporate & MNC Placements"
+    ],
+    "videoUrl": "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ"
+  },
+  "whyChooseUs": {
+    "title": "Why Choose Global?",
+    "subtitle": "The Proven Way to Master English",
+    "points": [
+      {
+        "title": "Expert Trainers",
+        "description": "Certified communication masters with personalized 1-on-1 correction",
+        "icon": "expert"
+      },
+      {
+        "title": "Practical Learning",
+        "description": "80% speaking time, roleplays, GDs, and live interactive debates",
+        "icon": "practical"
+      },
+      {
+        "title": "12 Learning Levels",
+        "description": "Structured curriculum from beginner foundational basics to native fluency",
+        "icon": "levels"
+      },
+      {
+        "title": "Personalised Counselling",
+        "description": "Individual diagnosis, custom improvement roadmap, and career guidance",
+        "icon": "counselling"
+      }
+    ]
+  },
+  "navLinks": [
+    { "label": "Home", "href": "/" },
+    { "label": "About Us", "href": "/about" },
+    { "label": "Courses", "href": "/courses" },
+    { "label": "Achievements", "href": "/achievements" },
+    { "label": "Gallery", "href": "/gallery" },
+    { "label": "Testimonials", "href": "/testimonials" },
+    { "label": "Reviews", "href": "/reviews" },
+    { "label": "Contact", "href": "/contact" }
+  ],
+  "socials": [
+    { "platform": "Instagram", "url": "https://instagram.com", "icon": "instagram" },
+    { "platform": "YouTube", "url": "https://youtube.com", "icon": "youtube" },
+    { "platform": "Facebook", "url": "https://facebook.com", "icon": "facebook" },
+    { "platform": "LinkedIn", "url": "https://linkedin.com", "icon": "linkedin" }
+  ]
+}

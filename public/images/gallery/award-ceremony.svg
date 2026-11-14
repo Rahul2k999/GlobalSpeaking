@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" fill="none">
+  <defs><linearGradient id="g4" x1="0" y1="0" x2="600" y2="450"><stop offset="0%" stop-color="#071D3D"/><stop offset="100%" stop-color="#0B2F63"/></linearGradient></defs>
+  <rect width="600" height="450" rx="16" fill="url(#g4)"/>
+  <circle cx="300" cy="180" r="70" fill="#FFC928" fill-opacity="0.25"/>
+  <text x="300" y="195" font-size="60" text-anchor="middle">🏆</text>
+  <text x="300" y="275" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="26" fill="#FFC928" text-anchor="middle">ANNUAL EXCELLENCE AWARDS</text>
+  <text x="300" y="315" font-family="'Inter', sans-serif" font-weight="600" font-size="18" fill="#FFFFFF" text-anchor="middle">Best Orator &amp; Fluency Champion Trophies</text>
+</svg>

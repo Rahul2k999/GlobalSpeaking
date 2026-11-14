@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" fill="none">
+  <defs>
+    <linearGradient id="vBg" x1="0" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#071D3D"/>
+      <stop offset="100%" stop-color="#0B2F63"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#vBg)"/>
+  
+  <!-- Subtle Grid & Lighting -->
+  <circle cx="400" cy="225" r="180" fill="#0757A6" fill-opacity="0.3"/>
+  <circle cx="680" cy="80" r="120" fill="#FFC928" fill-opacity="0.1"/>
+
+  <!-- Institute Badge Tag -->
+  <rect x="50" y="45" width="230" height="36" rx="8" fill="rgba(255,201,40,0.15)" stroke="#FFC928" stroke-width="1.5"/>
+  <text x="65" y="68" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="800" fill="#FFC928">★ MASTERCLASS EXCLUSIVE</text>
+
+  <!-- Video Title & Host Details -->
+  <text x="50" y="140" font-family="'Plus Jakarta Sans', sans-serif" font-size="34" font-weight="900" fill="#FFFFFF">How to Speak English Without</text>
+  <text x="50" y="185" font-family="'Plus Jakarta Sans', sans-serif" font-size="34" font-weight="900" fill="#FFC928">Translating in Your Mind</text>
+  
+  <text x="50" y="240" font-family="'Inter', sans-serif" font-size="18" font-weight="500" fill="#CBD5E1">The 12-Level Conversational Fluency Method by Coach Faizan Khan</text>
+
+  <!-- Coach Profile pill -->
+  <g transform="translate(50, 340)">
+    <rect width="320" height="60" rx="12" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)"/>
+    <circle cx="35" cy="30" r="18" fill="#FFC928"/>
+    <text x="35" y="36" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="800" fill="#071D3D" text-anchor="middle">FK</text>
+    <text x="65" y="27" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700" fill="#FFFFFF">Coach Faizan Khan</text>
+    <text x="65" y="46" font-family="'Inter', sans-serif" font-size="12" font-weight="400" fill="#94A3B8">Director &amp; Chief Master Trainer</text>
+  </g>
+
+  <!-- Large Central Play Button -->
+  <g transform="translate(550, 225)">
+    <circle cx="0" cy="0" r="54" fill="#FFC928" filter="drop-shadow(0 8px 24px rgba(255,201,40,0.5))"/>
+    <polygon points="-12,-20 -12,20 22,0" fill="#071D3D"/>
+  </g>
+</svg>

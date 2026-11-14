@@ -1,0 +1,247 @@
+---
+import achievementsData from '../data/achievements.json';
+
+const { milestones, corporatePartners, highlights } = achievementsData;
+
+const milestoneIcons: Record<string, string> = {
+  trophy: "🏆",
+  briefcase: "💼",
+  group: "🎓"
+};
+---
+
+<section class="section section--light-grey achievements-section" id="achievements" aria-labelledby="achievements-heading">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag">Track Record of Success</span>
+      <h2 id="achievements-heading" class="section-title">
+        Our <span class="highlight-yellow">Achievements</span>
+      </h2>
+      <p class="section-subtitle">
+        Tangible results that speak for themselves. Our graduates consistently lead multinational boardrooms and top educational faculties.
+      </p>
+    </div>
+
+    <!-- Milestones 3 Columns -->
+    <div class="milestones-grid">
+      {milestones.map((m) => (
+        <div class="milestone-card">
+          <div class="milestone-icon-wrap">
+            <span class="milestone-icon">{milestoneIcons[m.icon] || "🏆"}</span>
+          </div>
+          <div class="milestone-value">{m.value}</div>
+          <h3 class="milestone-title">{m.title}</h3>
+          <p class="milestone-sub">{m.subtitle}</p>
+          <p class="milestone-desc">{m.description}</p>
+        </div>
+      ))}
+    </div>
+
+    <!-- Placement Highlights Banner -->
+    <div class="highlights-box">
+      <div class="highlights-grid">
+        {highlights.map((item) => (
+          <div class="highlight-item">
+            <svg class="highlight-icon" viewBox="0 0 20 20" fill="currentColor">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+            </svg>
+            <span>{item}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Corporate Alumni Presence -->
+    <div class="corporate-section">
+      <h3 class="corporate-title">Where Our Confident Alumni Excel</h3>
+      <p class="corporate-sub">Global Institute alumni have cracked recruitment panels across premier multinational brands:</p>
+
+      <div class="partners-grid">
+        {corporatePartners.map((partner) => (
+          <div class="partner-card">
+            <div class="partner-name">{partner.name}</div>
+            <div class="partner-sector">{partner.sector}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .milestones-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    margin-bottom: var(--space-12);
+  }
+
+  @media (min-width: 768px) {
+    .milestones-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .milestone-card {
+    background-color: #FFFFFF;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-8);
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(11, 47, 99, 0.05);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+  }
+
+  .milestone-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 16px 36px rgba(11, 47, 99, 0.1);
+  }
+
+  .milestone-icon-wrap {
+    width: 60px;
+    height: 60px;
+    border-radius: var(--radius-full);
+    background-color: var(--color-bg-light-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-4);
+  }
+
+  .milestone-icon {
+    font-size: 1.8rem;
+  }
+
+  .milestone-value {
+    font-family: var(--font-heading);
+    font-size: clamp(2.2rem, 4vw, 3rem);
+    font-weight: 900;
+    color: var(--color-primary-navy);
+    line-height: 1;
+    margin-bottom: 0.35rem;
+  }
+
+  .milestone-title {
+    font-size: var(--text-lg);
+    font-weight: 800;
+    color: var(--color-secondary-blue);
+    margin-bottom: 0.25rem;
+  }
+
+  .milestone-sub {
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-3);
+  }
+
+  .milestone-desc {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--leading-normal);
+  }
+
+  /* Highlights Box */
+  .highlights-box {
+    background: linear-gradient(135deg, #0B2F63 0%, #0757A6 100%);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6) var(--space-8);
+    color: #FFFFFF;
+    margin-bottom: var(--space-16);
+    box-shadow: 0 12px 28px rgba(11, 47, 99, 0.15);
+  }
+
+  .highlights-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  @media (min-width: 640px) {
+    .highlights-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .highlight-item {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: #EEF5FD;
+  }
+
+  .highlight-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--color-accent-yellow);
+    flex-shrink: 0;
+  }
+
+  /* Corporate Section */
+  .corporate-section {
+    text-align: center;
+  }
+
+  .corporate-title {
+    font-size: clamp(1.4rem, 2.5vw, 1.85rem);
+    font-weight: 800;
+    color: var(--color-primary-navy);
+    margin-bottom: 0.5rem;
+  }
+
+  .corporate-sub {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-8);
+  }
+
+  .partners-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+
+  @media (min-width: 640px) {
+    .partners-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .partners-grid {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
+  .partner-card {
+    background-color: #FFFFFF;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5) var(--space-4);
+    box-shadow: 0 2px 8px rgba(11, 47, 99, 0.04);
+    transition: transform var(--transition-fast), border-color var(--transition-fast);
+  }
+
+  .partner-card:hover {
+    transform: translateY(-3px);
+    border-color: var(--color-secondary-blue);
+  }
+
+  .partner-name {
+    font-family: var(--font-heading);
+    font-size: var(--text-base);
+    font-weight: 800;
+    color: var(--color-primary-navy);
+    margin-bottom: 0.25rem;
+  }
+
+  .partner-sector {
+    font-size: 0.68rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+  }
+</style>

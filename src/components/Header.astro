@@ -1,119 +1,521 @@
 ---
-import ThemeToggle from './ThemeToggle.astro';
-import Button from './Button.astro';
-
-const navLinks = [
-  { href: '/', label: 'Home' },
-  { href: '/about', label: 'About' },
-];
+import siteData from '../data/site.json';
 
 const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
+const navLinks = siteData.navLinks;
+const { contact } = siteData;
 ---
 
-<header class="header">
-  <div class="container header__inner">
-    <a href="/" class="header__brand">
-      <svg class="header__logo" viewBox="0 0 32 32" width="28" height="28" fill="none">
-        <rect width="32" height="32" rx="8" fill="currentColor"/>
-        <path d="M16 6L7 22H11.5L13.5 18H18.5L20.5 22H25L16 6ZM16 12.8L17.3 15.5H14.7L16 12.8Z" fill="#38bdf8"/>
-        <circle cx="23" cy="9" r="2.5" fill="#f43f5e"/>
-      </svg>
-      <span class="header__title">Astro<span class="header__title-accent">Bun</span></span>
-    </a>
+<header class="site-header">
+  <!-- Top announcement & quick contact bar -->
+  <div class="site-header__topbar">
+    <div class="container site-header__topbar-inner">
+      <div class="topbar-left">
+        <span class="topbar-item">
+          <svg class="topbar-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+          <strong>New Batch Starting This Monday!</strong> Limited Seats
+        </span>
+        <span class="topbar-divider">|</span>
+        <span class="topbar-item hide-mobile">
+          <svg class="topbar-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <polyline points="12 6 12 12 16 14"/>
+          </svg>
+          Mon - Sat: 8:00 AM – 8:00 PM
+        </span>
+      </div>
 
-    <nav class="header__nav" aria-label="Main Navigation">
-      <ul class="header__nav-list">
-        {navLinks.map((link) => {
-          const isActive = pathname === link.href;
-          return (
-            <li>
-              <a
-                href={link.href}
-                class:list={['header__nav-link', { 'header__nav-link--active': isActive }]}
-                aria-current={isActive ? 'page' : undefined}
-              >
-                {link.label}
-              </a>
-            </li>
-          );
-        })}
-      </ul>
-    </nav>
+      <div class="topbar-right">
+        <a href={`tel:${contact.phoneClean}`} class="topbar-link">
+          <svg class="topbar-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+            <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.72 11.72 0 003.68.59 1 1 0 011 1v3.5a1 1 0 01-1 1A16 16 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.72 11.72 0 00.59 3.68 1 1 0 01-.24 1.02l-2.22 2.09z"/>
+          </svg>
+          <span>{contact.phone}</span>
+        </a>
+        <a 
+          href={`https://wa.me/${contact.whatsappClean}?text=${encodeURIComponent(contact.whatsappMessage)}`} 
+          target="_blank" 
+          rel="noopener noreferrer" 
+          class="topbar-whatsapp"
+        >
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+          </svg>
+          <span>WhatsApp Us</span>
+        </a>
+      </div>
+    </div>
+  </div>
 
-    <div class="header__actions">
-      <ThemeToggle />
-      <Button href="https://github.com" target="_blank" rel="noopener noreferrer" variant="secondary" size="sm">
-        GitHub
-      </Button>
+  <!-- Main Navigation Bar -->
+  <div class="site-header__main">
+    <div class="container site-header__inner">
+      <a href="/" class="site-header__brand" aria-label="GLOBAL Institute Home">
+        <svg class="brand-logo" viewBox="0 0 50 50" width="44" height="44" fill="none">
+          <rect width="50" height="50" rx="12" fill="#0B2F63"/>
+          <circle cx="25" cy="25" r="17" fill="#0757A6"/>
+          <ellipse cx="25" cy="25" rx="7.5" ry="17" stroke="#EEF5FD" stroke-width="1.5" fill="none"/>
+          <line x1="8" y1="25" x2="42" y2="25" stroke="#EEF5FD" stroke-width="1.5"/>
+          <circle cx="36" cy="14" r="4" fill="#FFC928"/>
+        </svg>
+        <div class="brand-text">
+          <div class="brand-name">GLOBAL <span class="brand-name-sub">INSTITUTE</span></div>
+          <div class="brand-sub">SPOKEN ENGLISH & PERSONALITY</div>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="site-nav" aria-label="Primary Navigation">
+        <ul class="site-nav__list">
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));
+            return (
+              <li>
+                <a
+                  href={link.href}
+                  class:list={['site-nav__link', { 'site-nav__link--active': isActive }]}
+                  aria-current={isActive ? 'page' : undefined}
+                >
+                  {link.label}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
+
+      <!-- Desktop Header CTA -->
+      <div class="site-header__actions">
+        <a href="/contact#enquiry-form" class="btn btn-yellow site-header__cta">
+          Book Free Demo
+        </a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button
+          type="button"
+          class="mobile-menu-toggle"
+          id="mobile-menu-toggle"
+          aria-expanded="false"
+          aria-label="Open mobile menu"
+          aria-controls="mobile-drawer"
+        >
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Slide Drawer -->
+  <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
+    <div class="mobile-drawer__overlay" id="mobile-drawer-overlay"></div>
+    <div class="mobile-drawer__content">
+      <div class="mobile-drawer__header">
+        <div class="brand-text">
+          <div class="brand-name">GLOBAL <span class="brand-name-sub">INSTITUTE</span></div>
+          <div class="brand-sub">Spoken English & Personality</div>
+        </div>
+        <button type="button" class="mobile-drawer__close" id="mobile-drawer-close" aria-label="Close menu">
+          &times;
+        </button>
+      </div>
+
+      <nav class="mobile-drawer__nav" aria-label="Mobile Navigation">
+        <ul class="mobile-drawer__list">
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href || (link.href !== '/' && pathname.startsWith(link.href));
+            return (
+              <li>
+                <a
+                  href={link.href}
+                  class:list={['mobile-drawer__link', { 'mobile-drawer__link--active': isActive }]}
+                >
+                  {link.label}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
+
+      <div class="mobile-drawer__footer">
+        <a href="/contact#enquiry-form" class="btn btn-yellow mobile-drawer__btn">
+          Book Free Demo Class
+        </a>
+        <a href={`tel:${contact.phoneClean}`} class="btn btn-call mobile-drawer__btn">
+          Call Now: {contact.phone}
+        </a>
+        <a 
+          href={`https://wa.me/${contact.whatsappClean}?text=${encodeURIComponent(contact.whatsappMessage)}`}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-whatsapp mobile-drawer__btn"
+        >
+          WhatsApp Inquiry
+        </a>
+      </div>
     </div>
   </div>
 </header>
 
-<style>
-  .header {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    width: 100%;
-    height: var(--header-height);
-    background-color: var(--color-bg);
-    border-bottom: 1px solid var(--color-border);
-    backdrop-filter: blur(8px);
-    display: flex;
-    align-items: center;
+<script is:inline>
+  const toggleBtn = document.getElementById('mobile-menu-toggle');
+  const closeBtn = document.getElementById('mobile-drawer-close');
+  const overlay = document.getElementById('mobile-drawer-overlay');
+  const drawer = document.getElementById('mobile-drawer');
+
+  function openDrawer() {
+    if (drawer && toggleBtn) {
+      drawer.classList.add('mobile-drawer--open');
+      drawer.setAttribute('aria-hidden', 'false');
+      toggleBtn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
   }
 
-  .header__inner {
+  function closeDrawer() {
+    if (drawer && toggleBtn) {
+      drawer.classList.remove('mobile-drawer--open');
+      drawer.setAttribute('aria-hidden', 'true');
+      toggleBtn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+  }
+
+  if (toggleBtn) toggleBtn.addEventListener('click', openDrawer);
+  if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+  if (overlay) overlay.addEventListener('click', closeDrawer);
+
+  // Close on Escape key
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer?.classList.contains('mobile-drawer--open')) {
+      closeDrawer();
+    }
+  });
+</script>
+
+<style>
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 12px rgba(11, 47, 99, 0.08);
+  }
+
+  /* Top Bar */
+  .site-header__topbar {
+    background-color: var(--color-deep-navy);
+    color: #EEF5FD;
+    font-size: var(--text-xs);
+    padding: 0.4rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .site-header__topbar-inner {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: var(--space-4);
   }
 
-  .header__brand {
+  .topbar-left, .topbar-right {
     display: flex;
     align-items: center;
     gap: var(--space-3);
-    font-size: var(--text-lg);
-    font-weight: 700;
-    color: var(--color-text);
-    text-decoration: none;
   }
 
-  .header__logo {
-    color: var(--color-text);
+  .topbar-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
   }
 
-  .header__title-accent {
-    color: var(--color-primary);
+  .topbar-item strong {
+    color: var(--color-accent-yellow);
   }
 
-  .header__nav-list {
-    display: flex;
-    list-style: none;
-    gap: var(--space-6);
+  .topbar-divider {
+    color: rgba(255, 255, 255, 0.25);
   }
 
-  .header__nav-link {
-    font-size: var(--text-sm);
-    font-weight: 500;
-    color: var(--color-text-muted);
-    text-decoration: none;
-    transition: color var(--transition-fast);
-  }
-
-  .header__nav-link:hover {
-    color: var(--color-text);
-  }
-
-  .header__nav-link--active {
-    color: var(--color-primary);
+  .topbar-link {
+    color: #EEF5FD;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
     font-weight: 600;
   }
 
-  .header__actions {
+  .topbar-link:hover {
+    color: var(--color-accent-yellow);
+  }
+
+  .topbar-whatsapp {
+    color: #25D366;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-weight: 600;
+  }
+
+  .topbar-whatsapp:hover {
+    color: #4ade80;
+  }
+
+  @media (max-width: 768px) {
+    .hide-mobile {
+      display: none;
+    }
+  }
+
+  /* Main Nav */
+  .site-header__main {
+    height: 4.5rem;
+    display: flex;
+    align-items: center;
+  }
+
+  .site-header__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+  }
+
+  /* Brand */
+  .site-header__brand {
     display: flex;
     align-items: center;
     gap: var(--space-3);
+    text-decoration: none;
+  }
+
+  .brand-logo {
+    flex-shrink: 0;
+  }
+
+  .brand-name {
+    font-family: var(--font-heading);
+    font-weight: 900;
+    font-size: 1.25rem;
+    line-height: 1.1;
+    color: var(--color-primary-navy);
+    letter-spacing: 0.04em;
+  }
+
+  .brand-name-sub {
+    color: var(--color-secondary-blue);
+    font-weight: 800;
+  }
+
+  .brand-sub {
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--color-text-secondary);
+  }
+
+  /* Desktop Nav Links */
+  .site-nav {
+    display: none;
+  }
+
+  @media (min-width: 1024px) {
+    .site-nav {
+      display: block;
+    }
+  }
+
+  .site-nav__list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 1.25rem;
+  }
+
+  .site-nav__link {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-text-main);
+    padding: 0.5rem 0.25rem;
+    position: relative;
+    transition: color var(--transition-fast);
+  }
+
+  .site-nav__link:hover {
+    color: var(--color-secondary-blue);
+  }
+
+  .site-nav__link--active {
+    color: var(--color-secondary-blue);
+    font-weight: 700;
+  }
+
+  .site-nav__link--active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: var(--color-accent-yellow);
+    border-radius: var(--radius-full);
+  }
+
+  .site-header__actions {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+  }
+
+  .site-header__cta {
+    display: none;
+  }
+
+  @media (min-width: 640px) {
+    .site-header__cta {
+      display: inline-flex;
+    }
+  }
+
+  /* Hamburger Toggle */
+  .mobile-menu-toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 2.25rem;
+    height: 2.25rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0.35rem;
+    border-radius: var(--radius-sm);
+  }
+
+  @media (min-width: 1024px) {
+    .mobile-menu-toggle {
+      display: none;
+    }
+  }
+
+  .hamburger-bar {
+    width: 100%;
+    height: 2.5px;
+    background-color: var(--color-primary-navy);
+    border-radius: 2px;
+    transition: all 0.2s ease;
+  }
+
+  /* Mobile Slide Drawer */
+  .mobile-drawer {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+    visibility: hidden;
+    pointer-events: none;
+    transition: visibility 0.3s ease;
+  }
+
+  .mobile-drawer--open {
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .mobile-drawer__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(7, 29, 61, 0.6);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .mobile-drawer--open .mobile-drawer__overlay {
+    opacity: 1;
+  }
+
+  .mobile-drawer__content {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 82%;
+    max-width: 340px;
+    height: 100%;
+    background-color: #FFFFFF;
+    box-shadow: -4px 0 24px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow-y: auto;
+    padding: var(--space-6);
+  }
+
+  .mobile-drawer--open .mobile-drawer__content {
+    transform: translateX(0);
+  }
+
+  .mobile-drawer__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: var(--space-4);
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: var(--space-4);
+  }
+
+  .mobile-drawer__close {
+    background: transparent;
+    border: none;
+    font-size: 2rem;
+    line-height: 1;
+    color: var(--color-text-main);
+    cursor: pointer;
+    padding: 0 0.5rem;
+  }
+
+  .mobile-drawer__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .mobile-drawer__link {
+    display: block;
+    padding: 0.65rem 0.75rem;
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: var(--color-text-main);
+    border-radius: var(--radius-md);
+    transition: all 0.2s;
+  }
+
+  .mobile-drawer__link:hover,
+  .mobile-drawer__link--active {
+    background-color: var(--color-bg-light-blue);
+    color: var(--color-secondary-blue);
+  }
+
+  .mobile-drawer__footer {
+    margin-top: auto;
+    padding-top: var(--space-6);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .mobile-drawer__btn {
+    width: 100%;
   }
 </style>

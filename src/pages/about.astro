@@ -1,131 +1,140 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Button from '../components/Button.astro';
-import Card from '../components/Card.astro';
+import Trainer from '../components/Trainer.astro';
+import Stats from '../components/Stats.astro';
+import Contact from '../components/Contact.astro';
 ---
 
 <BaseLayout
-  title="About This Starter"
-  description="Architecture and guidelines for using the Astro + Bun starter template across your website projects."
+  title="About Us & Coach Faizan Khan"
+  description="Discover the story and pedagogical philosophy of GLOBAL Institute, founded by Coach Faizan Khan to eliminate English speaking hesitation and build leaders."
 >
-  <div class="container about-page">
-    <div class="about-page__header">
-      <span class="badge-tag">Documentation</span>
-      <h1>About the Starter</h1>
-      <p class="about-page__subtitle">
-        Engineered for rapid bootstrapping, high maintainability, and zero bloat across client and internal projects.
+  <!-- Page Banner -->
+  <section class="page-hero">
+    <div class="container page-hero__inner">
+      <span class="section-tag section-tag--light">About GLOBAL Institute</span>
+      <h1 class="page-title">Pioneering Conversational Mastery &amp; Leadership</h1>
+      <p class="page-subtitle">
+        For over 12 years, GLOBAL Institute has stood as North India's foremost center for transforming hesitant speakers into fluent corporate leaders and inspirational educators.
       </p>
     </div>
+  </section>
 
-    <div class="about-page__content">
-      <section class="about-section">
-        <h2>Guiding Principles</h2>
-        <div class="grid grid--two">
-          <Card
-            title="Clean Git Lineage"
-            description="When spinning up a new website, start fresh from the GitHub template with an independent commit history."
-          />
-          <Card
-            title="Locked Dependencies"
-            description="Use Bun's frozen lockfile to ensure identical, deterministic builds in CI/CD and production environments."
-          />
-          <Card
-            title="Zero Bloated Frameworks"
-            description="Plain semantic HTML, CSS tokens, and optional Astro components. Bring React, Vue, or Svelte only when required."
-          />
-          <Card
-            title="SEO by Default"
-            description="Pre-wired Open Graph tags, canonical links, twitter cards, and sitemap generation save setup time on every launch."
-          />
+  <!-- Stats Ribbon -->
+  <Stats />
+
+  <!-- Our Mission & Vision -->
+  <section class="section">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-card">
+          <div class="about-icon">🎯</div>
+          <h2 class="about-title">Our Mission</h2>
+          <p class="about-text">
+            To eradicate language hesitation and stage fear through scientifically structured, neuro-linguistic speaking drills, empowering every student with the poise to express their ideas fearlessly in global forums.
+          </p>
         </div>
-      </section>
 
-      <section class="about-section">
-        <h2>Workflow Checklist for New Projects</h2>
-        <ul class="checklist">
-          <li><strong>1. Create repository:</strong> Click "Use this template" on GitHub.</li>
-          <li><strong>2. Configure site URL:</strong> Update <code>PUBLIC_SITE_URL</code> in your deployment environment or <code>.env</code>.</li>
-          <li><strong>3. Update metadata:</strong> Edit site titles and descriptions in <code>BaseHead.astro</code> and page frontmatter.</li>
-          <li><strong>4. Install dependencies:</strong> Run <code>bun install --frozen-lockfile</code>.</li>
-        </ul>
-      </section>
+        <div class="about-card">
+          <div class="about-icon">🌟</div>
+          <h2 class="about-title">Our Vision</h2>
+          <p class="about-text">
+            To build a world where lack of English fluency is never a barrier to career success, executive promotions, or global leadership opportunities.
+          </p>
+        </div>
 
-      <div class="about-page__cta">
-        <Button href="/" variant="primary" size="lg">&larr; Back to Home</Button>
+        <div class="about-card">
+          <div class="about-icon">⚡</div>
+          <h2 class="about-title">The 12-Level Method</h2>
+          <p class="about-text">
+            Traditional rote grammar instruction fails because conversation happens in milliseconds. Our 12-level progressive framework trains mental agility and spontaneous speech reflexes.
+          </p>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
+
+  <!-- Trainer Section -->
+  <Trainer />
+
+  <!-- Enquiry Form Section -->
+  <Contact />
 </BaseLayout>
 
 <style>
-  .about-page {
-    padding: var(--space-12) var(--space-4) var(--space-20);
-    max-width: 800px;
+  .page-hero {
+    background: linear-gradient(135deg, #071D3D 0%, #0B2F63 70%, #0757A6 100%);
+    color: #FFFFFF;
+    padding: var(--space-16) 0 var(--space-20);
+    text-align: center;
   }
 
-  .about-page__header {
-    margin-bottom: var(--space-10);
+  .page-hero__inner {
+    max-width: 820px;
+    margin: 0 auto;
   }
 
-  .badge-tag {
-    display: inline-block;
-    font-size: var(--text-xs);
-    font-weight: 600;
-    text-transform: uppercase;
-    color: var(--color-primary);
-    background-color: var(--color-primary-subtle);
-    padding: var(--space-1) var(--space-3);
-    border-radius: var(--radius-full);
-    margin-bottom: var(--space-3);
+  .section-tag--light {
+    background-color: rgba(255, 201, 40, 0.15);
+    color: var(--color-accent-yellow);
+    border: 1px solid rgba(255, 201, 40, 0.3);
   }
 
-  .about-page__subtitle {
-    font-size: var(--text-lg);
-    margin-top: var(--space-2);
+  .page-title {
+    font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+    font-weight: 900;
+    color: #FFFFFF;
+    margin-bottom: var(--space-4);
+    line-height: 1.15;
   }
 
-  .about-section {
-    margin-bottom: var(--space-10);
+  .page-subtitle {
+    font-size: var(--text-base);
+    color: #CBD5E1;
+    line-height: var(--leading-relaxed);
   }
 
-  .about-section h2 {
-    margin-bottom: var(--space-6);
-  }
-
-  .grid--two {
+  .about-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--space-4);
+    gap: var(--space-6);
   }
 
-  @media (min-width: 640px) {
-    .grid--two {
-      grid-template-columns: repeat(2, 1fr);
+  @media (min-width: 768px) {
+    .about-grid {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 
-  .checklist {
-    list-style: none;
+  .about-card {
+    background-color: var(--color-bg-light-blue);
+    border: 1px solid rgba(7, 87, 166, 0.15);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-8);
     display: flex;
     flex-direction: column;
-    gap: var(--space-3);
-    background-color: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    padding: var(--space-6);
+    transition: transform var(--transition-base);
   }
 
-  .checklist li {
-    font-size: var(--text-base);
-    color: var(--color-text-muted);
-    line-height: var(--leading-normal);
+  .about-card:hover {
+    transform: translateY(-4px);
   }
 
-  .checklist strong {
-    color: var(--color-text);
+  .about-icon {
+    font-size: 2.5rem;
+    margin-bottom: var(--space-4);
   }
 
-  .about-page__cta {
-    margin-top: var(--space-8);
+  .about-title {
+    font-size: var(--text-xl);
+    font-weight: 800;
+    color: var(--color-primary-navy);
+    margin-bottom: var(--space-3);
+  }
+
+  .about-text {
+    font-size: var(--text-sm);
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
   }
 </style>

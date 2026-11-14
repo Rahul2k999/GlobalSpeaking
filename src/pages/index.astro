@@ -1,237 +1,45 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Button from '../components/Button.astro';
-import Card from '../components/Card.astro';
+import Hero from '../components/Hero.astro';
+import Stats from '../components/Stats.astro';
+import Courses from '../components/Courses.astro';
+import Trainer from '../components/Trainer.astro';
+import Achievements from '../components/Achievements.astro';
+import Gallery from '../components/Gallery.astro';
+import VideoTestimonials from '../components/VideoTestimonials.astro';
+import Reviews from '../components/Reviews.astro';
+import Contact from '../components/Contact.astro';
+import siteData from '../data/site.json';
+
+const pageTitle = `${siteData.name} – ${siteData.slogan}`;
+const pageDesc = `${siteData.subSlogan}. 15,000+ Students Trained, 1,700+ MNC Selections, 1,000+ Teachers Placed. Join Coach Faizan Khan's 12-Level Spoken English & Personality Development Program.`;
 ---
 
-<BaseLayout
-  title="Home"
-  description="A reusable, high-performance Astro + Bun starter template with responsive layout, design tokens, and SEO optimization."
->
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="container hero__inner">
-      <div class="hero__badge">
-        <span class="pulse-dot"></span> Reusable Master Starter
-      </div>
-      <h1 class="hero__title">
-        High Performance Websites <br />
-        <span class="gradient-text">Built with Astro &amp; Bun</span>
-      </h1>
-      <p class="hero__lead">
-        A clean, lightweight foundation for production-ready web projects. Featuring CSS design tokens, responsive UI components, TypeScript, and automatic sitemap generation.
-      </p>
-      <div class="hero__actions">
-        <Button href="#features" variant="primary" size="lg">Explore Features</Button>
-        <Button href="/about" variant="outline" size="lg">About Template</Button>
-      </div>
-    </div>
-  </section>
+<BaseLayout title={pageTitle} description={pageDesc}>
+  <!-- 1. Hero Banner -->
+  <Hero />
 
-  <!-- Features Grid -->
-  <section id="features" class="section">
-    <div class="container">
-      <div class="section__header">
-        <h2 class="section__title">Starter Essentials</h2>
-        <p class="section__subtitle">Carefully selected defaults without unnecessary bloat or rigid opinionation.</p>
-      </div>
+  <!-- 2. Achievement Statistics -->
+  <Stats />
 
-      <div class="grid grid--features">
-        <Card
-          tag="Runtime"
-          title="Bun First"
-          description="Instant package management and ultrafast build tooling using Bun with strict lockfile support."
-        />
-        <Card
-          tag="Architecture"
-          title="Astro 5 & Islands"
-          description="Zero-JS by default. Ship minimal client-side JavaScript for maximum Core Web Vitals performance."
-        />
-        <Card
-          tag="Design System"
-          title="CSS Custom Properties"
-          description="Cohesive design tokens for light/dark themes, responsive typography, spacing, and elevation."
-        />
-        <Card
-          tag="SEO"
-          title="Meta & Sitemap"
-          description="Preconfigured Open Graph, Twitter Cards, canonical links, robots.txt, and automated sitemaps."
-        />
-      </div>
-    </div>
-  </section>
+  <!-- 3. Our Courses -->
+  <Courses showAllLink={true} />
 
-  <!-- Showcase Section -->
-  <section class="section section--alt">
-    <div class="container">
-      <div class="section__header">
-        <h2 class="section__title">Reusable Component Showcase</h2>
-        <p class="section__subtitle">Consistent building blocks ready for your next client or side project.</p>
-      </div>
+  <!-- 4. Meet Our Trainer & Why Choose Us -->
+  <Trainer />
 
-      <div class="showcase-card">
-        <h3 class="showcase-card__title">Buttons &amp; Variants</h3>
-        <p class="showcase-card__desc">Semantic, accessible buttons that seamlessly render as links or buttons.</p>
-        <div class="button-row">
-          <Button variant="primary">Primary</Button>
-          <Button variant="secondary">Secondary</Button>
-          <Button variant="outline">Outline</Button>
-          <Button variant="ghost">Ghost</Button>
-        </div>
-      </div>
+  <!-- 5. Our Achievements -->
+  <Achievements />
 
-      <div class="showcase-card">
-        <h3 class="showcase-card__title">Quick Start</h3>
-        <p class="showcase-card__desc">Verify and spin up your development server in seconds:</p>
-        <pre class="code-block"><code># Install dependencies
-bun install --frozen-lockfile
+  <!-- 6. Gallery -->
+  <Gallery limit={6} showFilters={true} />
 
-# Start local development server
-bun run dev
+  <!-- 7. Video Testimonials -->
+  <VideoTestimonials />
 
-# Run type check and production build
-bun run build</code></pre>
-      </div>
-    </div>
-  </section>
+  <!-- 8. Student Reviews -->
+  <Reviews limit={6} />
+
+  <!-- 9. Contact & Enquiry -->
+  <Contact />
 </BaseLayout>
-
-<style>
-  .hero {
-    padding: var(--space-16) 0 var(--space-12);
-    text-align: center;
-    background: radial-gradient(circle at 50% 20%, var(--color-primary-subtle) 0%, transparent 60%);
-  }
-
-  .hero__inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 800px;
-  }
-
-  .hero__badge {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--space-2);
-    font-size: var(--text-xs);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--color-primary);
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    padding: var(--space-1) var(--space-3);
-    border-radius: var(--radius-full);
-    margin-bottom: var(--space-6);
-  }
-
-  .pulse-dot {
-    width: 0.5rem;
-    height: 0.5rem;
-    border-radius: var(--radius-full);
-    background-color: var(--color-primary);
-  }
-
-  .hero__title {
-    margin-bottom: var(--space-4);
-  }
-
-  .gradient-text {
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-
-  .hero__lead {
-    font-size: var(--text-lg);
-    margin-bottom: var(--space-8);
-  }
-
-  .hero__actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-3);
-    justify-content: center;
-  }
-
-  .section {
-    padding: var(--space-16) 0;
-  }
-
-  .section--alt {
-    background-color: var(--color-bg-subtle);
-  }
-
-  .section__header {
-    text-align: center;
-    max-width: 600px;
-    margin: 0 auto var(--space-12);
-  }
-
-  .section__title {
-    margin-bottom: var(--space-2);
-  }
-
-  .section__subtitle {
-    font-size: var(--text-base);
-  }
-
-  .grid--features {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-6);
-  }
-
-  @media (min-width: 640px) {
-    .grid--features {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .grid--features {
-      grid-template-columns: repeat(4, 1fr);
-    }
-  }
-
-  .showcase-card {
-    background-color: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    padding: var(--space-8);
-    margin-bottom: var(--space-6);
-    box-shadow: var(--shadow-sm);
-  }
-
-  .showcase-card__title {
-    font-size: var(--text-xl);
-    margin-bottom: var(--space-2);
-  }
-
-  .showcase-card__desc {
-    font-size: var(--text-sm);
-    margin-bottom: var(--space-4);
-  }
-
-  .button-row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-3);
-  }
-
-  .code-block {
-    background-color: var(--color-bg-subtle);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    padding: var(--space-4);
-    overflow-x: auto;
-  }
-
-  .code-block code {
-    background: transparent;
-    border: none;
-    padding: 0;
-    color: var(--color-text);
-  }
-</style>

@@ -1,20 +1,20 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import Button from '../components/Button.astro';
 ---
 
 <BaseLayout
-  title="Page Not Found"
+  title="404 – Page Not Found"
   description="Sorry, the page you are looking for does not exist."
 >
   <div class="container not-found">
     <div class="not-found__code">404</div>
-    <h1 class="not-found__title">Page not found</h1>
+    <h1 class="not-found__title">Page Not Found</h1>
     <p class="not-found__desc">
-      The page you were looking for doesn't exist or has been moved.
+      The page you were looking for doesn't exist or has moved. Return to our homepage to explore courses and book a free demo session.
     </p>
-    <div class="not-found__action">
-      <Button href="/" variant="primary" size="lg">Return Home</Button>
+    <div class="not-found__actions">
+      <a href="/" class="btn btn-navy">Return Home &rarr;</a>
+      <a href="/courses" class="btn btn-yellow">Browse Courses</a>
     </div>
   </div>
 </BaseLayout>
@@ -27,26 +27,38 @@ import Button from '../components/Button.astro';
     justify-content: center;
     text-align: center;
     padding: var(--space-20) var(--space-4);
-    min-height: 50vh;
+    min-height: 60vh;
   }
 
   .not-found__code {
-    font-size: 6rem;
+    font-size: clamp(5rem, 10vw, 8rem);
     font-weight: 900;
     line-height: 1;
-    color: var(--color-primary);
-    opacity: 0.3;
+    color: var(--color-primary-navy);
+    opacity: 0.2;
     letter-spacing: -0.05em;
   }
 
   .not-found__title {
-    margin-top: var(--space-4);
-    margin-bottom: var(--space-2);
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    font-weight: 800;
+    color: var(--color-primary-navy);
+    margin-top: var(--space-2);
+    margin-bottom: var(--space-3);
   }
 
   .not-found__desc {
-    font-size: var(--text-lg);
-    max-width: 460px;
+    font-size: var(--text-base);
+    color: var(--color-text-secondary);
+    max-width: 480px;
     margin-bottom: var(--space-8);
+    line-height: var(--leading-relaxed);
+  }
+
+  .not-found__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-4);
   }
 </style>

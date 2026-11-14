@@ -1,0 +1,350 @@
+---
+import siteData from '../data/site.json';
+import videosData from '../data/videos.json';
+
+const { trainer, whyChooseUs } = siteData;
+const { trainerVideo } = videosData;
+
+const whyIcons: Record<string, string> = {
+  expert: "👨‍🏫",
+  practical: "🗣️",
+  levels: "📈",
+  counselling: "🎯"
+};
+---
+
+<section class="section trainer-section" id="trainer" aria-labelledby="trainer-heading">
+  <div class="container">
+    <!-- Trainer Profile Showcase -->
+    <div class="trainer-card">
+      <div class="trainer-card__grid">
+        <!-- Trainer Photo / Badge Column -->
+        <div class="trainer-card__media">
+          <div class="trainer-image-wrap">
+            <img
+              src="/images/trainer-faizan.svg"
+              alt={`${trainer.name} - ${trainer.designation}`}
+              width="500"
+              height="560"
+              loading="lazy"
+              class="trainer-photo"
+            />
+            <div class="experience-pill">
+              <span class="exp-number">12+</span>
+              <span class="exp-text">Years of Proven Excellence</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Trainer Content Column -->
+        <div class="trainer-card__content">
+          <div class="section-tag section-tag--blue">Leadership & Mentorship</div>
+          <h2 id="trainer-heading" class="trainer-name">{trainer.name}</h2>
+          <p class="trainer-designation">{trainer.designation}</p>
+
+          <p class="trainer-bio-lead">
+            {trainer.shortBio}
+          </p>
+
+          <p class="trainer-bio-body">
+            {trainer.fullBio}
+          </p>
+
+          <div class="trainer-credentials">
+            <h4 class="credentials-heading">Key Distinctions:</h4>
+            <ul class="credentials-list">
+              {trainer.credentials.map((cred) => (
+                <li class="cred-item">
+                  <svg class="cred-icon" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  <span>{cred}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <!-- Video Trigger & Action -->
+          <div class="trainer-actions">
+            <button
+              type="button"
+              class="btn btn-yellow btn-lg trainer-video-btn"
+              data-video-url={trainerVideo.embedUrl}
+              data-video-title={trainerVideo.title}
+              aria-label="Watch Coach Faizan Khan Masterclass Video"
+            >
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+              <span>Watch Video Masterclass ({trainerVideo.duration})</span>
+            </button>
+
+            <a href="#enquiry-section" class="btn btn-call btn-lg">
+              Book 1-on-1 Consultation
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Why Choose Global? 4 Pillar Grid -->
+    <div class="why-choose-wrap">
+      <div class="section-header">
+        <span class="section-tag">{whyChooseUs.subtitle}</span>
+        <h3 class="section-title">
+          {whyChooseUs.title.split('Global')[0]}
+          <span class="highlight-yellow">Global?</span>
+        </h3>
+        <p class="section-subtitle">
+          Our methodology focuses on the science of instinctive language acquisition, stage fear elimination, and behavioral poise.
+        </p>
+      </div>
+
+      <div class="why-grid">
+        {whyChooseUs.points.map((point) => (
+          <div class="why-card">
+            <div class="why-card__icon">{whyIcons[point.icon] || "⭐"}</div>
+            <h4 class="why-card__title">{point.title}</h4>
+            <p class="why-card__desc">{point.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .trainer-section {
+    background-color: #FFFFFF;
+  }
+
+  .trainer-card {
+    background: linear-gradient(135deg, #071D3D 0%, #0B2F63 100%);
+    color: #FFFFFF;
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+    box-shadow: 0 20px 45px rgba(11, 47, 99, 0.16);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: var(--space-20);
+  }
+
+  .trainer-card__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+  }
+
+  @media (min-width: 1024px) {
+    .trainer-card__grid {
+      grid-template-columns: 0.85fr 1.15fr;
+    }
+  }
+
+  .trainer-card__media {
+    padding: var(--space-8);
+    display: flex;
+    justify-content: center;
+    background: radial-gradient(circle at center, rgba(7, 87, 166, 0.4) 0%, transparent 70%);
+  }
+
+  .trainer-image-wrap {
+    position: relative;
+    max-width: 420px;
+    width: 100%;
+  }
+
+  .trainer-photo {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-xl);
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+  }
+
+  .experience-pill {
+    position: absolute;
+    bottom: -15px;
+    left: 20px;
+    background-color: var(--color-accent-yellow);
+    color: var(--color-deep-navy);
+    padding: 0.6rem 1.1rem;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .exp-number {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 900;
+    line-height: 1;
+  }
+
+  .exp-text {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.2;
+    max-width: 120px;
+  }
+
+  /* Content */
+  .trainer-card__content {
+    padding: var(--space-8);
+  }
+
+  @media (min-width: 768px) {
+    .trainer-card__content {
+      padding: var(--space-12);
+    }
+  }
+
+  .section-tag--blue {
+    background-color: rgba(7, 87, 166, 0.35);
+    color: #93C5FD;
+    border: 1px solid rgba(147, 197, 253, 0.3);
+  }
+
+  .trainer-name {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-weight: 900;
+    color: #FFFFFF;
+    margin-bottom: 0.25rem;
+    line-height: 1.1;
+  }
+
+  .trainer-designation {
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-accent-yellow);
+    margin-bottom: var(--space-5);
+  }
+
+  .trainer-bio-lead {
+    font-size: var(--text-base);
+    font-weight: 600;
+    color: #EEF5FD;
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-4);
+  }
+
+  .trainer-bio-body {
+    font-size: var(--text-sm);
+    color: #CBD5E1;
+    line-height: var(--leading-relaxed);
+    margin-bottom: var(--space-6);
+  }
+
+  .trainer-credentials {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    padding: var(--space-5);
+    margin-bottom: var(--space-8);
+  }
+
+  .credentials-heading {
+    font-size: var(--text-xs);
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-accent-yellow);
+    margin-bottom: var(--space-3);
+  }
+
+  .credentials-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .credentials-list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .cred-item {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-size: var(--text-xs);
+    color: #E2E8F0;
+    font-weight: 500;
+  }
+
+  .cred-icon {
+    width: 16px;
+    height: 16px;
+    color: var(--color-whatsapp-green);
+    flex-shrink: 0;
+  }
+
+  .trainer-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+  }
+
+  /* Why Choose Global */
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  @media (min-width: 640px) {
+    .why-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .why-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .why-card {
+    background-color: var(--color-bg-light-blue);
+    border: 1px solid rgba(7, 87, 166, 0.15);
+    border-radius: var(--radius-xl);
+    padding: var(--space-6);
+    text-align: center;
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+  }
+
+  .why-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(11, 47, 99, 0.09);
+    border-color: var(--color-secondary-blue);
+  }
+
+  .why-card__icon {
+    font-size: 2.2rem;
+    width: 64px;
+    height: 64px;
+    background-color: #FFFFFF;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto var(--space-4);
+    box-shadow: 0 4px 12px rgba(11, 47, 99, 0.06);
+  }
+
+  .why-card__title {
+    font-size: var(--text-lg);
+    font-weight: 800;
+    color: var(--color-primary-navy);
+    margin-bottom: 0.5rem;
+  }
+
+  .why-card__desc {
+    font-size: var(--text-xs);
+    color: var(--color-text-secondary);
+    line-height: var(--leading-normal);
+  }
+</style>

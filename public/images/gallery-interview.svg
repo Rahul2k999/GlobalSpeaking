@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" fill="none">
+  <defs>
+    <linearGradient id="gInt" x1="0" y1="0" x2="600" y2="450" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0B2F63"/>
+      <stop offset="100%" stop-color="#0757A6"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="450" fill="url(#gInt)"/>
+  <rect x="80" y="70" width="440" height="300" rx="20" fill="#071D3D" stroke="#20B45B" stroke-width="2.5"/>
+  <text x="300" y="140" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="28" fill="#FFFFFF" text-anchor="middle">HR MOCK INTERVIEW DRILL</text>
+  <text x="300" y="180" font-family="'Inter', sans-serif" font-weight="600" font-size="16" fill="#20B45B" text-anchor="middle">1-on-1 Panel Simulation &amp; Resume Review</text>
+  <g transform="translate(140, 220)">
+    <rect width="140" height="80" rx="10" fill="#1E293B"/>
+    <text x="70" y="45" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700" fill="#CBD5E1" text-anchor="middle">HR Panel</text>
+    <rect x="180" width="140" height="80" rx="10" fill="#0B2F63" stroke="#FFC928"/>
+    <text x="250" y="45" font-family="'Plus Jakarta Sans', sans-serif" font-size="14" font-weight="700" fill="#FFC928" text-anchor="middle">Candidate</text>
+  </g>
+</svg>

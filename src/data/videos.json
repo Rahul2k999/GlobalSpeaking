@@ -1,0 +1,58 @@
+{
+  "trainerVideo": {
+    "id": "coach-faizan-intro",
+    "title": "Why Traditional Grammar Classes Fail & How Global's 12-Level System Succeeds",
+    "speaker": "Coach Faizan Khan",
+    "designation": "Director & Communication Skills Expert",
+    "duration": "3:45",
+    "thumbnail": "/images/trainer-video-thumb.svg",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ",
+    "description": "Watch Coach Faizan Khan break down why memorizing rules keeps you hesitant, and how conversational neuro-drills create effortless speaking instincts within 30 days."
+  },
+  "testimonials": [
+    {
+      "id": "video-testimonial-1",
+      "studentName": "Pooja Sharma",
+      "role": "Senior Quality Analyst at Infosys",
+      "badge": "MNC Selection",
+      "headline": "From Hesitant Speaker to Cracking Infosys in 45 Days",
+      "duration": "2:18",
+      "thumbnail": "/images/testimonials/video-thumb-1.svg",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ",
+      "quote": "I had stage fright and stammered during English meetings. Coach Faizan Khan's practical drills gave me spontaneous flow and transformed my corporate career."
+    },
+    {
+      "id": "video-testimonial-2",
+      "studentName": "Rahul Verma",
+      "role": "Operations Manager at Amazon",
+      "badge": "Corporate Promotion",
+      "headline": "Aced Amazon HR & Leadership Rounds on 1st Attempt",
+      "duration": "2:40",
+      "thumbnail": "/images/testimonials/video-thumb-2.svg",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ",
+      "quote": "The mock interview rounds and video analysis were mind-blowing. I knew exactly how to answer tough behavioral questions with poise and confidence."
+    },
+    {
+      "id": "video-testimonial-3",
+      "studentName": "Ayesha Siddiqui",
+      "role": "Senior English Educator, DPS",
+      "badge": "Teacher Placed",
+      "headline": "Overcame Stage Fear & Got Placed in Top International School",
+      "duration": "2:05",
+      "thumbnail": "/images/testimonials/video-thumb-3.svg",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ",
+      "quote": "Global Institute helped me refine my phonetics, voice modulation, and podium presence. I am now confidently teaching English to senior secondary students."
+    },
+    {
+      "id": "video-testimonial-4",
+      "studentName": "Vikram Patel",
+      "role": "Software Engineer, Deloitte",
+      "badge": "Global Client Lead",
+      "headline": "Leading US Client Calls without Mental Translation",
+      "duration": "3:10",
+      "thumbnail": "/images/testimonials/video-thumb-4.svg",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ",
+      "quote": "Before Global Institute, I translated from Hindi to English before every sentence. Today, I lead international scrum meetings without a second thought."
+    }
+  ]
+}

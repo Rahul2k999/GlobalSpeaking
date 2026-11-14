@@ -1,0 +1,43 @@
+{
+  "milestones": [
+    {
+      "value": "15,000+",
+      "title": "Students Trained",
+      "icon": "trophy",
+      "subtitle": "Across Delhi NCR & North India",
+      "description": "Transformed from hesitant speakers into fluent, fearless, and articulate communicators through our signature 12-level method."
+    },
+    {
+      "value": "1,700+",
+      "title": "MNC Selections",
+      "icon": "briefcase",
+      "subtitle": "Top Multinationals & Corporate Houses",
+      "description": "Graduates recruited as business analysts, managers, operations leads, and software engineers in leading global firms."
+    },
+    {
+      "value": "1,000+",
+      "title": "Teachers Placed",
+      "icon": "group",
+      "subtitle": "Prestigious Schools & Colleges",
+      "description": "Educators trained in international phonetics, classroom management, and confident pedagogy across reputed institutions."
+    }
+  ],
+  "corporatePartners": [
+    { "name": "Amazon", "sector": "E-Commerce & Tech" },
+    { "name": "Infosys", "sector": "IT & Consulting" },
+    { "name": "TCS", "sector": "Information Technology" },
+    { "name": "Wipro", "sector": "Enterprise Solutions" },
+    { "name": "Deloitte", "sector": "Financial Advisory & Consulting" },
+    { "name": "Tech Mahindra", "sector": "Digital Transformation" },
+    { "name": "Genpact", "sector": "Global Business Services" },
+    { "name": "HDFC Bank", "sector": "Banking & Wealth Management" },
+    { "name": "DPS Schools", "sector": "Premier K-12 Education" },
+    { "name": "British Council Partner", "sector": "Language Assessment" }
+  ],
+  "highlights": [
+    "94% Placement Success Rate in Corporate Interviews",
+    "Average 40% Salary Hike for Working Professionals post-completion",
+    "12 Structured Learning Levels tailored to individual pace",
+    "ISO Certified Educational Training Standards"
+  ]
+}

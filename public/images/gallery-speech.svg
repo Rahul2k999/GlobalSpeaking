@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" fill="none">
+  <defs>
+    <linearGradient id="gSpeech" x1="0" y1="0" x2="600" y2="450" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#071D3D"/>
+      <stop offset="100%" stop-color="#0B2F63"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="450" fill="url(#gSpeech)"/>
+  <circle cx="300" cy="200" r="160" fill="#FFC928" fill-opacity="0.12"/>
+  <!-- Podium & Spotlight -->
+  <polygon points="120,450 300,50 480,450" fill="#FFC928" fill-opacity="0.08"/>
+  <rect x="240" y="260" width="120" height="150" rx="8" fill="#1E293B" stroke="#0757A6" stroke-width="2"/>
+  <text x="300" y="240" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="24" fill="#FFC928" text-anchor="middle">PUBLIC SPEAKING</text>
+  <text x="300" y="320" font-family="'Inter', sans-serif" font-weight="600" font-size="16" fill="#FFFFFF" text-anchor="middle">Stage Presentation Round</text>
+  <text x="300" y="350" font-family="'Inter', sans-serif" font-weight="500" font-size="14" fill="#94A3B8" text-anchor="middle">Confidence Building Drill</text>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" fill="none">
+  <defs><linearGradient id="g5" x1="0" y1="0" x2="600" y2="450"><stop offset="0%" stop-color="#0B2F63"/><stop offset="100%" stop-color="#0757A6"/></linearGradient></defs>
+  <rect width="600" height="450" rx="16" fill="url(#g5)"/>
+  <ellipse cx="300" cy="270" rx="190" ry="70" fill="#071D3D" stroke="#FFC928" stroke-width="2"/>
+  <text x="300" y="275" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="20" fill="#FFC928" text-anchor="middle">MOCK GROUP DISCUSSION</text>
+  <text x="300" y="140" font-family="'Plus Jakarta Sans', sans-serif" font-weight="800" font-size="28" fill="#FFFFFF" text-anchor="middle">Debates &amp; Panel Rounds</text>
+  <text x="300" y="175" font-family="'Inter', sans-serif" font-size="16" fill="#93C5FD" text-anchor="middle">Corporate Simulation with Live Scoring</text>
+</svg>

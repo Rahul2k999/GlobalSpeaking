@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" fill="none">
+  <rect width="400" height="240" rx="16" fill="#F8FAFC"/>
+  <circle cx="340" cy="50" r="50" fill="#0757A6" fill-opacity="0.1"/>
+  
+  <g transform="translate(60, 40)">
+    <!-- Interview Desk -->
+    <rect x="20" y="90" width="240" height="18" rx="6" fill="#0B2F63"/>
+    <rect x="50" y="108" width="14" height="40" fill="#64748B"/>
+    <rect x="216" y="108" width="14" height="40" fill="#64748B"/>
+    
+    <!-- Interviewer on Left -->
+    <circle cx="70" cy="55" r="16" fill="#0757A6"/>
+    <path d="M50 88 C50 72 60 70 70 70 C80 70 90 72 90 88 Z" fill="#0757A6"/>
+
+    <!-- Candidate on Right -->
+    <circle cx="210" cy="55" r="16" fill="#FFC928"/>
+    <path d="M190 88 C190 72 200 70 210 70 C220 70 230 72 230 88 Z" fill="#0B2F63"/>
+
+    <!-- Resume / Offer Letter -->
+    <rect x="120" y="65" width="40" height="45" rx="4" fill="#FFFFFF" stroke="#0757A6" stroke-width="2"/>
+    <line x1="128" y1="75" x2="152" y2="75" stroke="#20B45B" stroke-width="2.5"/>
+    <line x1="128" y1="83" x2="148" y2="83" stroke="#64748B" stroke-width="2"/>
+    <line x1="128" y1="91" x2="142" y2="91" stroke="#64748B" stroke-width="2"/>
+
+    <!-- Success Checkmark Tag -->
+    <rect x="180" y="10" width="95" height="34" rx="8" fill="#20B45B"/>
+    <text x="190" y="32" font-family="'Plus Jakarta Sans', sans-serif" font-weight="700" font-size="12" fill="#FFFFFF">✓ SELECTED</text>
+  </g>
+</svg>

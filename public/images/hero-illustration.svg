@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 520" fill="none">
+  <defs>
+    <linearGradient id="heroBg" x1="0" y1="0" x2="600" y2="520" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#EEF5FD"/>
+      <stop offset="100%" stop-color="#E2EEFC"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#F8FAFC"/>
+    </linearGradient>
+    <filter id="shadow" x="-10" y="-10" width="620" height="540" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#0B2F63" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Backdrop Shape -->
+  <rect x="20" y="20" width="560" height="480" rx="32" fill="url(#heroBg)"/>
+  <circle cx="500" cy="90" r="70" fill="#FFC928" fill-opacity="0.25"/>
+  <circle cx="100" cy="420" r="90" fill="#0757A6" fill-opacity="0.08"/>
+
+  <!-- Main Stage Card -->
+  <rect x="60" y="60" width="480" height="400" rx="24" fill="url(#cardGrad)" stroke="#CBD5E1" stroke-width="1.5" filter="url(#shadow)"/>
+
+  <!-- Podium / Stage -->
+  <rect x="220" y="270" width="160" height="150" rx="8" fill="#0B2F63"/>
+  <rect x="240" y="285" width="120" height="20" rx="4" fill="#0757A6"/>
+  <path d="M280 250 L280 270 M320 250 L320 270" stroke="#FFC928" stroke-width="4"/>
+  <rect x="270" y="235" width="60" height="18" rx="6" fill="#FFC928"/>
+  <circle cx="300" cy="225" r="7" fill="#0B2F63"/>
+
+  <!-- Confident Student Speaker -->
+  <!-- Body -->
+  <path d="M260 210 Q300 205 340 210 L350 280 L250 280 Z" fill="#0757A6"/>
+  <!-- Shirt Collar -->
+  <polygon points="300,210 290,225 310,225" fill="#FFFFFF"/>
+  <polygon points="300,225 295,245 305,245" fill="#FFC928"/>
+  <!-- Head -->
+  <circle cx="300" cy="175" r="28" fill="#F8C39E"/>
+  <!-- Hair -->
+  <path d="M272 170 C272 150 290 142 300 142 C315 142 328 150 328 168 C320 162 312 160 300 160 C288 160 280 164 272 170 Z" fill="#172B45"/>
+  <!-- Smile & Eyes -->
+  <circle cx="292" cy="173" r="3" fill="#172B45"/>
+  <circle cx="308" cy="173" r="3" fill="#172B45"/>
+  <path d="M294 184 Q300 190 306 184" stroke="#B45309" stroke-width="2" stroke-linecap="round" fill="none"/>
+  <!-- Raised Confident Hand -->
+  <path d="M340 220 Q370 200 375 175" stroke="#F8C39E" stroke-width="12" stroke-linecap="round" fill="none"/>
+  <circle cx="375" cy="170" r="8" fill="#F8C39E"/>
+
+  <!-- Speech Bubble Left -->
+  <g transform="translate(90, 110)">
+    <rect width="145" height="58" rx="14" fill="#0B2F63" filter="url(#shadow)"/>
+    <polygon points="120,58 135,70 135,58" fill="#0B2F63"/>
+    <text x="18" y="26" font-family="'Plus Jakarta Sans', sans-serif" font-size="12" font-weight="700" fill="#FFC928">Fluency &amp; Clarity</text>
+    <text x="18" y="44" font-family="'Inter', sans-serif" font-size="11" font-weight="500" fill="#FFFFFF">100% Practical Speaking</text>
+  </g>
+
+  <!-- Floating Badge Right: Google Rating -->
+  <g transform="translate(370, 100)">
+    <rect width="150" height="70" rx="16" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" filter="url(#shadow)"/>
+    <circle cx="32" cy="35" r="16" fill="#FFF9E6"/>
+    <text x="24" y="41" font-family="'Plus Jakarta Sans', sans-serif" font-size="16" fill="#D97706">★</text>
+    <text x="56" y="30" font-family="'Plus Jakarta Sans', sans-serif" font-size="15" font-weight="800" fill="#0B2F63">4.9 / 5.0</text>
+    <text x="56" y="48" font-family="'Inter', sans-serif" font-size="10.5" font-weight="600" fill="#64748B">3,500+ Reviews</text>
+  </g>
+
+  <!-- Floating Badge Bottom Left: Career Growth -->
+  <g transform="translate(80, 340)">
+    <rect width="165" height="68" rx="16" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.5" filter="url(#shadow)"/>
+    <circle cx="34" cy="34" r="18" fill="#EAF7EE"/>
+    <path d="M26 38 L31 33 L36 36 L43 28 M43 28 H38 M43 28 V33" stroke="#20B45B" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <text x="60" y="30" font-family="'Plus Jakarta Sans', sans-serif" font-size="13" font-weight="800" fill="#0B2F63">Top Placements</text>
+    <text x="60" y="47" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#20B45B">MNC &amp; Corporate Ready</text>
+  </g>
+
+  <!-- Floating Badge Bottom Right: 15,000+ Students -->
+  <g transform="translate(370, 340)">
+    <rect width="155" height="68" rx="16" fill="#0757A6" filter="url(#shadow)"/>
+    <text x="20" y="32" font-family="'Plus Jakarta Sans', sans-serif" font-size="18" font-weight="800" fill="#FFC928">15,000+</text>
+    <text x="20" y="49" font-family="'Inter', sans-serif" font-size="11" font-weight="600" fill="#FFFFFF">Confident Alumni</text>
+  </g>
+</svg>

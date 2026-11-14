@@ -1,9 +1,9 @@
 {
-  "name": "astro-bun-starter",
+  "name": "global-institute-speaking",
   "type": "module",
   "version": "1.0.0",
   "private": true,
-  "description": "Clean, lightweight Astro starter powered by Bun and TypeScript",
+  "description": "GLOBAL Institute - Spoken English & Personality Development Institute Website",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",

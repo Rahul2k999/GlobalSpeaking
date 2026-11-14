@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 60" fill="none">
+  <!-- Icon Mark -->
+  <rect x="2" y="5" width="50" height="50" rx="12" fill="#0B2F63"/>
+  <circle cx="27" cy="30" r="18" fill="#0757A6"/>
+  <ellipse cx="27" cy="30" rx="8" ry="18" stroke="#EEF5FD" stroke-width="1.5" fill="none" opacity="0.85"/>
+  <line x1="9" y1="30" x2="45" y2="30" stroke="#EEF5FD" stroke-width="1.5" opacity="0.85"/>
+  <line x1="12" y1="21" x2="42" y2="21" stroke="#EEF5FD" stroke-width="1.2" opacity="0.65"/>
+  <line x1="12" y1="39" x2="42" y2="39" stroke="#EEF5FD" stroke-width="1.2" opacity="0.65"/>
+  <circle cx="39" cy="17" r="4.5" fill="#FFC928"/>
+
+  <!-- Brand Typography -->
+  <text x="64" y="32" font-family="'Plus Jakarta Sans', 'Inter', system-ui, sans-serif" font-weight="900" font-size="24" fill="#0B2F63" letter-spacing="1">GLOBAL</text>
+  <text x="175" y="32" font-family="'Plus Jakarta Sans', 'Inter', system-ui, sans-serif" font-weight="700" font-size="16" fill="#0757A6">INSTITUTE</text>
+  <text x="65" y="47" font-family="'Inter', system-ui, sans-serif" font-weight="600" font-size="10.5" fill="#64748B" letter-spacing="0.5">SPOKEN ENGLISH &amp; PERSONALITY DEVELOPMENT</text>
+</svg>
