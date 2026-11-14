@@ -1,139 +1,140 @@
-# Astro + Bun Master Starter
+# GLOBAL Institute — Spoken English & Personality Development Website
 
-A lightweight, modern, and production-ready master starter for website projects powered by **Astro 5**, **TypeScript**, and **Bun**.
+A complete, high-performance static website for **GLOBAL Institute** built with **Astro 5**, **Bun**, and vanilla CSS design tokens. 
 
-Designed as a **GitHub Template Repository** to bootstrap client and internal web projects with minimal dependencies, responsive layout, CSS design tokens, dark/light mode, and built-in SEO.
-
----
-
-## Features
-
-- **Runtime & Tooling:** Ultrafast package management and builds via [Bun](https://bun.sh) with locked dependencies (`bun.lock`).
-- **Zero-Bloat Core:** Minimal dependencies (`astro`, `@astrojs/sitemap`, `@astrojs/check`, `typescript`). No unnecessary frameworks until your project needs them.
-- **Design Tokens & CSS Variables:** Centralized theme system in `src/styles/global.css` (colors, typography scale, spacing, border radiuses, box shadows).
-- **Dark / Light Mode:** Built-in theme switcher component with `localStorage` persistence and system preference fallback (`prefers-color-scheme`). No flash of unstyled theme (FOUC).
-- **Reusable UI Components:**
-  - `BaseHead.astro`: Automatic canonical URLs, Open Graph, Twitter Cards, favicon, and robots integration.
-  - `BaseLayout.astro`: Responsive root layout wrapping header, main content, and footer.
-  - `Header.astro`: Navigation with active link detection, logo, and action buttons.
-  - `Footer.astro`: Semantic responsive footer with metadata.
-  - `Button.astro`: Polymorphic button component (supports variants `primary`, `secondary`, `outline`, `ghost` and renders as `<a>` or `<button>`).
-  - `Card.astro`: Reusable content card with tags, hover animations, and slot support.
-  - `ThemeToggle.astro`: Accessible toggle for switching between light and dark themes.
-- **Built-in SEO & Sitemap:** Automated `@astrojs/sitemap` generation with dynamic `site` configuration and robots.txt.
-- **Full TypeScript Support:** Astro strict TypeScript configuration with path alias support (`@/*` -> `./src/*`).
+Designed for North India's premier English communication institute led by Coach Faizan Khan (15,000+ alumni, 1,700+ MNC placements, 1,000+ teachers placed).
 
 ---
 
-## Quick Start
+## 🌟 Key Features
 
-### 1. Prerequisites
-Ensure you have [Bun](https://bun.sh) installed (v1.1+ recommended).
+- **10 Core Homepage Sections in Exact Architectural Flow:**
+  1. **Hero Banner:** Headline, call-to-action triggers, trust badges, WhatsApp quick enrollment, and SVG illustration.
+  2. **Achievement Statistics:** Key metrics ribbon (15K+ alumni, 1,700+ corporate hires, 1,000+ teachers, 12 levels).
+  3. **Our Courses:** Showcase for Spoken English, Personality Development, and Interview Preparation with key features and links to dedicated dynamic pages.
+  4. **Meet Our Trainer & Why Choose Us:** Profile of Coach Faizan Khan, Kamal, and the 12-Level neuro-linguistic conversational methodology.
+  5. **Our Achievements:** Landmark milestones, corporate hiring partners (Amazon, Infosys, TCS, Deloitte, Genpact, etc.).
+  6. **Life at GLOBAL Institute (Gallery):** Interactive gallery with category filtering (All, Campus, Speaking, Podiums, Awards) and modal previews.
+  7. **Video Testimonials:** Student story cards with integrated video modal player for masterclasses and alumni reviews.
+  8. **Student Reviews & Social Proof:** 4.9/5 star rating banner, Google review cards with verified badges.
+  9. **Contact & Enquiry:** Campus address, contact info, interactive Google Map embed, and dual-submission admissions form (direct validation + instant WhatsApp dispatch).
+  10. **Comprehensive Footer:** Quick links, course directory, campus hours, accreditation, and sticky mobile quick-action bar.
+
+- **Complete Subpage Suite:**
+  - `/about`: Pedagogical philosophy, trainer profiles, and mission.
+  - `/courses`: Course comparison matrix and 12-Level ladder overview.
+  - `/courses/[slug]`: Dynamic static pages for `spoken-english`, `personality-development`, and `interview-preparation` with detailed phase-by-phase syllabi.
+  - `/achievements`: Corporate placement records, hiring partners, and alumni highlights.
+  - `/gallery`: Categorized photo gallery with interactive filtering.
+  - `/testimonials`: Video stories and student transformation archives.
+  - `/reviews`: Full Google review directory with verified student ratings.
+  - `/contact`: Campus location, admissions desk, schedule, and FAQs.
+  - `/privacy-policy`: Data privacy and student confidentiality commitments.
+  - `/404`: Custom responsive error page matching theme.
+
+- **Zero Missing Assets:**
+  - Built entirely with standalone SVG vector assets for logos, course illustrations, video thumbnails, gallery scenes, and avatars.
+
+- **Interactive UI Components:**
+  - Mobile slide-drawer navigation.
+  - Global accessible video modal dialog (`VideoModal.astro`).
+  - Client-side validated demo registration form with instant WhatsApp message prefill.
+  - Sticky bottom contact bar for mobile screens (Call Now + WhatsApp + Book Demo).
+
+---
+
+## 🚀 Technology Stack
+
+- **Framework:** [Astro 5](https://astro.build/) (Static Site Generation / SSG)
+- **Runtime & Package Manager:** [Bun](https://bun.sh/)
+- **SEO & Sitemap:** `@astrojs/sitemap`
+- **Type Checking:** `@astrojs/check` + TypeScript 5
+- **Styling:** CSS variables, responsive fluid typography, and semantic HTML5
+
+---
+
+## 🛠️ Local Development & Build Commands
+
+### Prerequisites
+Ensure [Bun](https://bun.sh) is installed.
 
 ```bash
+# Verify Bun installation
 bun --version
 ```
 
-### 2. Install Dependencies
-Install dependencies with locked versions:
-
+### Install Dependencies
 ```bash
 bun install --frozen-lockfile
 ```
 
-### 3. Start Development Server
+### Run Local Development Server
 ```bash
 bun run dev
 ```
-Visit `http://localhost:4321` in your browser.
+Open [http://localhost:4321](http://localhost:4321) in your browser.
 
----
+### Type Check & Production Build
+```bash
+bun run build
+```
+Generates 13 static HTML pages, SVG assets, CSS bundles, and sitemaps in the `dist/` directory.
 
-## Standard Scripts
-
-| Command | Action |
-| :--- | :--- |
-| `bun run dev` | Starts local dev server at `localhost:4321` with Hot Module Replacement |
-| `bun run build` | Runs type check (`astro check`) followed by production static build |
-| `bun run check` | Runs Astro and TypeScript type diagnostics |
-| `bun run preview` | Previews the local production build (`dist/`) |
-
----
-
-## Project Structure
-
-```text
-├── .env.example            # Environment variables example (PUBLIC_SITE_URL)
-├── .gitignore              # Ignores node_modules, dist, .astro, .env files, secrets
-├── astro.config.mjs        # Astro configuration with sitemap integration
-├── bun.lock                # Bun lockfile
-├── package.json            # Scripts and minimal dependencies
-├── tsconfig.json           # Astro strict TypeScript configuration with paths
-├── public/
-│   ├── favicon.svg         # SVG favicon
-│   └── robots.txt          # Search engine crawler instructions
-└── src/
-    ├── components/
-    │   ├── BaseHead.astro  # SEO, Open Graph, Twitter meta tags, theme inline script
-    │   ├── Button.astro    # Polymorphic button/link with variants and sizes
-    │   ├── Card.astro      # Feature and content cards
-    │   ├── Footer.astro    # Global responsive footer
-    │   ├── Header.astro    # Global sticky navigation header
-    │   └── ThemeToggle.astro # Dark/light mode switcher
-    ├── layouts/
-    │   └── BaseLayout.astro # Root document layout
-    ├── pages/
-    │   ├── 404.astro       # Error page
-    │   ├── about.astro     # About page example
-    │   └── index.astro     # Homepage with hero, features, and component showcase
-    └── styles/
-        └── global.css      # CSS variables, reset, typography, and utility classes
+### Preview Static Production Build
+```bash
+bun run preview
 ```
 
 ---
 
-## Using as a GitHub Template Repository
+## 📁 Project Architecture
 
-### Step 1: Mark as Template on GitHub
-1. Push this repository to GitHub (e.g. `your-user/astro-bun-starter`).
-2. Go to **Settings** > **General** on the GitHub repository.
-3. Check the box **"Template repository"**.
-
-### Step 2: Create a New Website Project
-For each new website:
-1. Click the green **"Use this template"** button on GitHub and choose **"Create a new repository"**.
-2. Give your new project its own repository name (e.g. `client-acme-website`).
-3. This creates a separate project repository with a **clean, independent Git history**.
-4. Clone the new repository to your machine:
-   ```bash
-   git clone git@github.com:your-user/client-acme-website.git
-   cd client-acme-website
-   ```
-5. Verify dependencies using the frozen lockfile:
-   ```bash
-   bun install --frozen-lockfile
-   ```
-6. Copy `.env.example` to `.env` and set the production site domain:
-   ```bash
-   cp .env.example .env
-   ```
-7. Only add project-specific dependencies when required (e.g., UI libraries or backend SDKs):
-   ```bash
-   bun add <package-name>
-   ```
-8. Commit only project source files and configuration. Never commit `node_modules`, `.env`, or credential files (pre-configured in `.gitignore`).
-
----
-
-## Customization Guide
-
-### Design Tokens
-Edit `src/styles/global.css` to update:
-- `--color-primary`, `--color-accent`
-- Background and surface colors for light and dark themes
-- Typography fonts, line-heights, and scale
-- Spacing, border radiuses, and shadow elevations
-
-### SEO & Site URL
-- Update `site` in `astro.config.mjs` or set `PUBLIC_SITE_URL` in your production environment variables.
-- Pass custom `title`, `description`, `image`, and `canonicalURL` props into `<BaseLayout>` on each page.
+```text
+├── public/
+│   ├── favicon.svg             # Institute SVG favicon
+│   ├── robots.txt              # Crawler instructions
+│   └── images/                 # Standalone SVG illustrations, badges & avatars
+├── src/
+│   ├── components/
+│   │   ├── Achievements.astro   # Corporate placement grid & statistics
+│   │   ├── BaseHead.astro       # SEO metadata, Open Graph & fonts
+│   │   ├── Contact.astro        # Campus info, map embed & enquiry grid
+│   │   ├── Courses.astro        # Course cards with syllabus links
+│   │   ├── EnquiryForm.astro    # Validated registration & WhatsApp form
+│   │   ├── Footer.astro         # Site footer & mobile sticky action bar
+│   │   ├── Gallery.astro        # Filterable photo gallery
+│   │   ├── Header.astro         # Announcement bar, logo & slide drawer
+│   │   ├── Hero.astro           # Homepage hero banner & CTAs
+│   │   ├── Reviews.astro        # Google ratings & student feedback
+│   │   ├── Stats.astro          # Achievement statistics counter
+│   │   ├── Trainer.astro        # Trainer profile & 12-level methodology
+│   │   ├── VideoModal.astro     # Accessible global video player modal
+│   │   └── VideoTestimonials.astro # Video testimonial grid
+│   ├── data/
+│   │   ├── achievements.json    # Milestones & corporate partners
+│   │   ├── courses.json         # 3 core programs with phase-by-phase syllabus
+│   │   ├── gallery.json         # Categorized campus photo items
+│   │   ├── reviews.json         # Ratings and testimonials
+│   │   ├── site.json            # Institute info, phones, trainer details
+│   │   └── videos.json          # Masterclasses and video stories
+│   ├── layouts/
+│   │   └── BaseLayout.astro     # Core HTML layout shell
+│   ├── pages/
+│   │   ├── 404.astro            # Custom 404 page
+│   │   ├── about.astro          # About institute & Coach Faizan Khan
+│   │   ├── achievements.astro   # Corporate placements & milestones
+│   │   ├── contact.astro        # Contact & admissions FAQ
+│   │   ├── courses/
+│   │   │   ├── [slug].astro     # Dynamic static syllabus & detail pages
+│   │   │   └── index.astro      # Course catalog & 12-level matrix
+│   │   ├── gallery.astro        # Campus gallery page
+│   │   ├── index.astro          # 10-section homepage
+│   │   ├── privacy-policy.astro # Data confidentiality policy
+│   │   ├── reviews.astro        # Verified student reviews page
+│   │   └── testimonials.astro   # Video testimonials & stories
+│   └── styles/
+│       └── global.css           # Design tokens, reset, typography & buttons
+├── astro.config.mjs             # Astro configuration + sitemap
+├── package.json                 # Scripts and dependencies
+└── tsconfig.json                # TypeScript configuration
+```
