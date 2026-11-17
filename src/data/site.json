@@ -1,87 +1,134 @@
 {
-  "name": "GLOBAL Institute",
-  "fullName": "GLOBAL Institute – Spoken English & Personality Development Institute",
-  "tagline": "Spoken English & Personality Development Institute",
-  "slogan": "Speak English with Confidence",
-  "subSlogan": "Transform Your Personality, Build a Better Future",
+  "name": "GLOBAL SPOKEN ENGLISH",
+  "shortName": "GLOBAL SPOKEN ENGLISH",
+  "fullName": "GLOBAL SPOKEN ENGLISH & Personality Development Institute",
+  "tagline": "Where Your Next Version Begins.",
+  "slogan": "Where Your Next Version Begins",
+  "subSlogan": "Spoken English, Personality Development & Interview Readiness",
+  "establishmentYear": 2016,
+  "establishedText": "Established in 2016",
+  "introduction": "Global Spoken English & Personality Development Institute is a professional training institute based in Amravati, Maharashtra, dedicated to improving communication skills, spoken English, personality development and interview readiness.\n\nWe help students, graduates, job seekers and working professionals develop the communication skills and confidence required to perform better in academic, professional and real-world situations.\n\nOur training approach focuses on practical learning, individual improvement, personalised guidance and real-life communication practice.\n\nWith a strong focus on individual requirements, we assess each candidate's current level before recommending the most suitable course and learning path.",
+  "logo": "/images/logo.png",
   "contact": {
-    "phone": "+91 98765 43210",
-    "phoneClean": "+919876543210",
-    "whatsapp": "+91 98765 43210",
-    "whatsappClean": "919876543210",
-    "whatsappMessage": "Hello Global Institute, I want to book a free demo class for Spoken English.",
-    "email": "admissions@globalinstitute.in",
-    "address": "Ground Floor, Landmark Complex, Opposite Metro Pillar 124, Civil Lines Main Road",
-    "city": "Civil Lines, Delhi",
-    "state": "Delhi NCR",
-    "pincode": "110054",
-    "landmark": "Near Civil Lines Metro Station Gate No. 2",
-    "timing": "Monday to Saturday: 8:00 AM – 8:00 PM | Sunday: Special Fast-Track Batches",
-    "mapEmbedUrl": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14002.392762283086!2d77.21550995!3d28.671754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd21f8a7e0eb%3A0xb35a06705d9571ff!2sCivil%20Lines%2C%20Delhi!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+    "phone": "9637339536",
+    "phoneDisplay": "+91 96373 39536",
+    "phoneClean": "+919637339536",
+    "whatsapp": "9637339536",
+    "whatsappClean": "919637339536",
+    "whatsappMessage": "Hello Global Spoken English, I would like to enquire about your training courses and book a counselling session.",
+    "email": "globalenglishamravati@gmail.com",
+    "city": "Amravati",
+    "state": "Maharashtra"
   },
+  "branches": [
+    {
+      "id": "branch-gadge-nagar",
+      "name": "Branch 1 — Gadge Nagar",
+      "shortName": "Gadge Nagar Branch",
+      "address": "Infront of Polytechnic College, Beside Shan Honda Showroom, Amravati, Maharashtra",
+      "landmark": "Infront of Polytechnic College, Beside Shan Honda Showroom",
+      "city": "Amravati",
+      "state": "Maharashtra",
+      "mapUrl": "https://maps.app.goo.gl/34fdHiYCr3WMkptb8"
+    },
+    {
+      "id": "branch-jamil-colony",
+      "name": "Branch 2 — Jamil Colony",
+      "shortName": "Jamil Colony Branch",
+      "address": "Infront of Samar Medical, Amravati, Maharashtra",
+      "landmark": "Infront of Samar Medical",
+      "city": "Amravati",
+      "state": "Maharashtra",
+      "mapUrl": "https://maps.app.goo.gl/bS7mbHecBJGeykHr9"
+    }
+  ],
   "stats": [
     {
       "value": "15,000+",
-      "label": "Students Trained",
+      "label": "Students & Professionals Trained",
       "icon": "students",
-      "description": "Empowered with fluent spoken English & unshakeable stage confidence"
+      "description": "Trained in spoken English, personality development & professional skills"
     },
     {
       "value": "1,700+",
       "label": "MNC Selections",
       "icon": "mnc",
-      "description": "Selected at top multinationals, consultancies & corporate tech leaders"
+      "description": "Supported through communication & interview-readiness training"
     },
     {
       "value": "1,000+",
       "label": "Teachers Placed",
       "icon": "teachers",
-      "description": "Educators trained in international communication & pedagogy"
+      "description": "Placed in CBSE and English-medium schools"
     },
     {
-      "value": "4.8/5",
-      "label": "Google Rating",
-      "icon": "rating",
-      "description": "Based on 850+ verified student reviews on Google Business"
+      "value": "2016",
+      "label": "Establishment Year",
+      "icon": "awards",
+      "description": "Where Your Next Version Begins in Amravati"
     }
   ],
   "trainer": {
     "name": "Coach Faizan Khan",
-    "designation": "Director & Communication Skills Expert",
-    "experience": "12+ Years Experience",
-    "shortBio": "Coach Faizan Khan has pioneered a revolutionary 12-level conversational fluency framework that eliminates fear, corrects grammar naturally, and cultivates executive boardroom charisma.",
-    "fullBio": "Coach Faizan Khan is an acclaimed Communication Specialist, Corporate Voice Coach, and Founder-Director of GLOBAL Institute. Over the past 12 years, he has personally trained more than 15,000 students, working professionals, school educators, and corporate executives. His high-impact, activity-based methodology replaces rote grammar drills with instinctive conversation practice, empowering anyone—from complete beginners to ambitious professionals—to speak English with authority, poise, and natural fluency.",
-    "credentials": [
-      "Certified Communication & Soft Skills Specialist",
-      "Master NLP Practitioner & Corporate Trainer",
-      "Keynote Speaker at 80+ Educational Summits",
-      "Mentor to 1,700+ Corporate & MNC Placements"
-    ],
-    "videoUrl": "https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ"
-  },
-  "whyChooseUs": {
-    "title": "Why Choose Global?",
-    "subtitle": "The Proven Way to Master English",
-    "points": [
+    "designation": "Communication Skills & PD Coach | Corporate Trainer, NLP Practitioner",
+    "experience": "Director & Founder",
+    "shortBio": "Coach Faizan Khan is a Communication Skills trainer, corporate trainer and Personality Development Coach dedicated to helping individuals build confidence, strengthen communication and unlock their potential.",
+    "fullBio": "As the Director of Global Spoken English & Personality Development Institute, Amravati, Coach Faizan Khan has trained 15,000+ Students and Working Professionals in Spoken English, Personality Development, Public Speaking, Interview Preparation and Professional skills. His practical, learner-focused training approach helps students and professionals improve the way they speak, present themselves, communicate and perform in real-life situations.",
+    "vision": "To empower individuals with the confidence, communication skills and personality required to create better opportunities in life and career.",
+    "awards": [
       {
-        "title": "Expert Trainers",
-        "description": "Certified communication masters with personalized 1-on-1 correction",
-        "icon": "expert"
+        "title": "Youth Icon Award 2023",
+        "description": "Recognition for contribution and impact among youth."
       },
       {
-        "title": "Practical Learning",
-        "description": "80% speaking time, roleplays, GDs, and live interactive debates",
+        "title": "Bharat Bhushan Award 2025",
+        "description": "National-level recognition, presented at Rashtrapati Bhavan."
+      },
+      {
+        "title": "National Ideal Teacher Award 2026",
+        "description": "Recognition for contribution to education and training."
+      }
+    ],
+    "achievements": [
+      "Trained 15,000+ students and working professionals.",
+      "Supported 1,700+ MNC selections through communication and interview-readiness training.",
+      "Contributed to the professional development and placement of 1,000+ teachers in CBSE and English-medium schools.",
+      "Conducted training programmes, workshops and sessions focused on communication, confidence, leadership and personality development.",
+      "Guided students, graduates, job seekers and working professionals towards stronger personal and professional communication."
+    ],
+    "expertise": [
+      "Spoken English & Communication Skills",
+      "Personality Development",
+      "Public Speaking & Stage Confidence",
+      "Interview Preparation",
+      "Corporate Training",
+      "Leadership & Professional Development",
+      "NLP-Based Personal Development"
+    ]
+  },
+  "whyChooseUs": {
+    "title": "Why Choose Global Spoken English?",
+    "subtitle": "Where Your Next Version Begins",
+    "points": [
+      {
+        "title": "Practical Learning Approach",
+        "description": "Focus on real-life speaking practice, conversational fluency, individual improvement, and personalised guidance.",
         "icon": "practical"
       },
       {
-        "title": "12 Learning Levels",
-        "description": "Structured curriculum from beginner foundational basics to native fluency",
+        "title": "12 Separate Learning Levels",
+        "description": "Structured curriculum with 12 distinct learning levels tailored for every age group, background, and profession.",
         "icon": "levels"
       },
       {
-        "title": "Personalised Counselling",
-        "description": "Individual diagnosis, custom improvement roadmap, and career guidance",
+        "title": "Personalised Guidance",
+        "description": "We assess each candidate's current level before recommending the most suitable course and learning path.",
         "icon": "counselling"
+      },
+      {
+        "title": "Award-Winning Mentorship",
+        "description": "Mentorship under Coach Faizan Khan, recipient of the Bharat Bhushan Award 2025 at Rashtrapati Bhavan.",
+        "icon": "expert"
       }
     ]
   },
@@ -96,9 +143,24 @@
     { "label": "Contact", "href": "/contact" }
   ],
   "socials": [
-    { "platform": "Instagram", "url": "https://instagram.com", "icon": "instagram" },
-    { "platform": "YouTube", "url": "https://youtube.com", "icon": "youtube" },
-    { "platform": "Facebook", "url": "https://facebook.com", "icon": "facebook" },
-    { "platform": "LinkedIn", "url": "https://linkedin.com", "icon": "linkedin" }
-  ]
+    {
+      "platform": "Instagram",
+      "url": "https://www.instagram.com/globalenglishamravati?psln=MWF1ajN2Z2drbDQzMQ==",
+      "icon": "instagram",
+      "handle": "@globalenglishamravati"
+    },
+    {
+      "platform": "Facebook",
+      "url": "https://www.facebook.com/share/18ks6MXjYR/",
+      "icon": "facebook",
+      "handle": "Global Spoken English"
+    },
+    {
+      "platform": "Google Reviews",
+      "url": "https://share.google/m4ORHUXMQapdfKmtU",
+      "icon": "google",
+      "handle": "Verified Google Reviews"
+    }
+  ],
+  "googleReviewsUrl": "https://share.google/m4ORHUXMQapdfKmtU"
 }

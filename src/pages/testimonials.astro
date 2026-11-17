@@ -3,19 +3,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import VideoTestimonials from '../components/VideoTestimonials.astro';
 import Reviews from '../components/Reviews.astro';
 import Contact from '../components/Contact.astro';
+import siteData from '../data/site.json';
+
+const { name } = siteData;
 ---
 
 <BaseLayout
-  title="Student Testimonials & Transformational Journeys"
-  description="Watch authentic video stories and read testimonials of students and working professionals who conquered stage fear and achieved career breakthroughs."
+  title={`Student Testimonials & Success Stories – ${name}`}
+  description="Discover genuine transformations from students and professionals trained at Global Spoken English & Personality Development Institute, Amravati."
 >
   <!-- Page Banner -->
   <section class="page-hero">
     <div class="container page-hero__inner">
       <span class="section-tag section-tag--light">Proven Transformations</span>
-      <h1 class="page-title">Real Stories, Real Results</h1>
+      <h1 class="page-title">Student Testimonials &amp; Success Stories</h1>
       <p class="page-subtitle">
-        Discover how our learners transitioned from stage nervousness to effortless conversational elegance and high-paying multinational roles.
+        Over 15,000 students and professionals have built confidence, improved spoken English, and prepared for careers under Coach Faizan Khan.
       </p>
     </div>
   </section>

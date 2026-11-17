@@ -15,7 +15,7 @@ const {
   type = "website",
 } = Astro.props;
 
-const siteTitle = title ? `${title} | GLOBAL Institute` : "GLOBAL Institute – Spoken English & Personality Development";
+const siteTitle = title ? title : "GLOBAL SPOKEN ENGLISH – Where Your Next Version Begins";
 const imageURL = new URL(image, Astro.site ?? Astro.url);
 ---
 

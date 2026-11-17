@@ -2,19 +2,22 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Gallery from '../components/Gallery.astro';
 import Contact from '../components/Contact.astro';
+import siteData from '../data/site.json';
+
+const { name } = siteData;
 ---
 
 <BaseLayout
-  title="Campus Life & Activity Photo Gallery"
-  description="Immerse yourself in life at GLOBAL Institute. Podiums, GD arenas, interactive classroom drills, and convocation award ceremonies."
+  title={`Photo Gallery & Institute Life – ${name}`}
+  description="Explore life at Global Spoken English & Personality Development Institute in Amravati, Maharashtra."
 >
   <!-- Page Banner -->
   <section class="page-hero">
     <div class="container page-hero__inner">
       <span class="section-tag section-tag--light">Institute Photo Gallery</span>
-      <h1 class="page-title">Life at GLOBAL Institute</h1>
+      <h1 class="page-title">Life at {name}</h1>
       <p class="page-subtitle">
-        Step into our high-energy speech arenas, podium practice stages, and vibrant student community celebrations.
+        Step into our interactive classrooms, group discussions, workshops, and student community celebrations in Amravati.
       </p>
     </div>
   </section>

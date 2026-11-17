@@ -2,42 +2,92 @@
   "milestones": [
     {
       "value": "15,000+",
-      "title": "Students Trained",
+      "title": "Students & Professionals Trained",
       "icon": "trophy",
-      "subtitle": "Across Delhi NCR & North India",
-      "description": "Transformed from hesitant speakers into fluent, fearless, and articulate communicators through our signature 12-level method."
+      "subtitle": "Spoken English & Personality Development",
+      "description": "Helped students, graduates, job seekers and working professionals build confidence and communication skills for real-world success."
     },
     {
       "value": "1,700+",
       "title": "MNC Selections",
       "icon": "briefcase",
-      "subtitle": "Top Multinationals & Corporate Houses",
-      "description": "Graduates recruited as business analysts, managers, operations leads, and software engineers in leading global firms."
+      "subtitle": "Multinational & Corporate Placements",
+      "description": "Supported through communication skills, interview-readiness, and personality coaching."
     },
     {
       "value": "1,000+",
       "title": "Teachers Placed",
       "icon": "group",
-      "subtitle": "Prestigious Schools & Colleges",
-      "description": "Educators trained in international phonetics, classroom management, and confident pedagogy across reputed institutions."
+      "subtitle": "In CBSE & English-Medium Schools",
+      "description": "Contributed to professional development, fluency, and placement of educators."
     }
   ],
+  "awards": [
+    {
+      "title": "Youth Icon Award 2023",
+      "subtitle": "Recognition for contribution and impact among youth",
+      "year": "2023"
+    },
+    {
+      "title": "Bharat Bhushan Award 2025",
+      "subtitle": "National-level recognition, presented at Rashtrapati Bhavan",
+      "year": "2025"
+    },
+    {
+      "title": "National Ideal Teacher Award 2026",
+      "subtitle": "Recognition for contribution to education and training",
+      "year": "2026"
+    }
+  ],
+  "careersSection": {
+    "title": "Our Candidates Are Building Careers At",
+    "subtitle": "Our trained candidates are contributing to organisations across leading industries.",
+    "disclaimer": "Organisations where trained candidates from GLOBAL SPOKEN ENGLISH are reported to be working. Company names are presented as text for informational purposes only without implying official partnerships or direct corporate tie-ups.",
+    "categories": [
+      {
+        "category": "IT & Technology",
+        "companies": ["TCS", "Infosys", "HCLTech", "Capgemini", "Wipro"]
+      },
+      {
+        "category": "Banking & Financial Services",
+        "companies": ["HDFC Bank", "ICICI Bank", "Axis Bank", "Kotak Mahindra Bank", "IDFC FIRST Bank"]
+      },
+      {
+        "category": "Consulting & Professional Services",
+        "companies": ["Deloitte", "Accenture", "Cognizant", "Genpact", "Concentrix"]
+      },
+      {
+        "category": "Technology & Software",
+        "companies": ["Tech Mahindra", "LTIMindtree", "Mphasis", "Persistent Systems", "Florasoft"]
+      }
+    ]
+  },
   "corporatePartners": [
-    { "name": "Amazon", "sector": "E-Commerce & Tech" },
-    { "name": "Infosys", "sector": "IT & Consulting" },
-    { "name": "TCS", "sector": "Information Technology" },
-    { "name": "Wipro", "sector": "Enterprise Solutions" },
-    { "name": "Deloitte", "sector": "Financial Advisory & Consulting" },
-    { "name": "Tech Mahindra", "sector": "Digital Transformation" },
-    { "name": "Genpact", "sector": "Global Business Services" },
-    { "name": "HDFC Bank", "sector": "Banking & Wealth Management" },
-    { "name": "DPS Schools", "sector": "Premier K-12 Education" },
-    { "name": "British Council Partner", "sector": "Language Assessment" }
+    { "name": "TCS", "sector": "IT & Technology" },
+    { "name": "Infosys", "sector": "IT & Technology" },
+    { "name": "HCLTech", "sector": "IT & Technology" },
+    { "name": "Capgemini", "sector": "IT & Technology" },
+    { "name": "Wipro", "sector": "IT & Technology" },
+    { "name": "HDFC Bank", "sector": "Banking & Financial Services" },
+    { "name": "ICICI Bank", "sector": "Banking & Financial Services" },
+    { "name": "Axis Bank", "sector": "Banking & Financial Services" },
+    { "name": "Kotak Mahindra Bank", "sector": "Banking & Financial Services" },
+    { "name": "IDFC FIRST Bank", "sector": "Banking & Financial Services" },
+    { "name": "Deloitte", "sector": "Consulting & Professional Services" },
+    { "name": "Accenture", "sector": "Consulting & Professional Services" },
+    { "name": "Cognizant", "sector": "Consulting & Professional Services" },
+    { "name": "Genpact", "sector": "Consulting & Professional Services" },
+    { "name": "Concentrix", "sector": "Consulting & Professional Services" },
+    { "name": "Tech Mahindra", "sector": "Technology & Software" },
+    { "name": "LTIMindtree", "sector": "Technology & Software" },
+    { "name": "Mphasis", "sector": "Technology & Software" },
+    { "name": "Persistent Systems", "sector": "Technology & Software" },
+    { "name": "Florasoft", "sector": "Technology & Software" }
   ],
   "highlights": [
-    "94% Placement Success Rate in Corporate Interviews",
-    "Average 40% Salary Hike for Working Professionals post-completion",
-    "12 Structured Learning Levels tailored to individual pace",
-    "ISO Certified Educational Training Standards"
+    "15,000+ Students and Working Professionals Trained",
+    "1,700+ MNC Selections through Communication & Interview Preparation",
+    "1,000+ Teachers Placed in CBSE and English-Medium Schools",
+    "12 Separate Learning Levels for Every Age Group and Profession"
   ]
 }

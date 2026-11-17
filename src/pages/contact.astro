@@ -1,24 +1,27 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Contact from '../components/Contact.astro';
+import siteData from '../data/site.json';
+
+const { name } = siteData;
 ---
 
 <BaseLayout
-  title="Contact Us & Admissions Support"
-  description="Get in touch with GLOBAL Institute admissions team. Call, WhatsApp, or visit our central campus for personal fluency assessment."
+  title={`Contact & Branch Locations – ${name}`}
+  description="Contact Global Spoken English in Amravati, Maharashtra. Visit our branches at Gadge Nagar and Jamil Colony, or connect via WhatsApp and Phone."
 >
   <!-- Page Banner -->
   <section class="page-hero">
     <div class="container page-hero__inner">
-      <span class="section-tag section-tag--light">Admissions Open</span>
-      <h1 class="page-title">Contact GLOBAL Institute</h1>
+      <span class="section-tag section-tag--light">Admissions &amp; Enquiries</span>
+      <h1 class="page-title">Contact &amp; Locations</h1>
       <p class="page-subtitle">
-        Schedule your free fluency assessment, meet our master trainers, or ask any question regarding batch timings and fees.
+        Schedule your individual level assessment, visit our branches in Amravati, or enquire directly via WhatsApp and Phone.
       </p>
     </div>
   </section>
 
-  <!-- Contact Component & Enquiry Form -->
+  <!-- Contact Component & Enquiry Form (includes both branches and Google Maps links) -->
   <Contact />
 
   <!-- FAQ Section for Prospective Students -->
@@ -26,36 +29,36 @@ import Contact from '../components/Contact.astro';
     <div class="container">
       <div class="section-header">
         <span class="section-tag">Frequently Asked Questions</span>
-        <h2 class="section-title">Common <span class="highlight-yellow">Enquiry</span> Questions</h2>
-        <p class="section-subtitle">Everything you need to know before joining your first demo class.</p>
+        <h2 class="section-title">Common <span class="highlight-yellow">Admissions</span> Questions</h2>
+        <p class="section-subtitle">Everything you need to know before joining your course at Global Spoken English.</p>
       </div>
 
       <div class="faq-grid">
         <div class="faq-card">
-          <h3 class="faq-question">Do you offer a free demo class?</h3>
+          <h3 class="faq-question">How do you assess a student's starting level?</h3>
           <p class="faq-answer">
-            Yes! Every candidate is invited to attend a 1-on-1 fluency evaluation and a complimentary classroom demo session before enrolling.
+            With a strong focus on individual requirements, we assess each candidate's current communication level before recommending the most suitable course and learning path across our 12 learning levels.
           </p>
         </div>
 
         <div class="faq-card">
-          <h3 class="faq-question">What is the average batch size?</h3>
+          <h3 class="faq-question">Where are your branches located in Amravati?</h3>
           <p class="faq-answer">
-            To ensure personal microphone time and interactive podium participation, all speaking batches are strictly capped at 12–15 students.
+            We operate two branches: Branch 1 is at Gadge Nagar (Infront of Polytechnic College, Beside Shan Honda Showroom) and Branch 2 is at Jamil Colony (Infront of Samar Medical).
           </p>
         </div>
 
         <div class="faq-card">
-          <h3 class="faq-question">Are evening and weekend slots available?</h3>
+          <h3 class="faq-question">What courses are currently offered?</h3>
           <p class="faq-answer">
-            Yes. We offer morning slots for college students (8 AM – 11 AM), evening slots for working executives (5 PM – 8 PM), and dedicated weekend fast-track batches.
+            We offer three specialized programs: Spoken English (40 Days – 3 Months with 12 separate learning levels), Personality Development (4 Weeks), and Interview Preparation (10 Days).
           </p>
         </div>
 
         <div class="faq-card">
-          <h3 class="faq-question">Will I get placement and interview assistance?</h3>
+          <h3 class="faq-question">Who leads the coaching and mentoring?</h3>
           <p class="faq-answer">
-            Absolutely. Students enrolled in our 12-Level Advanced Mastery program receive dedicated STAR interview drills, resume polishing, and direct referrals to hiring MNC partners.
+            Training is directed by Coach Faizan Khan, Communication Skills &amp; PD Coach, Corporate Trainer, NLP Practitioner, and recipient of the prestigious Bharat Bhushan Award 2025 at Rashtrapati Bhavan.
           </p>
         </div>
       </div>
@@ -124,7 +127,7 @@ import Contact from '../components/Contact.astro';
   }
 
   .faq-answer {
-    font-size: var(--text-xs);
+    font-size: var(--text-sm);
     color: var(--color-text-secondary);
     line-height: var(--leading-relaxed);
   }

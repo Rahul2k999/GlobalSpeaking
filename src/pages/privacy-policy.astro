@@ -6,8 +6,8 @@ const { name, contact } = siteData;
 ---
 
 <BaseLayout
-  title="Privacy Policy"
-  description="GLOBAL Institute's commitment to student data privacy, transparency, and information security."
+  title={`Privacy Policy – ${name}`}
+  description={`${name}'s commitment to student data privacy, transparency, and information security.`}
 >
   <!-- Page Banner -->
   <section class="page-hero">
@@ -22,7 +22,7 @@ const { name, contact } = siteData;
     <div class="container privacy-content">
       <h2>1. Introduction</h2>
       <p>
-        At {name}, we value and respect your privacy. This Privacy Policy details our practices concerning the collection, storage, and handling of information you submit when inquiring about our courses, booking demo classes, or attending our training programs.
+        At {name}, we value and respect your privacy. This Privacy Policy details our practices concerning the collection, storage, and handling of information you submit when inquiring about our courses, booking counselling sessions, or attending our training programs.
       </p>
 
       <h2>2. Information We Collect</h2>
@@ -31,19 +31,18 @@ const { name, contact } = siteData;
         <li>Full Name</li>
         <li>Contact Details (Telephone and WhatsApp numbers, email addresses)</li>
         <li>Educational background and English proficiency interests</li>
-        <li>Feedback and reviews voluntarily submitted by registered students</li>
+        <li>Feedback voluntarily submitted by registered students</li>
       </ul>
 
       <h2>3. Purpose of Data Use</h2>
       <p>We use the data you provide exclusively to:</p>
       <ul>
-        <li>Schedule your complimentary fluency assessment and demo batch seats</li>
-        <li>Communicate batch timetables, curriculum updates, and examination dates</li>
-        <li>Provide placement referrals and corporate interview opportunities</li>
-        <li>Respond promptly to direct queries through phone or WhatsApp</li>
+        <li>Schedule your complimentary level evaluation and counselling session</li>
+        <li>Communicate curriculum updates, batch information, and schedules</li>
+        <li>Respond promptly to direct queries through phone, WhatsApp, or email</li>
       </ul>
 
-      <h2>4. Data Confidentiality & Non-Disclosure</h2>
+      <h2>4. Data Confidentiality &amp; Non-Disclosure</h2>
       <p>
         {name} maintains a strict zero-spam, zero-reselling policy. We never sell, lease, or distribute your personal details or contact credentials to third-party marketing entities.
       </p>
@@ -59,9 +58,10 @@ const { name, contact } = siteData;
       </p>
       <div class="privacy-contact-box">
         <p><strong>{name} Admissions Desk</strong></p>
-        <p>Address: {contact.address}, {contact.city}</p>
+        <p>Location: Amravati, Maharashtra</p>
         <p>Phone: {contact.phone}</p>
         <p>WhatsApp: +91 {contact.whatsappClean}</p>
+        <p>Email: {contact.email}</p>
       </div>
     </div>
   </section>

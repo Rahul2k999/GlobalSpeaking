@@ -2,28 +2,28 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Reviews from '../components/Reviews.astro';
 import Contact from '../components/Contact.astro';
-import reviewsData from '../data/reviews.json';
+import siteData from '../data/site.json';
 
-const { rating, maxRating, totalReviews } = reviewsData;
+const { name } = siteData;
 ---
 
 <BaseLayout
-  title="Student Reviews & Ratings"
-  description={`Read genuine student reviews for GLOBAL Institute. Rated ${rating}/${maxRating} across ${totalReviews} verified reviews.`}
+  title={`Google Reviews & Student Feedback – ${name}`}
+  description="Read verified student feedback and reviews for Global Spoken English, Amravati directly on our official Google Business page."
 >
   <!-- Page Banner -->
   <section class="page-hero">
     <div class="container page-hero__inner">
-      <span class="section-tag section-tag--light">Student Feedback</span>
-      <h1 class="page-title">Verified Student Reviews</h1>
+      <span class="section-tag section-tag--light">Verified Feedback</span>
+      <h1 class="page-title">Google Reviews &amp; Feedback</h1>
       <p class="page-subtitle">
-        Rated {rating} out of {maxRating} stars across {totalReviews} reviews on Google. See why students call GLOBAL Institute life-changing.
+        Authentic reviews and testimonials from our students, graduates, and working professionals on Google Business.
       </p>
     </div>
   </section>
 
-  <!-- Complete Reviews Grid (all items) -->
-  <Reviews limit={0} />
+  <!-- Complete Reviews Component -->
+  <Reviews />
 
   <!-- Contact / Booking -->
   <Contact />

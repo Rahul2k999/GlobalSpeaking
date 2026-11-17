@@ -3,20 +3,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Stats from '../components/Stats.astro';
 import Achievements from '../components/Achievements.astro';
 import Contact from '../components/Contact.astro';
-import achievementsData from '../data/achievements.json';
+import siteData from '../data/site.json';
+
+const { name } = siteData;
 ---
 
 <BaseLayout
-  title="Our Track Record & Corporate Selections"
-  description="Over 15,000 alumni, 1,700+ multinational corporate placements, and 1,000+ certified English educators across leading institutions."
+  title={`Achievements & Corporate Placements – ${name}`}
+  description="Over 15,000 students trained, 1,700+ multinational corporate placements, and 1,000+ educators placed in CBSE and English-medium schools."
 >
   <!-- Page Banner -->
   <section class="page-hero">
     <div class="container page-hero__inner">
-      <span class="section-tag section-tag--light">Measurable Excellence</span>
-      <h1 class="page-title">12 Years of Proven Student Success</h1>
+      <span class="section-tag section-tag--light">Track Record of Success</span>
+      <h1 class="page-title">Achievements &amp; Placements</h1>
       <p class="page-subtitle">
-        Explore how our systematic, neuro-linguistic 12-level methodology transformed college students and job-seekers into fluent global leaders.
+        Explore how our learner-focused training and communication coaching have empowered 15,000+ students, graduates, and working professionals in Amravati.
       </p>
     </div>
   </section>
@@ -24,32 +26,8 @@ import achievementsData from '../data/achievements.json';
   <!-- Key Statistics Counter -->
   <Stats />
 
-  <!-- Achievements Component Grid -->
+  <!-- Achievements Component Grid with Milestones, Awards & Corporate Candidates Section -->
   <Achievements />
-
-  <!-- Corporate Alumni Spotlight Section -->
-  <section class="section section--light-blue">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag">Global Corporate Presence</span>
-        <h2 class="section-title">Where Our <span class="highlight-yellow">Alumni</span> Work</h2>
-        <p class="section-subtitle">
-          From Fortune 500 MNC tech giants to premium K-12 international schools, our alumni spearhead global operations.
-        </p>
-      </div>
-
-      <div class="partners-grid">
-        {achievementsData.corporatePartners.map((partner) => (
-          <div class="partner-card">
-            <div class="partner-logo-box">
-              <span class="partner-name">{partner.name}</span>
-            </div>
-            <span class="partner-tag">{partner.sector}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
 
   <!-- Admissions / Contact -->
   <Contact />
@@ -86,58 +64,5 @@ import achievementsData from '../data/achievements.json';
     font-size: var(--text-base);
     color: #CBD5E1;
     line-height: var(--leading-relaxed);
-  }
-
-  .partners-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-4);
-  }
-
-  @media (min-width: 640px) {
-    .partners-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .partners-grid {
-      grid-template-columns: repeat(6, 1fr);
-    }
-  }
-
-  .partner-card {
-    background-color: #FFFFFF;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-xl);
-    padding: var(--space-5) var(--space-3);
-    text-align: center;
-    box-shadow: 0 4px 14px rgba(11, 47, 99, 0.04);
-    transition: transform var(--transition-base);
-  }
-
-  .partner-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 24px rgba(11, 47, 99, 0.08);
-  }
-
-  .partner-logo-box {
-    margin-bottom: var(--space-2);
-  }
-
-  .partner-name {
-    font-size: var(--text-sm);
-    font-weight: 800;
-    color: var(--color-primary-navy);
-  }
-
-  .partner-tag {
-    display: inline-block;
-    font-size: 0.65rem;
-    font-weight: 700;
-    color: var(--color-secondary-blue);
-    background-color: var(--color-bg-light-blue);
-    padding: 0.2rem 0.5rem;
-    border-radius: var(--radius-sm);
   }
 </style>

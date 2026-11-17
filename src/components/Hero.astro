@@ -1,10 +1,10 @@
 ---
 import siteData from '../data/site.json';
 
-const { slogan, subSlogan, contact } = siteData;
+const { subSlogan, contact, establishedText, name } = siteData;
 ---
 
-<section class="hero-section" aria-label="Welcome to GLOBAL Institute">
+<section class="hero-section" aria-label={`Welcome to ${name}`}>
   <div class="hero-section__backdrop">
     <div class="hero-circle hero-circle--1"></div>
     <div class="hero-circle hero-circle--2"></div>
@@ -15,12 +15,12 @@ const { slogan, subSlogan, contact } = siteData;
     <div class="hero-content">
       <div class="hero-badge">
         <span class="hero-badge__dot"></span>
-        <span>Admissions Open for New Interactive Batches</span>
+        <span>{establishedText} • Amravati, Maharashtra</span>
       </div>
 
       <h1 class="hero-title">
-        {slogan.split('with')[0]}
-        <span class="hero-title__highlight">with Confidence</span>
+        Where Your Next
+        <span class="hero-title__highlight">Version Begins</span>
       </h1>
 
       <p class="hero-subtitle">
@@ -28,7 +28,7 @@ const { slogan, subSlogan, contact } = siteData;
       </p>
 
       <p class="hero-tagline-desc">
-        Break free from mental translation and speaking hesitation. Master spontaneous spoken English, commanding body language, and corporate interview readiness under the personal mentorship of <strong>Coach Faizan Khan</strong>.
+        Global Spoken English &amp; Personality Development Institute is dedicated to improving communication skills, spoken English, personality development and interview readiness. Under the direct mentorship of <strong>Coach Faizan Khan</strong>, we assess each candidate's current level to recommend the ideal learning path.
       </p>
 
       <!-- Key Proof Points / Highlights -->
@@ -52,7 +52,7 @@ const { slogan, subSlogan, contact } = siteData;
       <!-- Action Buttons -->
       <div class="hero-actions">
         <a href="#enquiry-section" class="btn btn-yellow btn-lg hero-btn-main">
-          <span>Join Free Demo Class</span>
+          <span>Book Free Demo Class</span>
           <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5">
             <path d="M5 12h14M12 5l7 7-7 7"/>
           </svg>
@@ -62,7 +62,7 @@ const { slogan, subSlogan, contact } = siteData;
           <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
             <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.72 11.72 0 003.68.59 1 1 0 011 1v3.5a1 1 0 01-1 1A16 16 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.72 11.72 0 00.59 3.68 1 1 0 01-.24 1.02l-2.22 2.09z"/>
           </svg>
-          <span>Call Now</span>
+          <span>Call: {contact.phone}</span>
         </a>
 
         <a 
@@ -81,11 +81,11 @@ const { slogan, subSlogan, contact } = siteData;
       <!-- Trust Badges -->
       <div class="hero-trust">
         <div class="trust-rating">
-          <div class="stars">★★★★★</div>
-          <span class="rating-text"><strong>4.8/5</strong> on Google (850+ Reviews)</span>
+          <span class="stars">🎖️</span>
+          <span class="rating-text">Recipient of <strong>Bharat Bhushan Award 2025</strong></span>
         </div>
         <span class="trust-dot">•</span>
-        <span class="trust-guarantee">100% Practical Speaking Drills</span>
+        <span class="trust-guarantee">Practical Learning &amp; Personalized Guidance</span>
       </div>
     </div>
 
@@ -93,20 +93,20 @@ const { slogan, subSlogan, contact } = siteData;
     <div class="hero-visual">
       <div class="hero-visual__wrapper">
         <img
-          src="/images/hero-illustration.svg"
-          alt="Confident student speaking on stage with fluency badges at GLOBAL Institute"
-          width="600"
-          height="520"
+          src="/images/logo.png"
+          alt="GLOBAL SPOKEN ENGLISH Emblem"
+          width="400"
+          height="400"
           loading="eager"
-          class="hero-visual__image"
+          class="hero-logo-featured"
         />
 
         <!-- Floating Card 1 -->
         <div class="hero-float-card hero-float-card--top">
           <div class="float-icon">🎯</div>
           <div>
-            <div class="float-title">12 Learning Levels</div>
-            <div class="float-sub">Basic to Executive Fluency</div>
+            <div class="float-title">12 Separate Levels</div>
+            <div class="float-sub">For Every Age &amp; Profession</div>
           </div>
         </div>
 
@@ -114,8 +114,8 @@ const { slogan, subSlogan, contact } = siteData;
         <div class="hero-float-card hero-float-card--bottom">
           <div class="float-icon float-icon--green">✓</div>
           <div>
-            <div class="float-title">Zero Stage Fear</div>
-            <div class="float-sub">Mic &amp; Podium Drills</div>
+            <div class="float-title">Practical Learning</div>
+            <div class="float-sub">Real-Life Speaking Practice</div>
           </div>
         </div>
       </div>
@@ -338,10 +338,15 @@ const { slogan, subSlogan, contact } = siteData;
     width: 100%;
   }
 
-  .hero-visual__image {
+  .hero-visual__image,
+  .hero-logo-featured {
     width: 100%;
+    max-width: 420px;
     height: auto;
-    border-radius: var(--radius-2xl);
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.35));
   }
 
   /* Floating Badges */

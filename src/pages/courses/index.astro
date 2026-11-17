@@ -2,20 +2,23 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import coursesData from '../../data/courses.json';
 import Contact from '../../components/Contact.astro';
+import siteData from '../../data/site.json';
+
+const { name } = siteData;
 
 const levels = [
-  { level: "Levels 1–2", title: "Foundation & Hesitation Eradication", desc: "Thought-translation elimination, fear release, daily essential active phrase bank." },
-  { level: "Levels 3–4", title: "Functional Grammar & Daily Dialogue", desc: "Tenses in speech, active vocabulary, questions, polite negotiations, and telephonic etiquette." },
-  { level: "Levels 5–6", title: "Spontaneous Fluency & Impromptu Speech", desc: "Extempore speaking, Just A Minute (JAM), storytelling, accent softening, and speech rhythm." },
-  { level: "Levels 7–8", title: "Podium Presence & Voice Modulation", desc: "Stage fear overcome, mic drills, body language, commanding posture, and dynamic vocal pitch." },
-  { level: "Levels 9–10", title: "Executive Debates & Group Discussions", desc: "Rebuttal skills, boardroom vocabulary, conflict de-escalation, and non-verbal charisma." },
-  { level: "Levels 11–12", title: "Corporate Interview Mastery & Global Lead", desc: "STAR behavioral technique, panel mock interviews, salary negotiation, and executive poise." }
+  { level: "Levels 1–2", title: "Foundation & Hesitation Eradication", desc: "Thought-translation elimination, fear release, daily essential active vocabulary and speaking drills." },
+  { level: "Levels 3–4", title: "Functional Grammar & Daily Dialogue", desc: "Sentence formation, active vocabulary, daily conversation practice, questions, and polite interaction." },
+  { level: "Levels 5–6", title: "Spontaneous Fluency & Impromptu Speech", desc: "Extempore speaking, Just A Minute (JAM), storytelling, pronunciation, and rhythm." },
+  { level: "Levels 7–8", title: "Podium Presence & Voice Modulation", desc: "Stage fear overcome, body language & gestures, confident posture, and vocal dynamics." },
+  { level: "Levels 9–10", title: "Group Discussions & Public Speaking", desc: "Active debating, leadership, stage daring, conflict de-escalation, and communicative poise." },
+  { level: "Levels 11–12", title: "Corporate Interview Preparation & Career Lead", desc: "HR interview questions, resume presentation, etiquette, and realistic mock interview panels." }
 ];
 ---
 
 <BaseLayout
-  title="Our Courses & 12-Level English Fluency System"
-  description="Explore our Spoken English, Personality Development, and Interview Preparation courses scientifically sequenced across 12 levels."
+  title={`Courses & 12-Level System – ${name}`}
+  description="Explore Spoken English, Personality Development, and Interview Preparation courses at Global Spoken English, Amravati. 12 separate learning levels."
 >
   <!-- Page Banner -->
   <section class="page-hero">
@@ -23,7 +26,7 @@ const levels = [
       <span class="section-tag section-tag--light">Structured Academic Pathways</span>
       <h1 class="page-title">Comprehensive English &amp; Grooming Programs</h1>
       <p class="page-subtitle">
-        Whether you struggle with basic conversation or want to command multinational boardrooms, our modular 12-level method delivers permanent fluency.
+        Our training approach focuses on practical learning, individual improvement, personalised guidance and real-life communication practice.
       </p>
     </div>
   </section>
@@ -48,22 +51,18 @@ const levels = [
                 <p class="course-tagline">{course.tagline}</p>
                 <p class="course-full-desc">{course.fullDescription}</p>
 
-                <div class="timings-box">
-                  <strong>Batch Timings:</strong> {course.batchTimings}
-                </div>
-
                 <div class="card-actions">
                   <a href={`/courses/${course.slug}`} class="btn btn-call">
-                    View Full Syllabus &amp; Phases &rarr;
+                    View Course Details &rarr;
                   </a>
                   <a href="#enquiry-section" class="btn btn-yellow">
-                    Book Free Demo Class
+                    Enquire Now
                   </a>
                 </div>
               </div>
 
               <div class="card-right">
-                <h4 class="features-title">What You Will Master:</h4>
+                <h4 class="features-title">Key Focus Areas:</h4>
                 <ul class="features-checklist">
                   {course.keyFeatures.map((feat) => (
                     <li>

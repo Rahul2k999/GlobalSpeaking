@@ -3,153 +3,85 @@
     "id": "spoken-english",
     "slug": "spoken-english",
     "title": "Spoken English",
-    "tagline": "Speak Fluently & Fearlessly",
-    "badge": "Most Popular",
+    "tagline": "Speak Better. Speak Confidently.",
+    "badge": "Flagship Program",
     "highlightColor": "#0757A6",
-    "shortDescription": "Overcome hesitation, master everyday English, correct grammar naturally, and build spontaneous conversational fluency.",
-    "fullDescription": "Our flagship Spoken English course is engineered specifically for individuals who hesitate while speaking English or translate in their heads before uttering sentences. With daily speech drills, vocabulary expansion, accent neutralization, and live group activities, you transition from hesitating to speaking naturally, confidently, and effortlessly.",
-    "duration": "3 Months (Daily 1.5 Hours)",
-    "level": "Level 1 to Level 6 (Foundational to Conversational)",
-    "mode": "Offline Classroom & Hybrid Interactive",
-    "batchTimings": "Morning: 8:00 AM, 10:00 AM | Afternoon: 2:00 PM | Evening: 5:00 PM, 6:30 PM",
-    "syllabus": [
-      {
-        "phase": "Phase 1: Zero-Hesitation Foundation",
-        "topics": [
-          "Eliminating subconscious fear and hesitation in social settings",
-          "Everyday conversational starters & thought translation elimination",
-          "Functional grammar without dry rules: Tenses, Modals & Sentence Structures",
-          "Daily active vocabulary bank: 500+ high-frequency practical phrases"
-        ]
-      },
-      {
-        "phase": "Phase 2: Conversational Agility & Vocabulary",
-        "topics": [
-          "Storytelling, impromptu speaking & JAM (Just A Minute) sessions",
-          "Telephone etiquette, asking questions & polite negotiations",
-          "Pronunciation polishing, syllable stress & accent softening",
-          "Extempore speaking and daily debate on real-life current affairs"
-        ]
-      },
-      {
-        "phase": "Phase 3: Advanced Fluency & Public Speaking",
-        "topics": [
-          "Idiomatic English, business metaphors and conversational idioms",
-          "Podium presentation techniques and commanding audience attention",
-          "Spontaneous discussions, complex viewpoints and rebuttal skills",
-          "Final video assessment and fluency certification"
-        ]
-      }
+    "shortDescription": "Improve your English communication through structured learning and regular speaking practice.",
+    "fullDescription": "Improve your English communication through structured learning and regular speaking practice. Our training approach focuses on practical learning, individual improvement, personalised guidance and real-life communication practice. With a strong focus on individual requirements, we assess each candidate's current level before recommending the most suitable course and learning path.",
+    "duration": "40 Days – 3 Months",
+    "level": "12 Separate Learning Levels",
+    "specialFeature": "12 Separate Learning Levels for every age group and profession",
+    "mode": "Interactive Classroom & Practice Sessions",
+    "keyFocusAreas": [
+      "English Speaking & Fluency",
+      "Grammar & Vocabulary",
+      "Pronunciation & Sentence Formation",
+      "Daily Conversation Practice",
+      "Group Discussion & Public Speaking"
     ],
     "keyFeatures": [
-      "Zero-Hesitation Speaking Drills every single day",
-      "80% Student Speaking Time guaranteed per session",
-      "Native-level pronunciation & intonation guidance",
-      "Regular audio-video recorded performance assessments",
-      "Comprehensive study manuals & audio practice drills",
-      "Certificate of Conversational Mastery upon completion"
+      "12 Separate Learning Levels for every age group and profession",
+      "English Speaking & Fluency training",
+      "Grammar & Vocabulary enhancement",
+      "Pronunciation & Sentence Formation drills",
+      "Daily Conversation Practice in real-world scenarios",
+      "Group Discussion & Public Speaking exposure"
     ]
   },
   {
     "id": "personality-development",
     "slug": "personality-development",
     "title": "Personality Development",
-    "tagline": "Enhance Your Personality",
-    "badge": "Career Transforming",
+    "tagline": "Become a More Confident Version of Yourself.",
+    "badge": "Transformational",
     "highlightColor": "#0B2F63",
-    "shortDescription": "Build commanding body language, overcome stage fright, master active listening, and radiate executive boardroom presence.",
-    "fullDescription": "True success requires more than fluent words; it demands magnetic personal presence, assertive body language, emotional composure, and stage dominance. This course grooms your posture, eye contact, social etiquette, voice modulation, and public speaking confidence to help you stand out anywhere.",
-    "duration": "2 Months (Weekend & Weekday Batches)",
-    "level": "Level 7 to Level 10 (Executive & Leadership Grooming)",
-    "mode": "Experiential Workshop & Live Simulation",
-    "batchTimings": "Weekday Evenings: 5:30 PM | Weekend Special: Sat & Sun 11:00 AM",
-    "syllabus": [
-      {
-        "phase": "Phase 1: Body Language & First Impressions",
-        "topics": [
-          "Non-verbal communication: The 7-second rule of lasting impressions",
-          "Posture, walking stride, handshake etiquette & confident eye contact",
-          "Eliminating nervous fidgeting, closed gestures & defensive body signals",
-          "Power poses for instant mental confidence before public speaking"
-        ]
-      },
-      {
-        "phase": "Phase 2: Voice Culture & Stage Presence",
-        "topics": [
-          "Vocal pitch, dynamic range, pause management & resonance exercises",
-          "Overcoming stage fear, performance anxiety and heart palpitations",
-          "Storytelling for persuasion, emotional resonance and inspirational speeches",
-          "Handling tough audience questions with calm composure and charisma"
-        ]
-      },
-      {
-        "phase": "Phase 3: Executive Etiquette & Social Grace",
-        "topics": [
-          "Corporate dressing, grooming standards & professional decorum",
-          "Dining etiquette, networking mastery & corporate cocktail manners",
-          "Emotional intelligence, active listening & conflict de-escalation",
-          "Personal branding on LinkedIn and executive leadership presence"
-        ]
-      }
+    "shortDescription": "Enhance the way you communicate, present yourself and interact with others.",
+    "fullDescription": "Become a more confident version of yourself. Enhance the way you communicate, present yourself and interact with others through practical coaching in confidence, body language, grooming, and stage daring led by Coach Faizan Khan.",
+    "duration": "4 Weeks",
+    "level": "Comprehensive Personality Grooming",
+    "specialFeature": "Practical confidence and behavioral transformation",
+    "mode": "Interactive Grooming & Practice Sessions",
+    "keyFocusAreas": [
+      "Confidence & Positive Mindset",
+      "Body Language & Gestures",
+      "Grooming & Dressing Sense",
+      "Communication & Social Skills",
+      "Leadership & Stage Daring"
     ],
     "keyFeatures": [
-      "Overcoming Stage Fear & Anxiety through progressive exposure",
-      "Live Podium & Mic Practice with constructive feedback",
-      "Voice Modulation, Pitch Control & Breath Management",
-      "Professional Dress Code, Grooming & Dining Etiquette",
-      "Interpersonal Skills, Conflict Resolution & Charisma Building",
-      "Personalized Personality Assessment Report by Coach Faizan Khan"
+      "Confidence & Positive Mindset building",
+      "Body Language & Gestures mastery",
+      "Professional Grooming & Dressing Sense",
+      "Communication & Social Skills enhancement",
+      "Leadership & Stage Daring development"
     ]
   },
   {
     "id": "interview-preparation",
     "slug": "interview-preparation",
     "title": "Interview Preparation",
-    "tagline": "Ace Your Interviews",
-    "badge": "High Placement Rate",
+    "tagline": "Get Ready to Face Your Next Interview.",
+    "badge": "High Success Rate",
     "highlightColor": "#FFC928",
-    "shortDescription": "Crack corporate, MNC, and teaching interviews with winning answers, resume engineering, HR mock rounds, and salary negotiation.",
-    "fullDescription": "Designed specifically for job seekers, college graduates, and professionals aiming for promotion or MNC transitions. Learn how to craft winning answers to tricky behavioral questions, command Group Discussions, present an ATS-optimized CV, and ace HR and technical panel interviews.",
-    "duration": "1 Month Intensive (Fast-Track)",
-    "level": "Level 11 & Level 12 (Placement & MNC Readiness)",
-    "mode": "1-on-1 Mock Panels & Group Simulations",
-    "batchTimings": "Morning: 9:00 AM | Evening: 7:00 PM | Fast-Track Bootcamp",
-    "syllabus": [
-      {
-        "phase": "Phase 1: Winning Self-Introduction & CV Engineering",
-        "topics": [
-          "The 90-second 'Tell Me About Yourself' elevator pitch that hooks interviewers",
-          "ATS-friendly resume restructuring and achievement quantification",
-          "LinkedIn profile optimization for inbound recruiter outreach",
-          "Aligning your strengths, projects, and past experience with job descriptions"
-        ]
-      },
-      {
-        "phase": "Phase 2: Mastering Behavioral & Tough Questions",
-        "topics": [
-          "The STAR method (Situation, Task, Action, Result) for behavioral questions",
-          "Handling gap years, job switches, weaknesses, and salary expectation questions",
-          "Panel interview tactics, multi-interviewer eye contact & body posture",
-          "Group Discussion (GD) mastery: Initiating, moderating, and summarizing"
-        ]
-      },
-      {
-        "phase": "Phase 3: Live Video Mocks & Final Polish",
-        "topics": [
-          "Realistic mock interviews with senior corporate hiring managers",
-          "Frame-by-frame video playback analysis of posture, voice & answer clarity",
-          "Salary negotiation scripts & evaluating multiple offer letters",
-          "Post-interview follow-up etiquette and thank-you correspondence"
-        ]
-      }
+    "shortDescription": "Prepare yourself to present your knowledge, skills and personality with confidence.",
+    "fullDescription": "Get ready to face your next interview. Prepare yourself to present your knowledge, skills and personality with confidence. Our focused training covers self-introduction, HR rounds, resume presentation, interview etiquette, and rigorous mock interviews with personalised constructive feedback.",
+    "duration": "10 Days",
+    "level": "Intensive Interview Readiness",
+    "specialFeature": "Real-world mock interview simulations & feedback",
+    "mode": "Mock Interview Panels & Personal Feedback",
+    "keyFocusAreas": [
+      "Self-Introduction",
+      "HR Interview Questions",
+      "Resume Presentation",
+      "Interview Etiquette & Body Language",
+      "Mock Interviews & Feedback"
     ],
     "keyFeatures": [
-      "Realistic Mock Interviews with frame-by-frame video playback",
-      "Winning answers to 50+ toughest HR and behavioral interview questions",
-      "ATS-Optimized Resume, Cover Letter & LinkedIn overhaul",
-      "Group Discussion (GD) simulation with corporate moderation rules",
-      "Specialized training for IT, MNCs, BPOs, Banking & School Teaching roles",
-      "Dedicated placement assistance & MNC interview referral network"
+      "Impactful Self-Introduction presentation",
+      "Mastery of HR Interview Questions",
+      "Professional Resume Presentation",
+      "Interview Etiquette & Body Language refinement",
+      "Practical Mock Interviews & Actionable Feedback"
     ]
   }
 ]

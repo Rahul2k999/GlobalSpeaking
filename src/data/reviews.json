@@ -1,75 +1,9 @@
 {
-  "rating": "4.8",
-  "maxRating": "5.0",
-  "totalReviews": "850+",
-  "platform": "Google Business Reviews",
-  "badge": "Verified Student Reviews",
-  "reviews": [
-    {
-      "id": "rev-1",
-      "name": "Dr. Rohit Saxena",
-      "role": "Medical Specialist & Healthcare Consultant",
-      "batch": "Weekend Executive Fluency Batch",
-      "rating": 5,
-      "date": "1 week ago",
-      "avatar": "/images/reviews/avatar-1.svg",
-      "content": "GLOBAL Institute is truly the benchmark for spoken English and personality grooming. Coach Faizan Khan's personal attention to every student's individual weakness is remarkable. My public presentation skills and patient consultations have improved dramatically.",
-      "verified": true
-    },
-    {
-      "id": "rev-2",
-      "name": "Sneha Mukherjee",
-      "role": "Business Development Associate, TCS",
-      "batch": "Spoken English & Interview Prep",
-      "rating": 5,
-      "date": "2 weeks ago",
-      "avatar": "/images/reviews/avatar-2.svg",
-      "content": "I joined with severe hesitation. After just 4 weeks of daily jam sessions, extempore, and vocabulary drills, I gave my TCS interview in pure English without a single stutter. Selected in round 1! Thank you Coach Faizan sir!",
-      "verified": true
-    },
-    {
-      "id": "rev-3",
-      "name": "Mohammad Tariq",
-      "role": "Government School Educator",
-      "batch": "English Teachers Placement Batch",
-      "rating": 5,
-      "date": "3 weeks ago",
-      "avatar": "/images/reviews/avatar-3.svg",
-      "content": "The 12-level curriculum is scientifically designed. You don't have to cram boring grammar formulas. The practical speaking atmosphere forces you to think in English. Recommended to every teacher and student.",
-      "verified": true
-    },
-    {
-      "id": "rev-4",
-      "name": "Priyanka Mehra",
-      "role": "Human Resources Executive, Genpact",
-      "batch": "Personality Development & Stage Presence",
-      "rating": 5,
-      "date": "1 month ago",
-      "avatar": "/images/reviews/avatar-4.svg",
-      "content": "The transformation in my body language, voice modulation, and stage confidence is unbelievable. The mock podium sessions gave me the courage to host corporate town halls. Best decision of my life!",
-      "verified": true
-    },
-    {
-      "id": "rev-5",
-      "name": "Amitabh Joshi",
-      "role": "Final Year B.Tech Student, DTU",
-      "batch": "MNC Campus Placement Accelerator",
-      "rating": 5,
-      "date": "1 month ago",
-      "avatar": "/images/reviews/avatar-5.svg",
-      "content": "The mock interviews conducted by Coach Faizan Khan reflect real corporate panel standards. The video analysis showed me how many times I was using filler words. Today I hold two MNC offers!",
-      "verified": true
-    },
-    {
-      "id": "rev-6",
-      "name": "Kavita Choudhary",
-      "role": "Banking Officer, HDFC Bank",
-      "batch": "Spoken English & Corporate Communication",
-      "rating": 5,
-      "date": "2 months ago",
-      "avatar": "/images/reviews/avatar-6.svg",
-      "content": "Friendly trainers, positive environment, and daily speaking opportunities. Within 60 days, I lost my stage fright completely and now handle premium HDFC corporate clientele with ease.",
-      "verified": true
-    }
-  ]
+  "platform": "Google Reviews",
+  "googleReviewsUrl": "https://share.google/m4ORHUXMQapdfKmtU",
+  "badge": "Verified Google Reviews",
+  "headline": "Read Genuine Reviews from Our Students on Google",
+  "description": "Our students, graduates, and working professionals share their learning experiences and career transformations on Google Reviews. Read verified feedback or leave your own review directly on our official Google Business page.",
+  "actionText": "Read Reviews on Google",
+  "reviews": []
 }

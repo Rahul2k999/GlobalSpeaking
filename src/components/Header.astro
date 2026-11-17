@@ -3,7 +3,7 @@ import siteData from '../data/site.json';
 
 const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
 const navLinks = siteData.navLinks;
-const { contact } = siteData;
+const { contact, tagline, establishedText } = siteData;
 ---
 
 <header class="site-header">
@@ -15,16 +15,16 @@ const { contact } = siteData;
           <svg class="topbar-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
           </svg>
-          <strong>New Batch Starting This Monday!</strong> Limited Seats
+          <strong>{establishedText}</strong> • Amravati, Maharashtra
         </span>
         <span class="topbar-divider">|</span>
-        <span class="topbar-item hide-mobile">
+        <a href={`mailto:${contact.email}`} class="topbar-link hide-mobile">
           <svg class="topbar-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="10"/>
-            <polyline points="12 6 12 12 16 14"/>
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
           </svg>
-          Mon - Sat: 8:00 AM – 8:00 PM
-        </span>
+          <span>{contact.email}</span>
+        </a>
       </div>
 
       <div class="topbar-right">
@@ -32,7 +32,7 @@ const { contact } = siteData;
           <svg class="topbar-icon" viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
             <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24 11.72 11.72 0 003.68.59 1 1 0 011 1v3.5a1 1 0 01-1 1A16 16 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1 11.72 11.72 0 00.59 3.68 1 1 0 01-.24 1.02l-2.22 2.09z"/>
           </svg>
-          <span>{contact.phone}</span>
+          <span>Call: {contact.phone}</span>
         </a>
         <a 
           href={`https://wa.me/${contact.whatsappClean}?text=${encodeURIComponent(contact.whatsappMessage)}`} 
@@ -52,17 +52,11 @@ const { contact } = siteData;
   <!-- Main Navigation Bar -->
   <div class="site-header__main">
     <div class="container site-header__inner">
-      <a href="/" class="site-header__brand" aria-label="GLOBAL Institute Home">
-        <svg class="brand-logo" viewBox="0 0 50 50" width="44" height="44" fill="none">
-          <rect width="50" height="50" rx="12" fill="#0B2F63"/>
-          <circle cx="25" cy="25" r="17" fill="#0757A6"/>
-          <ellipse cx="25" cy="25" rx="7.5" ry="17" stroke="#EEF5FD" stroke-width="1.5" fill="none"/>
-          <line x1="8" y1="25" x2="42" y2="25" stroke="#EEF5FD" stroke-width="1.5"/>
-          <circle cx="36" cy="14" r="4" fill="#FFC928"/>
-        </svg>
+      <a href="/" class="site-header__brand" aria-label="GLOBAL SPOKEN ENGLISH Home">
+        <img src="/images/logo.png" alt="GLOBAL SPOKEN ENGLISH Logo" width="46" height="44" class="brand-logo-img" />
         <div class="brand-text">
-          <div class="brand-name">GLOBAL <span class="brand-name-sub">INSTITUTE</span></div>
-          <div class="brand-sub">SPOKEN ENGLISH & PERSONALITY</div>
+          <div class="brand-name">GLOBAL <span class="brand-name-sub">SPOKEN ENGLISH</span></div>
+          <div class="brand-sub">{tagline}</div>
         </div>
       </a>
 
@@ -114,9 +108,12 @@ const { contact } = siteData;
     <div class="mobile-drawer__overlay" id="mobile-drawer-overlay"></div>
     <div class="mobile-drawer__content">
       <div class="mobile-drawer__header">
-        <div class="brand-text">
-          <div class="brand-name">GLOBAL <span class="brand-name-sub">INSTITUTE</span></div>
-          <div class="brand-sub">Spoken English & Personality</div>
+        <div class="brand-header-flex">
+          <img src="/images/logo.png" alt="GLOBAL SPOKEN ENGLISH Logo" width="40" height="38" class="brand-logo-img-sm" />
+          <div class="brand-text">
+            <div class="brand-name">GLOBAL <span class="brand-name-sub">SPOKEN ENGLISH</span></div>
+            <div class="brand-sub">{tagline}</div>
+          </div>
         </div>
         <button type="button" class="mobile-drawer__close" id="mobile-drawer-close" aria-label="Close menu">
           &times;
@@ -154,7 +151,10 @@ const { contact } = siteData;
           rel="noopener noreferrer"
           class="btn btn-whatsapp mobile-drawer__btn"
         >
-          WhatsApp Inquiry
+          WhatsApp: {contact.whatsapp}
+        </a>
+        <a href={`mailto:${contact.email}`} class="mobile-drawer__email">
+          {contact.email}
         </a>
       </div>
     </div>
@@ -293,6 +293,35 @@ const { contact } = siteData;
     align-items: center;
     gap: var(--space-3);
     text-decoration: none;
+  }
+
+  .brand-logo-img {
+    width: 46px;
+    height: 44px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  .brand-logo-img-sm {
+    width: 38px;
+    height: 38px;
+    object-fit: contain;
+    flex-shrink: 0;
+  }
+
+  .brand-header-flex {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .mobile-drawer__email {
+    display: block;
+    text-align: center;
+    font-size: var(--text-xs);
+    color: #64748B;
+    margin-top: 0.5rem;
+    text-decoration: underline;
   }
 
   .brand-logo {

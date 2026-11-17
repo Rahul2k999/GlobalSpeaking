@@ -3,19 +3,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Trainer from '../components/Trainer.astro';
 import Stats from '../components/Stats.astro';
 import Contact from '../components/Contact.astro';
+import siteData from '../data/site.json';
+
+const { name, tagline, introduction, trainer } = siteData;
+const introParagraphs = introduction.split('\n\n');
 ---
 
 <BaseLayout
-  title="About Us & Coach Faizan Khan"
-  description="Discover the story and pedagogical philosophy of GLOBAL Institute, founded by Coach Faizan Khan to eliminate English speaking hesitation and build leaders."
+  title={`About Us & Coach Faizan Khan – ${name}`}
+  description="Learn about Global Spoken English & Personality Development Institute in Amravati, Maharashtra. Established in 2016 by Coach Faizan Khan."
 >
   <!-- Page Banner -->
   <section class="page-hero">
     <div class="container page-hero__inner">
-      <span class="section-tag section-tag--light">About GLOBAL Institute</span>
-      <h1 class="page-title">Pioneering Conversational Mastery &amp; Leadership</h1>
+      <span class="section-tag section-tag--light">About {name}</span>
+      <h1 class="page-title">{tagline}</h1>
       <p class="page-subtitle">
-        For over 12 years, GLOBAL Institute has stood as North India's foremost center for transforming hesitant speakers into fluent corporate leaders and inspirational educators.
+        Established in 2016 in Amravati, Maharashtra — dedicated to improving communication skills, spoken English, personality development and interview readiness.
       </p>
     </div>
   </section>
@@ -23,31 +27,44 @@ import Contact from '../components/Contact.astro';
   <!-- Stats Ribbon -->
   <Stats />
 
-  <!-- Our Mission & Vision -->
-  <section class="section">
+  <!-- Institute Introduction Section -->
+  <section class="section about-intro-section">
     <div class="container">
+      <div class="intro-box">
+        <div class="section-header">
+          <span class="section-tag">Institute Introduction</span>
+          <h2 class="section-title">Welcome to <span class="highlight-yellow">{name}</span></h2>
+        </div>
+        <div class="intro-paragraphs">
+          {introParagraphs.map((para) => (
+            <p class="intro-text">{para}</p>
+          ))}
+        </div>
+      </div>
+
+      <!-- 3 Pillar Core Cards -->
       <div class="about-grid">
         <div class="about-card">
           <div class="about-icon">🎯</div>
-          <h2 class="about-title">Our Mission</h2>
+          <h3 class="about-title">Our Mission</h3>
           <p class="about-text">
-            To eradicate language hesitation and stage fear through scientifically structured, neuro-linguistic speaking drills, empowering every student with the poise to express their ideas fearlessly in global forums.
+            To help students, graduates, job seekers, and working professionals develop the communication skills and confidence required to perform better in academic, professional, and real-world situations.
           </p>
         </div>
 
         <div class="about-card">
           <div class="about-icon">🌟</div>
-          <h2 class="about-title">Our Vision</h2>
+          <h3 class="about-title">Our Vision</h3>
           <p class="about-text">
-            To build a world where lack of English fluency is never a barrier to career success, executive promotions, or global leadership opportunities.
+            "{trainer.vision}"
           </p>
         </div>
 
         <div class="about-card">
           <div class="about-icon">⚡</div>
-          <h2 class="about-title">The 12-Level Method</h2>
+          <h3 class="about-title">Our Training Approach</h3>
           <p class="about-text">
-            Traditional rote grammar instruction fails because conversation happens in milliseconds. Our 12-level progressive framework trains mental agility and spontaneous speech reflexes.
+            Focus on practical learning, individual improvement, personalised guidance, and real-life communication practice across 12 separate learning levels.
           </p>
         </div>
       </div>
@@ -94,6 +111,40 @@ import Contact from '../components/Contact.astro';
     line-height: var(--leading-relaxed);
   }
 
+  .about-intro-section {
+    padding-top: var(--space-8);
+  }
+
+  .intro-box {
+    background-color: #FFFFFF;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-8) var(--space-6);
+    box-shadow: 0 10px 30px rgba(11, 47, 99, 0.05);
+    margin-bottom: var(--space-12);
+  }
+
+  @media (min-width: 768px) {
+    .intro-box {
+      padding: var(--space-10) var(--space-12);
+    }
+  }
+
+  .intro-paragraphs {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .intro-text {
+    font-size: var(--text-base);
+    color: var(--color-text-main);
+    line-height: var(--leading-relaxed);
+    margin: 0;
+  }
+
   .about-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -107,21 +158,21 @@ import Contact from '../components/Contact.astro';
   }
 
   .about-card {
-    background-color: var(--color-bg-light-blue);
-    border: 1px solid rgba(7, 87, 166, 0.15);
-    border-radius: var(--radius-2xl);
-    padding: var(--space-8);
-    display: flex;
-    flex-direction: column;
-    transition: transform var(--transition-base);
+    background-color: #FFFFFF;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-8) var(--space-6);
+    box-shadow: 0 4px 14px rgba(11, 47, 99, 0.04);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
   }
 
   .about-card:hover {
     transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(11, 47, 99, 0.08);
   }
 
   .about-icon {
-    font-size: 2.5rem;
+    font-size: 2.25rem;
     margin-bottom: var(--space-4);
   }
 
@@ -136,5 +187,6 @@ import Contact from '../components/Contact.astro';
     font-size: var(--text-sm);
     color: var(--color-text-secondary);
     line-height: var(--leading-relaxed);
+    margin: 0;
   }
 </style>

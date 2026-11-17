@@ -1,7 +1,7 @@
 ---
 import achievementsData from '../data/achievements.json';
 
-const { milestones, corporatePartners, highlights } = achievementsData;
+const { milestones, awards, careersSection, highlights } = achievementsData;
 
 const milestoneIcons: Record<string, string> = {
   trophy: "🏆",
@@ -18,7 +18,7 @@ const milestoneIcons: Record<string, string> = {
         Our <span class="highlight-yellow">Achievements</span>
       </h2>
       <p class="section-subtitle">
-        Tangible results that speak for themselves. Our graduates consistently lead multinational boardrooms and top educational faculties.
+        Tangible results and institutional milestones reflecting our commitment to empowering students, graduates, and working professionals in Amravati.
       </p>
     </div>
 
@@ -37,6 +37,54 @@ const milestoneIcons: Record<string, string> = {
       ))}
     </div>
 
+    <!-- National Awards & Recognitions Bar -->
+    <div class="awards-container">
+      <div class="awards-header">
+        <span class="awards-tag">Honours &amp; Accolades</span>
+        <h3 class="awards-main-title">Prestigious Recognitions Awarded to Coach Faizan Khan</h3>
+      </div>
+      <div class="awards-grid">
+        {awards.map((award) => (
+          <div class="award-card">
+            <div class="award-year-badge">{award.year}</div>
+            <div class="award-card__body">
+              <h4 class="award-title">{award.title}</h4>
+              <p class="award-sub">{award.subtitle}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Corporate Candidates Placement Companies -->
+    <div class="corporate-section">
+      <div class="corporate-header">
+        <span class="section-tag">{careersSection.subtitle}</span>
+        <h3 class="corporate-title">{careersSection.title}</h3>
+        <p class="corporate-disclaimer">
+          {careersSection.disclaimer}
+        </p>
+      </div>
+
+      <div class="categories-grid">
+        {careersSection.categories.map((cat) => (
+          <div class="category-card">
+            <div class="category-header">
+              <h4 class="category-title">{cat.category}</h4>
+            </div>
+            <ul class="companies-list">
+              {cat.companies.map((company) => (
+                <li class="company-item">
+                  <span class="company-bullet">•</span>
+                  <span class="company-name">{company}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+
     <!-- Placement Highlights Banner -->
     <div class="highlights-box">
       <div class="highlights-grid">
@@ -46,21 +94,6 @@ const milestoneIcons: Record<string, string> = {
               <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
             </svg>
             <span>{item}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-
-    <!-- Corporate Alumni Presence -->
-    <div class="corporate-section">
-      <h3 class="corporate-title">Where Our Confident Alumni Excel</h3>
-      <p class="corporate-sub">Global Institute alumni have cracked recruitment panels across premier multinational brands:</p>
-
-      <div class="partners-grid">
-        {corporatePartners.map((partner) => (
-          <div class="partner-card">
-            <div class="partner-name">{partner.name}</div>
-            <div class="partner-sector">{partner.sector}</div>
           </div>
         ))}
       </div>
@@ -100,7 +133,7 @@ const milestoneIcons: Record<string, string> = {
   .milestone-icon-wrap {
     width: 60px;
     height: 60px;
-    border-radius: var(--radius-full);
+    border-radius: 50%;
     background-color: var(--color-bg-light-blue);
     display: flex;
     align-items: center;
@@ -109,48 +142,227 @@ const milestoneIcons: Record<string, string> = {
   }
 
   .milestone-icon {
-    font-size: 1.8rem;
+    font-size: 1.75rem;
   }
 
   .milestone-value {
     font-family: var(--font-heading);
-    font-size: clamp(2.2rem, 4vw, 3rem);
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
     font-weight: 900;
     color: var(--color-primary-navy);
-    line-height: 1;
-    margin-bottom: 0.35rem;
+    line-height: 1.1;
+    margin-bottom: 0.25rem;
   }
 
   .milestone-title {
-    font-size: var(--text-lg);
+    font-size: var(--text-base);
     font-weight: 800;
     color: var(--color-secondary-blue);
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.35rem;
   }
 
   .milestone-sub {
     font-size: var(--text-xs);
     font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: var(--color-text-muted);
+    color: var(--color-accent-yellow);
+    background-color: var(--color-deep-navy);
+    display: inline-block;
+    padding: 0.15rem 0.6rem;
+    border-radius: var(--radius-sm);
     margin-bottom: var(--space-3);
   }
 
   .milestone-desc {
-    font-size: var(--text-sm);
+    font-size: var(--text-xs);
     color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+  }
+
+  /* Awards Section */
+  .awards-container {
+    background: linear-gradient(135deg, #071D3D 0%, #0B2F63 100%);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-8);
+    color: #FFFFFF;
+    margin-bottom: var(--space-12);
+    box-shadow: 0 12px 30px rgba(11, 47, 99, 0.12);
+  }
+
+  .awards-header {
+    text-align: center;
+    margin-bottom: var(--space-6);
+  }
+
+  .awards-tag {
+    display: inline-block;
+    background-color: rgba(255, 201, 40, 0.15);
+    color: var(--color-accent-yellow);
+    border: 1px solid rgba(255, 201, 40, 0.3);
+    font-size: 0.72rem;
+    font-weight: 800;
+    padding: 0.2rem 0.6rem;
+    border-radius: var(--radius-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.4rem;
+  }
+
+  .awards-main-title {
+    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    font-weight: 800;
+    color: #FFFFFF;
+  }
+
+  .awards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  @media (min-width: 768px) {
+    .awards-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .award-card {
+    background-color: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: var(--radius-xl);
+    padding: var(--space-5);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform var(--transition-base);
+  }
+
+  .award-card:hover {
+    transform: translateY(-3px);
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .award-year-badge {
+    align-self: flex-start;
+    background-color: var(--color-accent-yellow);
+    color: var(--color-primary-navy);
+    font-size: 0.72rem;
+    font-weight: 900;
+    padding: 0.15rem 0.5rem;
+    border-radius: var(--radius-sm);
+    margin-bottom: 0.5rem;
+  }
+
+  .award-title {
+    font-size: var(--text-base);
+    font-weight: 800;
+    color: #FFFFFF;
+    margin-bottom: 0.25rem;
+    line-height: 1.25;
+  }
+
+  .award-sub {
+    font-size: var(--text-xs);
+    color: #CBD5E1;
     line-height: var(--leading-normal);
+  }
+
+  /* Corporate Section */
+  .corporate-section {
+    background-color: #FFFFFF;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-8);
+    margin-bottom: var(--space-12);
+    box-shadow: 0 6px 20px rgba(11, 47, 99, 0.04);
+  }
+
+  .corporate-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto var(--space-8);
+  }
+
+  .corporate-title {
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+    font-weight: 900;
+    color: var(--color-primary-navy);
+    margin: var(--space-2) 0 var(--space-2);
+  }
+
+  .corporate-disclaimer {
+    font-size: var(--text-xs);
+    color: var(--color-text-secondary);
+    line-height: var(--leading-relaxed);
+  }
+
+  .categories-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  @media (min-width: 640px) {
+    .categories-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .categories-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .category-card {
+    background-color: var(--color-bg-light-blue);
+    border: 1px solid rgba(7, 87, 166, 0.15);
+    border-radius: var(--radius-xl);
+    padding: var(--space-5);
+  }
+
+  .category-header {
+    border-bottom: 2px solid var(--color-secondary-blue);
+    padding-bottom: 0.4rem;
+    margin-bottom: var(--space-4);
+  }
+
+  .category-title {
+    font-size: var(--text-sm);
+    font-weight: 800;
+    color: var(--color-primary-navy);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .companies-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .company-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: var(--text-sm);
+    color: var(--color-text-main);
+    font-weight: 600;
+  }
+
+  .company-bullet {
+    color: var(--color-secondary-blue);
+    font-size: 1.1rem;
+    line-height: 1;
   }
 
   /* Highlights Box */
   .highlights-box {
-    background: linear-gradient(135deg, #0B2F63 0%, #0757A6 100%);
+    background-color: #FFFFFF;
+    border: 1px solid var(--color-border);
     border-radius: var(--radius-xl);
-    padding: var(--space-6) var(--space-8);
-    color: #FFFFFF;
-    margin-bottom: var(--space-16);
-    box-shadow: 0 12px 28px rgba(11, 47, 99, 0.15);
+    padding: var(--space-6);
+    box-shadow: 0 4px 14px rgba(11, 47, 99, 0.04);
   }
 
   .highlights-grid {
@@ -159,7 +371,7 @@ const milestoneIcons: Record<string, string> = {
     gap: var(--space-4);
   }
 
-  @media (min-width: 640px) {
+  @media (min-width: 768px) {
     .highlights-grid {
       grid-template-columns: repeat(2, 1fr);
     }
@@ -168,80 +380,16 @@ const milestoneIcons: Record<string, string> = {
   .highlight-item {
     display: flex;
     align-items: center;
-    gap: 0.6rem;
+    gap: var(--space-3);
     font-size: var(--text-sm);
-    font-weight: 600;
-    color: #EEF5FD;
+    font-weight: 700;
+    color: var(--color-primary-navy);
   }
 
   .highlight-icon {
     width: 20px;
     height: 20px;
-    color: var(--color-accent-yellow);
+    color: #20B45B;
     flex-shrink: 0;
-  }
-
-  /* Corporate Section */
-  .corporate-section {
-    text-align: center;
-  }
-
-  .corporate-title {
-    font-size: clamp(1.4rem, 2.5vw, 1.85rem);
-    font-weight: 800;
-    color: var(--color-primary-navy);
-    margin-bottom: 0.5rem;
-  }
-
-  .corporate-sub {
-    font-size: var(--text-sm);
-    color: var(--color-text-secondary);
-    margin-bottom: var(--space-8);
-  }
-
-  .partners-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-4);
-  }
-
-  @media (min-width: 640px) {
-    .partners-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .partners-grid {
-      grid-template-columns: repeat(5, 1fr);
-    }
-  }
-
-  .partner-card {
-    background-color: #FFFFFF;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    padding: var(--space-5) var(--space-4);
-    box-shadow: 0 2px 8px rgba(11, 47, 99, 0.04);
-    transition: transform var(--transition-fast), border-color var(--transition-fast);
-  }
-
-  .partner-card:hover {
-    transform: translateY(-3px);
-    border-color: var(--color-secondary-blue);
-  }
-
-  .partner-name {
-    font-family: var(--font-heading);
-    font-size: var(--text-base);
-    font-weight: 800;
-    color: var(--color-primary-navy);
-    margin-bottom: 0.25rem;
-  }
-
-  .partner-sector {
-    font-size: 0.68rem;
-    font-weight: 600;
-    color: var(--color-text-secondary);
   }
 </style>
