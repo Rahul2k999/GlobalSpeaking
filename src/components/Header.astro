@@ -6,9 +6,8 @@ const navLinks = siteData.navLinks;
 const { contact, tagline, establishedText } = siteData;
 ---
 
-<header class="site-header">
-  <!-- Top announcement & quick contact bar -->
-  <div class="site-header__topbar">
+<!-- Top announcement & quick contact bar -->
+<div class="site-header__topbar">
     <div class="container site-header__topbar-inner">
       <div class="topbar-left">
         <span class="topbar-item">
@@ -49,7 +48,8 @@ const { contact, tagline, establishedText } = siteData;
     </div>
   </div>
 
-  <!-- Main Navigation Bar -->
+<!-- Main Navigation Bar (Sticky) -->
+<header class="site-header">
   <div class="site-header__main">
     <div class="container site-header__inner">
       <a href="/" class="site-header__brand" aria-label="GLOBAL SPOKEN ENGLISH Home">
@@ -142,18 +142,6 @@ const { contact, tagline, establishedText } = siteData;
           })}
         </ul>
       </nav>
-
-      <div class="mobile-drawer__footer">
-        <div class="mobile-drawer__info">
-          <p class="mobile-drawer__info-item">
-            <span class="mobile-drawer__info-icon">📍</span>
-            <span>Amravati, Maharashtra</span>
-          </p>
-          <a href={`mailto:${contact.email}`} class="mobile-drawer__email">
-            ✉️ {contact.email}
-          </a>
-        </div>
-      </div>
     </div>
   </div>
 </header>
@@ -438,6 +426,46 @@ const { contact, tagline, establishedText } = siteData;
     }
   }
 
+  /* Desktop Navigation */
+  .site-nav {
+    display: none;
+  }
+
+  @media (min-width: 1024px) {
+    .site-nav {
+      display: block;
+    }
+
+    .site-nav__list {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .site-nav__link {
+      display: inline-block;
+      padding: 0.5rem 0.25rem;
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--color-text-main);
+      text-decoration: none;
+      transition: color 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .site-nav__link:hover,
+    .site-nav__link--active {
+      color: var(--color-secondary-blue);
+    }
+
+    .site-header__brand {
+      flex: 0 0 auto;
+    }
+  }
+
   .site-header__actions {
     display: flex;
     align-items: center;
@@ -578,46 +606,5 @@ const { contact, tagline, establishedText } = siteData;
   .mobile-drawer__link--active {
     background-color: var(--color-bg-light-blue);
     color: var(--color-secondary-blue);
-  }
-
-  .mobile-drawer__footer {
-    margin-top: auto;
-    padding-top: var(--space-4);
-    padding-bottom: var(--space-8);
-    border-top: 1px solid var(--color-border);
-  }
-
-  .mobile-drawer__info {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-2);
-  }
-
-  .mobile-drawer__info-item {
-    font-size: var(--text-xs);
-    color: var(--color-text-secondary);
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    margin: 0;
-  }
-
-  .mobile-drawer__info-icon {
-    font-size: 0.9rem;
-  }
-
-  .mobile-drawer__email {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.35rem;
-    font-size: var(--text-xs);
-    color: var(--color-secondary-blue);
-    word-break: break-all;
-    text-decoration: none;
-    font-weight: 600;
-  }
-
-  .mobile-drawer__email:hover {
-    text-decoration: underline;
   }
 </style>
