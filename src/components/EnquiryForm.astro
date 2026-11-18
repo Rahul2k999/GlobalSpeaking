@@ -320,11 +320,15 @@ I would like to enquire about course admission:
     color: var(--color-text-secondary);
     border-top-left-radius: var(--radius-md);
     border-bottom-left-radius: var(--radius-md);
+    flex-shrink: 0;
   }
 
   .form-input--prefixed {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
+    flex: 1;
+    min-width: 0;
+    width: 100%;
   }
 
   .form-error {

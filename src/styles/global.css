@@ -102,6 +102,8 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -111,6 +113,9 @@ body {
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+  position: relative;
   padding-bottom: calc(58px + env(safe-area-inset-bottom, 0px));
 }
 
@@ -152,7 +157,7 @@ a:hover {
   color: var(--color-primary-navy);
 }
 
-img, svg {
+img, svg, video, canvas, audio, iframe, embed, object {
   display: block;
   max-width: 100%;
 }
@@ -307,6 +312,23 @@ button, input, select, textarea {
   font-size: var(--text-base);
   font-weight: 700;
   border-radius: var(--radius-lg);
+}
+
+@media (max-width: 480px) {
+  .btn {
+    white-space: normal;
+    max-width: 100%;
+  }
+  .btn-lg {
+    padding: 0.85rem 1.25rem;
+    font-size: var(--text-sm);
+  }
+}
+
+@media (max-width: 380px) {
+  .hide-xs {
+    display: none !important;
+  }
 }
 
 .btn-whatsapp {

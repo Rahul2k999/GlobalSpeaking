@@ -15,7 +15,7 @@ const { contact, tagline, establishedText } = siteData;
           <svg class="topbar-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
           </svg>
-          <strong>{establishedText}</strong> • Amravati, Maharashtra
+          <strong>{establishedText}</strong><span class="topbar-city"> • Amravati, Maharashtra</span>
         </span>
         <span class="topbar-divider">|</span>
         <a href={`mailto:${contact.email}`} class="topbar-link hide-mobile">
@@ -43,7 +43,7 @@ const { contact, tagline, establishedText } = siteData;
           <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
           </svg>
-          <span>WhatsApp Us</span>
+          <span>WhatsApp<span class="hide-xs"> Us</span></span>
         </a>
       </div>
     </div>
@@ -55,7 +55,10 @@ const { contact, tagline, establishedText } = siteData;
       <a href="/" class="site-header__brand" aria-label="GLOBAL SPOKEN ENGLISH Home">
         <img src="/images/logo.png" alt="GLOBAL SPOKEN ENGLISH Logo" width="46" height="44" class="brand-logo-img" />
         <div class="brand-text">
-          <div class="brand-name">GLOBAL <span class="brand-name-sub">SPOKEN ENGLISH</span></div>
+          <div class="brand-name">
+            <span class="brand-name-main">GLOBAL</span>
+            <span class="brand-name-sub">SPOKEN ENGLISH</span>
+          </div>
           <div class="brand-sub">{tagline}</div>
         </div>
       </a>
@@ -109,10 +112,12 @@ const { contact, tagline, establishedText } = siteData;
     <div class="mobile-drawer__content">
       <div class="mobile-drawer__header">
         <div class="brand-header-flex">
-          <img src="/images/logo.png" alt="GLOBAL SPOKEN ENGLISH Logo" width="40" height="38" class="brand-logo-img-sm" />
+          <img src="/images/logo.png" alt="GLOBAL SPOKEN ENGLISH Logo" width="38" height="36" class="brand-logo-img-sm" />
           <div class="brand-text">
-            <div class="brand-name">GLOBAL <span class="brand-name-sub">SPOKEN ENGLISH</span></div>
-            <div class="brand-sub">{tagline}</div>
+            <div class="brand-name">
+              <span class="brand-name-main">GLOBAL</span>
+              <span class="brand-name-sub">SPOKEN ENGLISH</span>
+            </div>
           </div>
         </div>
         <button type="button" class="mobile-drawer__close" id="mobile-drawer-close" aria-label="Close menu">
@@ -218,19 +223,21 @@ const { contact, tagline, establishedText } = siteData;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: var(--space-4);
+    gap: var(--space-3);
   }
 
   .topbar-left, .topbar-right {
     display: flex;
     align-items: center;
     gap: var(--space-3);
+    min-width: 0;
   }
 
   .topbar-item {
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
+    white-space: nowrap;
   }
 
   .topbar-item strong {
@@ -247,6 +254,7 @@ const { contact, tagline, establishedText } = siteData;
     align-items: center;
     gap: 0.35rem;
     font-weight: 600;
+    white-space: nowrap;
   }
 
   .topbar-link:hover {
@@ -259,6 +267,7 @@ const { contact, tagline, establishedText } = siteData;
     align-items: center;
     gap: 0.35rem;
     font-weight: 600;
+    white-space: nowrap;
   }
 
   .topbar-whatsapp:hover {
@@ -267,7 +276,31 @@ const { contact, tagline, establishedText } = siteData;
 
   @media (max-width: 768px) {
     .hide-mobile {
-      display: none;
+      display: none !important;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .topbar-left {
+      display: none !important;
+    }
+    .site-header__topbar-inner {
+      justify-content: center;
+    }
+    .topbar-right {
+      justify-content: center;
+      width: 100%;
+      gap: var(--space-4);
+    }
+  }
+
+  @media (max-width: 380px) {
+    .hide-xs {
+      display: none !important;
+    }
+    .topbar-right {
+      gap: var(--space-3);
+      font-size: 0.72rem;
     }
   }
 
@@ -282,27 +315,32 @@ const { contact, tagline, establishedText } = siteData;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: var(--space-4);
+    gap: var(--space-3);
+    width: 100%;
+    min-width: 0;
   }
 
   /* Brand */
   .site-header__brand {
     display: flex;
     align-items: center;
-    gap: var(--space-3);
+    gap: 0.65rem;
     text-decoration: none;
+    min-width: 0;
+    flex: 1 1 auto;
+    overflow: hidden;
   }
 
   .brand-logo-img {
-    width: 46px;
-    height: 44px;
+    width: 44px;
+    height: 42px;
     object-fit: contain;
     flex-shrink: 0;
   }
 
   .brand-logo-img-sm {
-    width: 38px;
-    height: 38px;
+    width: 36px;
+    height: 36px;
     object-fit: contain;
     flex-shrink: 0;
   }
@@ -310,20 +348,15 @@ const { contact, tagline, establishedText } = siteData;
   .brand-header-flex {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
+    gap: 0.65rem;
+    min-width: 0;
   }
 
-  .mobile-drawer__email {
-    display: block;
-    text-align: center;
-    font-size: var(--text-xs);
-    color: #64748B;
-    margin-top: 0.5rem;
-    text-decoration: underline;
-  }
-
-  .brand-logo {
-    flex-shrink: 0;
+  .brand-text {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .brand-name {
@@ -332,7 +365,12 @@ const { contact, tagline, establishedText } = siteData;
     font-size: 1.25rem;
     line-height: 1.1;
     color: var(--color-primary-navy);
-    letter-spacing: 0.04em;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+  }
+
+  .brand-name-main {
+    color: var(--color-primary-navy);
   }
 
   .brand-name-sub {
@@ -343,68 +381,75 @@ const { contact, tagline, establishedText } = siteData;
   .brand-sub {
     font-size: 0.65rem;
     font-weight: 700;
-    letter-spacing: 0.06em;
+    letter-spacing: 0.04em;
     color: var(--color-text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
-  /* Desktop Nav Links */
-  .site-nav {
-    display: none;
-  }
+  @media (max-width: 580px) {
+    .site-header__main {
+      height: 4.15rem;
+    }
 
-  @media (min-width: 1024px) {
-    .site-nav {
+    .brand-logo-img {
+      width: 38px;
+      height: 36px;
+    }
+
+    .site-header__brand {
+      gap: 0.5rem;
+    }
+
+    .brand-name {
+      font-size: 1.05rem;
+      line-height: 1.12;
+      white-space: normal;
+    }
+
+    .brand-name-sub {
       display: block;
+      font-size: 0.76rem;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-sub {
+      display: none;
     }
   }
 
-  .site-nav__list {
-    display: flex;
-    align-items: center;
-    list-style: none;
-    gap: 1.25rem;
-  }
+  @media (max-width: 360px) {
+    .site-header__inner {
+      gap: 0.35rem;
+    }
 
-  .site-nav__link {
-    font-size: var(--text-sm);
-    font-weight: 600;
-    color: var(--color-text-main);
-    padding: 0.5rem 0.25rem;
-    position: relative;
-    transition: color var(--transition-fast);
-  }
+    .brand-logo-img {
+      width: 32px;
+      height: 32px;
+    }
 
-  .site-nav__link:hover {
-    color: var(--color-secondary-blue);
-  }
+    .brand-name {
+      font-size: 0.92rem;
+    }
 
-  .site-nav__link--active {
-    color: var(--color-secondary-blue);
-    font-weight: 700;
-  }
-
-  .site-nav__link--active::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background-color: var(--color-accent-yellow);
-    border-radius: var(--radius-full);
+    .brand-name-sub {
+      font-size: 0.7rem;
+    }
   }
 
   .site-header__actions {
     display: flex;
     align-items: center;
     gap: var(--space-3);
+    flex-shrink: 0;
   }
 
   .site-header__cta {
     display: none;
   }
 
-  @media (min-width: 640px) {
+  @media (min-width: 768px) {
     .site-header__cta {
       display: inline-flex;
     }
@@ -415,13 +460,14 @@ const { contact, tagline, establishedText } = siteData;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    width: 2.25rem;
-    height: 2.25rem;
+    width: 2.5rem;
+    height: 2.5rem;
     background: transparent;
     border: none;
     cursor: pointer;
-    padding: 0.35rem;
+    padding: 0.45rem;
     border-radius: var(--radius-sm);
+    flex-shrink: 0;
   }
 
   @media (min-width: 1024px) {
