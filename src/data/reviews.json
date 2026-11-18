@@ -5,5 +5,54 @@
   "headline": "Read Genuine Reviews from Our Students on Google",
   "description": "Our students, graduates, and working professionals share their learning experiences and career transformations on Google Reviews. Read verified feedback or leave your own review directly on our official Google Business page.",
   "actionText": "Read Reviews on Google",
-  "reviews": []
+  "reviews": [
+    {
+      "id": "rev-1",
+      "author": "Shivaji Kana",
+      "rating": 5,
+      "time": "Google Verified",
+      "comment": "Global Spoken English is the best academy in Amravati for English speaking and personality development. Faizan sir's coaching method is very practical and helpful.",
+      "image": "/images/reviews/review-shivaji-kana.webp"
+    },
+    {
+      "id": "rev-2",
+      "author": "Sumarna Fatema",
+      "rating": 5,
+      "time": "Google Verified",
+      "comment": "Best institute in Amravati for spoken English. I overcame my fear of speaking in front of people. Very positive atmosphere and encouraging mentors.",
+      "image": "/images/reviews/review-sumarna-fatema.webp"
+    },
+    {
+      "id": "rev-3",
+      "author": "Wafiya Khan",
+      "rating": 5,
+      "time": "Google Verified",
+      "comment": "I had a great experience learning English speaking and personality grooming here. Faizan sir teaches with patience and gives personal attention to every student.",
+      "image": "/images/reviews/review-wafiya-khan.webp"
+    },
+    {
+      "id": "rev-4",
+      "author": "Faisal Khan",
+      "rating": 5,
+      "time": "Google Verified",
+      "comment": "Outstanding coaching for interview preparation and stage daring. Highly recommend Global Spoken English to everyone in Amravati preparing for MNC placements.",
+      "image": "/images/reviews/review-faisal-khan.webp"
+    },
+    {
+      "id": "rev-5",
+      "author": "Salim Ahmad",
+      "rating": 5,
+      "time": "Google Verified",
+      "comment": "A wonderful learning platform. The 12 learning levels system makes learning English easy and comfortable for students of all age groups.",
+      "image": "/images/reviews/review-salim-ahmad.webp"
+    },
+    {
+      "id": "rev-6",
+      "author": "Shahin Saudagar",
+      "rating": 5,
+      "time": "Google Verified",
+      "comment": "Great environment for learning English and building self-confidence. Truly where your next version begins in Amravati.",
+      "image": "/images/reviews/review-shahin-saudagar.webp"
+    }
+  ]
 }

@@ -1,5 +1,5 @@
 ---
-// Interactive Video Player Modal
+// Interactive Video Player Modal (Supports both native HTML5 MP4 videos & iframe embeds)
 ---
 
 <div id="video-modal" class="video-modal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="video-modal-title">
@@ -13,12 +13,22 @@
     </div>
     <div class="video-modal__body">
       <div class="video-modal__aspect">
+        <video
+          id="video-modal-player"
+          controls
+          playsinline
+          preload="metadata"
+          class="video-modal__media"
+          style="display: none;"
+        ></video>
         <iframe
           id="video-modal-iframe"
           src=""
           title="Video Player"
+          class="video-modal__media"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
+          style="display: none;"
         ></iframe>
       </div>
     </div>
@@ -29,27 +39,57 @@
   const videoModal = document.getElementById('video-modal');
   const videoOverlay = document.getElementById('video-modal-overlay');
   const videoCloseBtn = document.getElementById('video-modal-close');
+  const videoPlayer = document.getElementById('video-modal-player');
   const videoIframe = document.getElementById('video-modal-iframe');
   const videoTitle = document.getElementById('video-modal-title');
 
   function openVideoModal(url, title = 'Watch Video') {
-    if (!videoModal || !videoIframe) return;
-    
-    // Add autoplay param safely
-    const autoplayUrl = url.includes('?') ? `${url}&autoplay=1` : `${url}?autoplay=1`;
-    videoIframe.src = autoplayUrl;
+    if (!videoModal) return;
     if (videoTitle) videoTitle.textContent = title;
-    
+
+    const isDirectVideo = url.endsWith('.mp4') || url.endsWith('.webm') || url.includes('/videos/');
+
+    if (isDirectVideo) {
+      if (videoIframe) {
+        videoIframe.style.display = 'none';
+        videoIframe.src = '';
+      }
+      if (videoPlayer) {
+        videoPlayer.style.display = 'block';
+        videoPlayer.src = url;
+        videoPlayer.play().catch(() => {});
+      }
+    } else {
+      if (videoPlayer) {
+        videoPlayer.pause();
+        videoPlayer.style.display = 'none';
+        videoPlayer.src = '';
+      }
+      if (videoIframe) {
+        videoIframe.style.display = 'block';
+        const autoplayUrl = url.includes('?') ? `${url}&autoplay=1` : `${url}?autoplay=1`;
+        videoIframe.src = autoplayUrl;
+      }
+    }
+
     videoModal.classList.add('video-modal--open');
     videoModal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
   }
 
   function closeVideoModal() {
-    if (!videoModal || !videoIframe) return;
+    if (!videoModal) return;
     videoModal.classList.remove('video-modal--open');
     videoModal.setAttribute('aria-hidden', 'true');
-    videoIframe.src = ''; // stops playing
+    if (videoPlayer) {
+      videoPlayer.pause();
+      videoPlayer.src = '';
+      videoPlayer.style.display = 'none';
+    }
+    if (videoIframe) {
+      videoIframe.src = '';
+      videoIframe.style.display = 'none';
+    }
     document.body.style.overflow = '';
   }
 
@@ -163,14 +203,16 @@
     position: relative;
     width: 100%;
     padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    background-color: #000000;
   }
 
-  .video-modal__aspect iframe {
+  .video-modal__media {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     border: none;
+    object-fit: contain;
   }
 </style>

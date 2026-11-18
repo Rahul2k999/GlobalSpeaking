@@ -19,14 +19,17 @@ const whyIcons: Record<string, string> = {
         <!-- Trainer Photo / Badge Column -->
         <div class="trainer-card__media">
           <div class="trainer-image-wrap">
-            <img
-              src="/images/trainer-faizan.svg"
-              alt={`${trainer.name} - ${trainer.designation}`}
-              width="500"
-              height="560"
-              loading="lazy"
-              class="trainer-photo"
-            />
+            <picture>
+              <source srcset="/images/trainer-faizan-portrait.webp" type="image/webp" />
+              <img
+                src="/images/trainer-faizan-portrait.webp"
+                alt={`${trainer.name} - ${trainer.designation}`}
+                width="500"
+                height="560"
+                loading="lazy"
+                class="trainer-photo"
+              />
+            </picture>
             <div class="experience-pill">
               <span class="exp-number">Director</span>
               <span class="exp-text">Global Spoken English</span>

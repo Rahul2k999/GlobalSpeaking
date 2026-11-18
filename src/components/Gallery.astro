@@ -4,9 +4,10 @@ import galleryData from '../data/gallery.json';
 interface Props {
   limit?: number;
   showFilters?: boolean;
+  showAllLink?: boolean;
 }
 
-const { limit = 6, showFilters = true } = Astro.props;
+const { limit = 6, showFilters = true, showAllLink = false } = Astro.props;
 const { categories, items } = galleryData;
 const displayItems = limit ? items.slice(0, limit) : items;
 ---
@@ -63,11 +64,13 @@ const displayItems = limit ? items.slice(0, limit) : items;
       ))}
     </div>
 
-    <div class="gallery-cta">
-      <a href="/gallery" class="btn btn-call">
-        View Full Gallery Archive (30+ Photos) &rarr;
-      </a>
-    </div>
+    {showAllLink && (
+      <div class="gallery-cta">
+        <a href="/gallery" class="btn btn-call">
+          View Full Gallery Archive &rarr;
+        </a>
+      </div>
+    )}
   </div>
 </section>
 

@@ -6,8 +6,11 @@ interface Props {
   limit?: number;
 }
 
-const { googleReviewsUrl, badge, headline, description, actionText } = reviewsData;
+const { limit } = Astro.props;
+const { googleReviewsUrl, badge, headline, description, actionText, reviews } = reviewsData;
 const { name } = siteData;
+
+const displayReviews = limit ? reviews.slice(0, limit) : reviews;
 ---
 
 <section class="section section--light-blue reviews-section" id="reviews" aria-labelledby="reviews-heading">
@@ -21,6 +24,40 @@ const { name } = siteData;
         Real experiences and verified reviews from students, graduates, and professionals trained at {name}.
       </p>
     </div>
+
+    <!-- Verified Review Cards Grid -->
+    {displayReviews && displayReviews.length > 0 && (
+      <div class="reviews-grid">
+        {displayReviews.map((rev) => (
+          <article class="review-item-card">
+            {rev.image && (
+              <div class="review-screenshot-wrap">
+                <img
+                  src={rev.image}
+                  alt={`Google review by ${rev.author}`}
+                  width="400"
+                  height="160"
+                  loading="lazy"
+                  class="review-screenshot-img"
+                />
+              </div>
+            )}
+            <div class="review-item-body">
+              <div class="review-meta">
+                <div class="review-author-wrap">
+                  <span class="review-author">{rev.author}</span>
+                  <span class="review-time">{rev.time}</span>
+                </div>
+                <div class="review-stars" aria-label={`${rev.rating} out of 5 stars`}>
+                  {"★".repeat(rev.rating)}
+                </div>
+              </div>
+              <p class="review-comment">"{rev.comment}"</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    )}
 
     <!-- Official Google Reviews Showcase Card -->
     <div class="google-reviews-card">
@@ -84,6 +121,103 @@ const { name } = siteData;
 <style>
   .reviews-section {
     background-color: var(--color-bg-light-blue);
+  }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    margin-bottom: var(--space-12);
+  }
+
+  @media (min-width: 640px) {
+    .reviews-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .reviews-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .review-item-card {
+    background-color: #FFFFFF;
+    border: 1px solid rgba(7, 87, 166, 0.12);
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(11, 47, 99, 0.06);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .review-item-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(11, 47, 99, 0.12);
+  }
+
+  .review-screenshot-wrap {
+    width: 100%;
+    background-color: #F8FAFC;
+    border-bottom: 1px solid rgba(7, 87, 166, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--space-3);
+  }
+
+  .review-screenshot-img {
+    max-width: 100%;
+    height: auto;
+    max-height: 140px;
+    object-fit: contain;
+    border-radius: var(--radius-md);
+  }
+
+  .review-item-body {
+    padding: var(--space-5);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .review-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: var(--space-3);
+  }
+
+  .review-author-wrap {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .review-author {
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-primary-navy);
+  }
+
+  .review-time {
+    font-size: var(--text-xs);
+    color: #64748B;
+  }
+
+  .review-stars {
+    color: var(--color-accent-yellow);
+    font-size: 1rem;
+    letter-spacing: 2px;
+  }
+
+  .review-comment {
+    font-size: var(--text-sm);
+    color: #334155;
+    line-height: var(--leading-relaxed);
+    margin: 0;
+    font-style: italic;
   }
 
   .google-reviews-card {
@@ -174,11 +308,5 @@ const { name } = siteData;
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-4);
-  }
-
-  .google-cta-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
   }
 </style>

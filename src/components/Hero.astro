@@ -92,14 +92,24 @@ const { subSlogan, contact, establishedText, name } = siteData;
     <!-- Right Column: Visual Stage Graphic -->
     <div class="hero-visual">
       <div class="hero-visual__wrapper">
-        <img
-          src="/images/logo.png"
-          alt="GLOBAL SPOKEN ENGLISH Emblem"
-          width="400"
-          height="400"
-          loading="eager"
-          class="hero-logo-featured"
-        />
+        <div class="hero-image-frame">
+          <picture>
+            <source srcset="/images/hero-faizan-stage.webp" type="image/webp" />
+            <img
+              src="/images/hero-faizan-stage.webp"
+              alt="Coach Faizan Khan conducting live communication session at Global Spoken English"
+              width="480"
+              height="580"
+              loading="eager"
+              fetchpriority="high"
+              class="hero-photo"
+            />
+          </picture>
+          <div class="hero-trainer-pill">
+            <span class="hero-pill-badge">Director &amp; Chief Coach</span>
+            <span class="hero-pill-name">Coach Faizan Khan</span>
+          </div>
+        </div>
 
         <!-- Floating Card 1 -->
         <div class="hero-float-card hero-float-card--top">
@@ -334,19 +344,60 @@ const { subSlogan, contact, establishedText, name } = siteData;
 
   .hero-visual__wrapper {
     position: relative;
-    max-width: 520px;
+    max-width: 480px;
     width: 100%;
   }
 
-  .hero-visual__image,
-  .hero-logo-featured {
+  .hero-image-frame {
+    position: relative;
+    border-radius: var(--radius-2xl);
+    overflow: hidden;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+    border: 2px solid rgba(255, 201, 40, 0.4);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(7, 29, 61, 0.8) 100%);
+  }
+
+  .hero-photo {
     width: 100%;
-    max-width: 420px;
     height: auto;
-    object-fit: contain;
-    margin: 0 auto;
+    max-height: 540px;
+    object-fit: cover;
     display: block;
-    filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.35));
+    transition: transform 0.4s ease;
+  }
+
+  .hero-image-frame:hover .hero-photo {
+    transform: scale(1.02);
+  }
+
+  .hero-trainer-pill {
+    position: absolute;
+    bottom: var(--space-4);
+    left: var(--space-4);
+    right: var(--space-4);
+    background: rgba(7, 29, 61, 0.85);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 201, 40, 0.3);
+    border-radius: var(--radius-lg);
+    padding: var(--space-2) var(--space-4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-pill-badge {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--color-accent-yellow);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .hero-pill-name {
+    font-size: var(--text-base);
+    font-weight: 800;
+    color: #FFFFFF;
   }
 
   /* Floating Badges */

@@ -1,14 +1,76 @@
 {
-  "notice": "Video assets from client Google Drive folders will be integrated once reviewed and approved.",
+  "notice": "Verified student video testimonials from Global Spoken English & Personality Development Institute.",
   "trainerVideo": {
     "id": "coach-faizan-intro",
     "title": "Introduction to Global Spoken English with Coach Faizan Khan",
     "speaker": "Coach Faizan Khan",
     "designation": "Communication Skills & PD Coach | Corporate Trainer, NLP Practitioner",
     "duration": "Official Profile",
-    "thumbnail": "/images/trainer-video-thumb.svg",
+    "thumbnail": "/images/about-faizan-mic.webp",
+    "videoUrl": "/videos/testimonial-1.mp4",
     "embedUrl": "",
     "description": "Coach Faizan Khan guides students and professionals in spoken English, communication skills, personality development, and interview readiness."
   },
-  "testimonials": []
+  "testimonials": [
+    {
+      "id": "testimonial-1",
+      "student": "Student Fluency Transformation",
+      "course": "Spoken English & Fluency",
+      "duration": "0:25",
+      "thumbnail": "/images/testimonials/poster-testimonial-1.webp",
+      "videoUrl": "/videos/testimonial-1.mp4",
+      "quote": "My English speaking fluency and confidence improved drastically within weeks through practical classroom drills.",
+      "homepage": true
+    },
+    {
+      "id": "testimonial-2",
+      "student": "Public Speaking & Stage Daring",
+      "course": "Spoken English & Communication",
+      "duration": "0:26",
+      "thumbnail": "/images/testimonials/poster-testimonial-2.webp",
+      "videoUrl": "/videos/testimonial-2.mp4",
+      "quote": "The hesitation and fear of public speaking completely vanished after regular podium practice sessions.",
+      "homepage": false
+    },
+    {
+      "id": "testimonial-3",
+      "student": "Confidence & Stage Presence",
+      "course": "Personality Development & Stage Daring",
+      "duration": "0:25",
+      "thumbnail": "/images/testimonials/poster-testimonial-3.webp",
+      "videoUrl": "/videos/testimonial-3.mp4",
+      "quote": "Coach Faizan Khan's practical drills helped me express ideas clearly and speak without hesitation in front of audiences.",
+      "homepage": true
+    },
+    {
+      "id": "testimonial-4",
+      "student": "College & Campus Readiness",
+      "course": "Confidence & Personality Grooming",
+      "duration": "0:25",
+      "thumbnail": "/images/testimonials/poster-testimonial-4.webp",
+      "videoUrl": "/videos/testimonial-4.mp4",
+      "quote": "College life got easier to compete with others because of my enhanced confidence and spoken English.",
+      "homepage": false
+    },
+    {
+      "id": "testimonial-5",
+      "student": "Interview & Professional Growth",
+      "course": "Spoken English & Interview Readiness",
+      "duration": "0:25",
+      "thumbnail": "/images/testimonials/poster-testimonial-5.webp",
+      "videoUrl": "/videos/testimonial-5.mp4",
+      "quote": "I learned how to structure my thoughts, master HR rounds, and present myself professionally in interviews.",
+      "homepage": true
+    },
+    {
+      "id": "testimonial-6",
+      "student": "Hesitation to Fluency Journey",
+      "course": "Fluency & Conversational English",
+      "duration": "0:25",
+      "thumbnail": "/images/testimonials/poster-testimonial-6.webp",
+      "videoUrl": "/videos/testimonial-6.mp4",
+      "quote": "Global Spoken English is the premier institute in Amravati to overcome speaking hesitation and speak natural English.",
+      "homepage": false
+    }
+  ]
 }
