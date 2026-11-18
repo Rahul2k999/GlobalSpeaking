@@ -111,6 +111,13 @@ body {
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  padding-bottom: calc(58px + env(safe-area-inset-bottom, 0px));
+}
+
+@media (min-width: 768px) {
+  body {
+    padding-bottom: 0;
+  }
 }
 
 /* Typography Defaults */
@@ -119,11 +126,13 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: var(--leading-tight);
   letter-spacing: -0.02em;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
-h1 { font-size: clamp(2.2rem, 5vw, var(--text-5xl)); }
-h2 { font-size: clamp(1.75rem, 3.8vw, var(--text-4xl)); }
-h3 { font-size: clamp(1.35rem, 2.5vw, var(--text-2xl)); }
+h1 { font-size: clamp(1.85rem, 5.5vw, var(--text-5xl)); }
+h2 { font-size: clamp(1.5rem, 4vw, var(--text-4xl)); }
+h3 { font-size: clamp(1.25rem, 3vw, var(--text-2xl)); }
 h4 { font-size: var(--text-xl); }
 h5 { font-size: var(--text-lg); }
 h6 { font-size: var(--text-base); }

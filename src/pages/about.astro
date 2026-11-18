@@ -118,7 +118,7 @@ const introParagraphs = introduction.split('\n\n');
   }
 
   .page-title {
-    font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+    font-size: clamp(1.75rem, 5vw, 3.25rem);
     font-weight: 900;
     color: #FFFFFF;
     margin-bottom: var(--space-4);
@@ -139,9 +139,15 @@ const introParagraphs = introduction.split('\n\n');
     background-color: #FFFFFF;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-2xl);
-    padding: var(--space-8) var(--space-6);
+    padding: var(--space-6) var(--space-4);
     box-shadow: 0 10px 30px rgba(11, 47, 99, 0.05);
     margin-bottom: var(--space-12);
+  }
+
+  @media (min-width: 640px) {
+    .intro-box {
+      padding: var(--space-8) var(--space-6);
+    }
   }
 
   @media (min-width: 768px) {
@@ -248,9 +254,15 @@ const introParagraphs = introduction.split('\n\n');
     background-color: #FFFFFF;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-xl);
-    padding: var(--space-8) var(--space-6);
+    padding: var(--space-6) var(--space-4);
     box-shadow: 0 4px 14px rgba(11, 47, 99, 0.04);
     transition: transform var(--transition-base), box-shadow var(--transition-base);
+  }
+
+  @media (min-width: 640px) {
+    .about-card {
+      padding: var(--space-8) var(--space-6);
+    }
   }
 
   .about-card:hover {

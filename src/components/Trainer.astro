@@ -178,9 +178,15 @@ const whyIcons: Record<string, string> = {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: var(--space-8);
+    padding: var(--space-4);
     position: relative;
     height: 100%;
+  }
+
+  @media (min-width: 640px) {
+    .trainer-card__media {
+      padding: var(--space-8);
+    }
   }
 
   .trainer-image-wrap {
@@ -199,17 +205,25 @@ const whyIcons: Record<string, string> = {
 
   .experience-pill {
     position: absolute;
-    bottom: -15px;
-    right: 15px;
+    bottom: -10px;
+    right: 10px;
     background-color: var(--color-accent-yellow);
     color: var(--color-primary-navy);
-    padding: var(--space-3) var(--space-5);
+    padding: var(--space-2) var(--space-4);
     border-radius: var(--radius-lg);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     align-items: center;
     border: 2px solid #FFFFFF;
+  }
+
+  @media (min-width: 640px) {
+    .experience-pill {
+      bottom: -15px;
+      right: 15px;
+      padding: var(--space-3) var(--space-5);
+    }
   }
 
   .exp-number {
@@ -229,7 +243,13 @@ const whyIcons: Record<string, string> = {
   }
 
   .trainer-card__content {
-    padding: var(--space-8) var(--space-6);
+    padding: var(--space-6) var(--space-4);
+  }
+
+  @media (min-width: 640px) {
+    .trainer-card__content {
+      padding: var(--space-8) var(--space-6);
+    }
   }
 
   @media (min-width: 768px) {
@@ -406,6 +426,16 @@ const whyIcons: Record<string, string> = {
     gap: var(--space-4);
   }
 
+  @media (max-width: 540px) {
+    .trainer-actions {
+      flex-direction: column;
+    }
+    .trainer-actions .btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
   /* Why Choose Us Grid */
   .why-choose-wrap {
     padding-top: var(--space-6);
@@ -414,12 +444,13 @@ const whyIcons: Record<string, string> = {
   .why-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: var(--space-6);
+    gap: var(--space-4);
   }
 
   @media (min-width: 640px) {
     .why-grid {
       grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-6);
     }
   }
 
@@ -433,9 +464,15 @@ const whyIcons: Record<string, string> = {
     background-color: #FFFFFF;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-xl);
-    padding: var(--space-6);
+    padding: var(--space-5) var(--space-4);
     box-shadow: 0 4px 14px rgba(11, 47, 99, 0.04);
     transition: transform var(--transition-base), box-shadow var(--transition-base);
+  }
+
+  @media (min-width: 640px) {
+    .why-card {
+      padding: var(--space-6);
+    }
   }
 
   .why-card:hover {

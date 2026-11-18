@@ -184,7 +184,7 @@ const { name, contact } = siteData;
   }
 
   .course-hero__title {
-    font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+    font-size: clamp(1.75rem, 5vw, 3.25rem);
     font-weight: 900;
     line-height: 1.15;
     margin-bottom: var(--space-2);
@@ -255,6 +255,16 @@ const { name, contact } = siteData;
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-4);
+  }
+
+  @media (max-width: 540px) {
+    .course-hero__actions {
+      flex-direction: column;
+    }
+    .course-hero__actions .btn {
+      width: 100%;
+      justify-content: center;
+    }
   }
 
   .btn-outline-white {
@@ -342,8 +352,14 @@ const { name, contact } = siteData;
     background-color: #FFFFFF;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-xl);
-    padding: var(--space-6);
+    padding: var(--space-5) var(--space-4);
     box-shadow: 0 4px 14px rgba(11, 47, 99, 0.04);
+  }
+
+  @media (min-width: 640px) {
+    .phase-card {
+      padding: var(--space-6);
+    }
   }
 
   .phase-header {
@@ -388,8 +404,14 @@ const { name, contact } = siteData;
     background-color: #FFFFFF;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-2xl);
-    padding: var(--space-8);
+    padding: var(--space-6) var(--space-4);
     box-shadow: 0 10px 30px rgba(11, 47, 99, 0.08);
+  }
+
+  @media (min-width: 640px) {
+    .sidebar-card {
+      padding: var(--space-8);
+    }
   }
 
   .sidebar-course-media {

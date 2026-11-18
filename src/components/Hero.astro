@@ -271,6 +271,14 @@ const { subSlogan, contact, establishedText, name } = siteData;
     margin-bottom: var(--space-8);
   }
 
+  @media (max-width: 480px) {
+    .hero-proof-grid {
+      padding: var(--space-3);
+      gap: var(--space-2);
+      margin-bottom: var(--space-6);
+    }
+  }
+
   .proof-item {
     flex: 1;
     text-align: center;
@@ -278,7 +286,7 @@ const { subSlogan, contact, establishedText, name } = siteData;
 
   .proof-number {
     font-family: var(--font-heading);
-    font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+    font-size: clamp(1.15rem, 2.5vw, 1.75rem);
     font-weight: 900;
     color: var(--color-accent-yellow);
     line-height: 1.1;
@@ -289,6 +297,12 @@ const { subSlogan, contact, establishedText, name } = siteData;
     font-weight: 600;
     color: #CBD5E1;
     margin-top: 2px;
+  }
+
+  @media (max-width: 480px) {
+    .proof-label {
+      font-size: 0.68rem;
+    }
   }
 
   .proof-divider {
@@ -303,6 +317,16 @@ const { subSlogan, contact, establishedText, name } = siteData;
     flex-wrap: wrap;
     gap: var(--space-3);
     margin-bottom: var(--space-6);
+  }
+
+  @media (max-width: 540px) {
+    .hero-actions {
+      flex-direction: column;
+    }
+    .hero-actions .btn {
+      width: 100%;
+      justify-content: center;
+    }
   }
 
   .hero-trust {

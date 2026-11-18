@@ -210,10 +210,16 @@ const displayItems = limit ? items.slice(0, limit) : items;
   }
 
   .gallery-caption {
-    padding: var(--space-5);
+    padding: var(--space-4);
     flex: 1;
     display: flex;
     flex-direction: column;
+  }
+
+  @media (min-width: 640px) {
+    .gallery-caption {
+      padding: var(--space-5);
+    }
   }
 
   .gallery-item-title {

@@ -223,12 +223,18 @@ const displayReviews = limit ? reviews.slice(0, limit) : reviews;
   .google-reviews-card {
     background: linear-gradient(135deg, #071D3D 0%, #0B2F63 100%);
     border-radius: var(--radius-2xl);
-    padding: var(--space-8);
+    padding: var(--space-6) var(--space-4);
     color: #FFFFFF;
     box-shadow: 0 16px 36px rgba(11, 47, 99, 0.12);
     border: 1px solid rgba(255, 255, 255, 0.1);
     max-width: 860px;
     margin: 0 auto;
+  }
+
+  @media (min-width: 640px) {
+    .google-reviews-card {
+      padding: var(--space-8);
+    }
   }
 
   @media (min-width: 768px) {
@@ -307,6 +313,16 @@ const displayReviews = limit ? reviews.slice(0, limit) : reviews;
   .google-reviews-action {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--space-4);
+    gap: var(--space-3);
+  }
+
+  @media (max-width: 540px) {
+    .google-reviews-action {
+      flex-direction: column;
+    }
+    .google-reviews-action .btn {
+      width: 100%;
+      justify-content: center;
+    }
   }
 </style>

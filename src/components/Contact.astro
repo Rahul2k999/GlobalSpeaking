@@ -175,8 +175,14 @@ const { contact, branches, name, socials } = siteData;
     background-color: #FFFFFF;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-2xl);
-    padding: var(--space-8);
+    padding: var(--space-5) var(--space-4);
     box-shadow: 0 8px 24px rgba(11, 47, 99, 0.05);
+  }
+
+  @media (min-width: 640px) {
+    .info-card {
+      padding: var(--space-8);
+    }
   }
 
   .info-card__title {
