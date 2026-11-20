@@ -25,70 +25,67 @@ const displayReviews = limit ? reviews.slice(0, limit) : reviews;
       </p>
     </div>
 
-    <!-- Verified Review Cards Grid -->
     {displayReviews && displayReviews.length > 0 && (
-      <div class="reviews-grid">
-        {displayReviews.map((rev) => (
-          <article class="review-item-card">
-            {rev.image && (
-              <div class="review-screenshot-wrap">
-                <img
-                  src={rev.image}
-                  alt={`Google review by ${rev.author}`}
-                  width="400"
-                  height="160"
-                  loading="lazy"
-                  class="review-screenshot-img"
-                />
-              </div>
-            )}
-            <div class="review-item-body">
-              <div class="review-meta">
-                <div class="review-author-wrap">
-                  <span class="review-author">{rev.author}</span>
-                  <span class="review-time">{rev.time}</span>
-                </div>
-                <div class="review-stars" aria-label={`${rev.rating} out of 5 stars`}>
-                  {"★".repeat(rev.rating)}
-                </div>
-              </div>
-              <p class="review-comment">"{rev.comment}"</p>
-            </div>
-          </article>
-        ))}
-      </div>
-    )}
-
-    <!-- Official Google Reviews Showcase Card -->
-    <div class="google-reviews-card">
-      <div class="google-reviews-card__content">
-        <div class="google-brand-header">
-          <svg viewBox="0 0 24 24" width="36" height="36" fill="currentColor" class="google-icon">
-            <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/>
+      <div class="reviews-carousel" data-review-carousel>
+        <button type="button" class="reviews-nav reviews-nav--prev" data-review-prev aria-label="Previous review">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path d="M15 18l-6-6 6-6"/>
           </svg>
-          <div class="google-header-text">
-            <h3 class="google-reviews-title">{headline}</h3>
-            <span class="google-reviews-tag">Verified Public Business Reviews</span>
+        </button>
+
+        <div class="reviews-viewport">
+          <div class="reviews-track">
+            {displayReviews.map((rev) => (
+              <article class="review-item-card">
+                {rev.image && (
+                  <div class="review-screenshot-wrap">
+                    <img
+                      src={rev.image}
+                      alt={`Google review by ${rev.author}`}
+                      width="400"
+                      height="170"
+                      loading="lazy"
+                      class="review-screenshot-img"
+                    />
+                  </div>
+                )}
+                <div class="review-item-body">
+                  <div class="review-meta">
+                    <div class="review-author-wrap">
+                      <span class="review-author">{rev.author}</span>
+                      <span class="review-time">{rev.time}</span>
+                    </div>
+                    <div class="review-stars" aria-label={`${rev.rating} out of 5 stars`}>
+                      {"★".repeat(rev.rating)}
+                    </div>
+                  </div>
+                  <p class="review-comment">"{rev.comment}"</p>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
 
-        <p class="google-reviews-desc">
-          {description}
-        </p>
+        <button type="button" class="reviews-nav reviews-nav--next" data-review-next aria-label="Next review">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path d="M9 18l6-6-6-6"/>
+          </svg>
+        </button>
 
-        <div class="google-reviews-pillars">
-          <div class="pillar-item">
-            <span class="pillar-check">✓</span>
-            <span>100% Genuine Public Google Reviews</span>
+        <div class="review-dots" aria-hidden="true"></div>
+      </div>
+    )}
+
+    <div class="google-reviews-card">
+      <div class="google-reviews-card__inner">
+        <div class="google-reviews-card__content">
+          <div class="google-brand-header">
+            <svg viewBox="0 0 24 24" width="34" height="34" fill="currentColor" class="google-icon" aria-hidden="true">
+              <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/>
+            </svg>
+            <h3 class="google-reviews-title">{headline}</h3>
           </div>
-          <div class="pillar-item">
-            <span class="pillar-check">✓</span>
-            <span>Real Student Feedback &amp; Success Stories</span>
-          </div>
-          <div class="pillar-item">
-            <span class="pillar-check">✓</span>
-            <span>Transparent Ratings on Google Maps</span>
-          </div>
+          <p class="google-reviews-desc">{description}</p>
         </div>
 
         <div class="google-reviews-action">
@@ -98,7 +95,7 @@ const displayReviews = limit ? reviews.slice(0, limit) : reviews;
             rel="noopener noreferrer"
             class="btn btn-yellow btn-lg google-cta-btn"
           >
-            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true">
               <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/>
             </svg>
             <span>{actionText} &rarr;</span>
@@ -118,31 +115,98 @@ const displayReviews = limit ? reviews.slice(0, limit) : reviews;
   </div>
 </section>
 
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('[data-review-carousel]').forEach((root) => {
+      const track = root.querySelector('.reviews-track');
+      const viewport = root.querySelector('.reviews-viewport');
+      const cards = [...track.querySelectorAll('.review-item-card')];
+      const prev = root.querySelector('[data-review-prev]');
+      const next = root.querySelector('[data-review-next]');
+      const dotsBox = root.querySelector('.review-dots');
+      if (!cards.length) return;
+
+      let index = 0;
+      let maxIndex = 0;
+
+      const gap = () => parseFloat(getComputedStyle(track).gap) || 0;
+      const step = () => cards[0].getBoundingClientRect().width + gap();
+
+      const renderDots = () => {
+        dotsBox.innerHTML = '';
+        for (let i = 0; i <= maxIndex; i++) {
+          const dot = document.createElement('button');
+          dot.type = 'button';
+          dot.className = 'review-dot' + (i === index ? ' review-dot--active' : '');
+          dot.setAttribute('aria-label', `Go to review ${i + 1}`);
+          if (i === index) dot.setAttribute('aria-current', 'true');
+          dot.addEventListener('click', () => { index = i; update(); });
+          dotsBox.appendChild(dot);
+        }
+      };
+
+      const update = (animate = true) => {
+        const vpWidth = viewport.getBoundingClientRect().width;
+        const cardWidth = cards[0].getBoundingClientRect().width;
+        const visible = Math.max(1, Math.floor((vpWidth + gap()) / (cardWidth + gap())));
+        maxIndex = Math.max(0, cards.length - visible);
+        index = Math.max(0, Math.min(index, maxIndex));
+        track.style.transition = animate ? 'transform 0.45s ease' : 'none';
+        track.style.transform = `translate3d(${-index * step()}px, 0, 0)`;
+        prev.disabled = index === 0;
+        next.disabled = index >= maxIndex;
+        renderDots();
+      };
+
+      prev.addEventListener('click', () => { index = Math.max(0, index - 1); update(); });
+      next.addEventListener('click', () => { index = Math.min(maxIndex, index + 1); update(); });
+
+      let startX = null;
+      viewport.addEventListener('pointerdown', (e) => { startX = e.clientX; });
+      viewport.addEventListener('pointerup', (e) => {
+        if (startX === null) return;
+        const delta = e.clientX - startX;
+        if (Math.abs(delta) > 40) {
+          index = Math.max(0, Math.min(maxIndex, index + (delta < 0 ? 1 : -1)));
+          update();
+        }
+        startX = null;
+      });
+
+      window.addEventListener('resize', () => update(false));
+      update(false);
+    });
+  });
+</script>
+
 <style>
   .reviews-section {
     background-color: var(--color-bg-light-blue);
   }
 
-  .reviews-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-6);
+  .reviews-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
     margin-bottom: var(--space-12);
   }
 
-  @media (min-width: 640px) {
-    .reviews-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  .reviews-viewport {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
   }
 
-  @media (min-width: 1024px) {
-    .reviews-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
+  .reviews-track {
+    display: flex;
+    gap: var(--space-6);
+    width: max-content;
+    will-change: transform;
   }
 
   .review-item-card {
+    flex: 0 0 auto;
+    width: 360px;
     background-color: #FFFFFF;
     border: 1px solid rgba(7, 87, 166, 0.12);
     border-radius: var(--radius-xl);
@@ -158,6 +222,18 @@ const displayReviews = limit ? reviews.slice(0, limit) : reviews;
     box-shadow: 0 12px 24px rgba(11, 47, 99, 0.12);
   }
 
+  @media (max-width: 1023px) {
+    .review-item-card {
+      width: 340px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .review-item-card {
+      width: min(86vw, 350px);
+    }
+  }
+
   .review-screenshot-wrap {
     width: 100%;
     background-color: #F8FAFC;
@@ -166,12 +242,13 @@ const displayReviews = limit ? reviews.slice(0, limit) : reviews;
     align-items: center;
     justify-content: center;
     padding: var(--space-3);
+    min-height: 170px;
   }
 
   .review-screenshot-img {
     max-width: 100%;
     height: auto;
-    max-height: 140px;
+    max-height: 170px;
     object-fit: contain;
     border-radius: var(--radius-md);
   }
@@ -220,6 +297,78 @@ const displayReviews = limit ? reviews.slice(0, limit) : reviews;
     font-style: italic;
   }
 
+  .reviews-nav {
+    position: absolute;
+    top: 38%;
+    transform: translateY(-50%);
+    z-index: 5;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(7, 87, 166, 0.18);
+    background-color: #FFFFFF;
+    color: var(--color-secondary-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(11, 47, 99, 0.14);
+    transition: background-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+  }
+
+  .reviews-nav:hover:not(:disabled) {
+    background-color: var(--color-secondary-blue);
+    color: #FFFFFF;
+  }
+
+  .reviews-nav:disabled {
+    opacity: 0.35;
+    cursor: default;
+  }
+
+  .reviews-nav--prev {
+    left: -8px;
+  }
+
+  .reviews-nav--next {
+    right: -8px;
+  }
+
+  @media (max-width: 640px) {
+    .reviews-nav {
+      width: 34px;
+      height: 34px;
+      top: 36%;
+    }
+    .reviews-nav--prev { left: -2px; }
+    .reviews-nav--next { right: -2px; }
+  }
+
+  .review-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.45rem;
+    margin-top: var(--space-6);
+  }
+
+  .review-dot {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(7, 87, 166, 0.2);
+    cursor: pointer;
+    transition: width 0.2s ease, background-color 0.2s ease;
+  }
+
+  .review-dot--active {
+    width: 22px;
+    border-radius: var(--radius-full);
+    background-color: var(--color-accent-yellow);
+  }
+
   .google-reviews-card {
     background: linear-gradient(135deg, #071D3D 0%, #0B2F63 100%);
     border-radius: var(--radius-2xl);
@@ -227,27 +376,42 @@ const displayReviews = limit ? reviews.slice(0, limit) : reviews;
     color: #FFFFFF;
     box-shadow: 0 16px 36px rgba(11, 47, 99, 0.12);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    max-width: 860px;
+    width: 100%;
+    max-width: 1180px;
     margin: 0 auto;
   }
 
   @media (min-width: 640px) {
     .google-reviews-card {
-      padding: var(--space-8);
+      padding: var(--space-8) var(--space-10);
     }
   }
 
-  @media (min-width: 768px) {
-    .google-reviews-card {
-      padding: var(--space-12);
+  .google-reviews-card__inner {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  @media (min-width: 900px) {
+    .google-reviews-card__inner {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-10);
     }
+  }
+
+  .google-reviews-card__content {
+    flex: 1 1 auto;
+    min-width: 0;
   }
 
   .google-brand-header {
     display: flex;
     align-items: center;
-    gap: var(--space-4);
-    margin-bottom: var(--space-5);
+    gap: var(--space-3);
+    margin-bottom: var(--space-3);
   }
 
   .google-icon {
@@ -259,61 +423,23 @@ const displayReviews = limit ? reviews.slice(0, limit) : reviews;
     font-size: clamp(1.4rem, 2.5vw, 1.85rem);
     font-weight: 900;
     color: #FFFFFF;
-    margin: 0 0 0.2rem;
+    margin: 0;
     line-height: 1.2;
   }
 
-  .google-reviews-tag {
-    font-size: var(--text-xs);
-    font-weight: 700;
-    color: var(--color-accent-yellow);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-  }
-
   .google-reviews-desc {
-    font-size: var(--text-base);
+    font-size: var(--text-sm);
     color: #CBD5E1;
     line-height: var(--leading-relaxed);
-    margin-bottom: var(--space-6);
-  }
-
-  .google-reviews-pillars {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    margin-bottom: var(--space-8);
-    background-color: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: var(--radius-lg);
-    padding: var(--space-4) var(--space-5);
-  }
-
-  @media (min-width: 640px) {
-    .google-reviews-pillars {
-      flex-direction: row;
-      justify-content: space-between;
-    }
-  }
-
-  .pillar-item {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    font-size: var(--text-xs);
-    font-weight: 700;
-    color: #EEF5FD;
-  }
-
-  .pillar-check {
-    color: #20B45B;
-    font-weight: 900;
+    margin: 0;
+    max-width: 620px;
   }
 
   .google-reviews-action {
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-3);
+    flex: 0 0 auto;
   }
 
   @media (max-width: 540px) {

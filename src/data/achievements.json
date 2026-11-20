@@ -23,16 +23,26 @@
     }
   ],
   "eventPhotos": [
-    {
-      "image": "/images/achievements/achievement-event-1.webp",
-      "title": "National Youth Leadership & Fluency Convocation",
-      "caption": "Coach Faizan Khan addressing thousands of students and youth on communication mastery and stage confidence."
-    },
-    {
-      "image": "/images/achievements/achievement-event-2.webp",
-      "title": "Educator Honours & Career Excellence Ceremony",
-      "caption": "Celebrating placed candidates, school educators, and star speakers at the annual recognition event."
-    }
+    { "image": "/images/events/activity-1.webp", "title": "", "caption": "" },
+    { "image": "/images/events/activity-2.webp", "title": "", "caption": "" },
+    { "image": "/images/events/activity-3.webp", "title": "", "caption": "" },
+    { "image": "/images/events/activity-4.webp", "title": "", "caption": "" },
+    { "image": "/images/events/activity-5.webp", "title": "", "caption": "" },
+    { "image": "/images/events/activity-6.webp", "title": "", "caption": "" }
+  ],
+  "achievementPhotos": [
+    "/images/achievements/achievement-1.webp",
+    "/images/achievements/achievement-2.webp",
+    "/images/achievements/achievement-3.webp",
+    "/images/achievements/achievement-4.webp",
+    "/images/achievements/achievement-5.webp",
+    "/images/achievements/achievement-7.webp",
+    "/images/achievements/achievement-8.webp",
+    "/images/achievements/achievement-10.webp",
+    "/images/achievements/achievement-11.webp",
+    "/images/achievements/achievement-12.webp",
+    "/images/achievements/achievement-13.webp",
+    "/images/achievements/achievement-14.webp"
   ],
   "awards": [
     {
@@ -54,6 +64,7 @@
   "careersSection": {
     "title": "Our Candidates Are Building Careers At",
     "subtitle": "Our trained candidates are contributing to organisations across leading industries.",
+    "logoImage": "/images/company-logos.webp",
     "disclaimer": "Organisations where trained candidates from GLOBAL SPOKEN ENGLISH are reported to be working. Company names are presented as text for informational purposes only without implying official partnerships or direct corporate tie-ups.",
     "categories": [
       {

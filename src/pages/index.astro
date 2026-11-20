@@ -1,7 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
-import Stats from '../components/Stats.astro';
 import Courses from '../components/Courses.astro';
 import Trainer from '../components/Trainer.astro';
 import Achievements from '../components/Achievements.astro';
@@ -19,23 +18,20 @@ const pageDesc = `Global Spoken English & Personality Development Institute in A
   <!-- 1. Hero Banner -->
   <Hero />
 
-  <!-- 2. Achievement Statistics -->
-  <Stats />
-
-  <!-- 3. Our Courses -->
+  <!-- 2. Our Courses -->
   <Courses showAllLink={true} />
 
-  <!-- 4. Meet Our Trainer & Why Choose Us -->
-  <Trainer />
+  <!-- 4. Meet Our Trainer -->
+  <Trainer showWhyChoose={false} />
 
-  <!-- 5. Our Achievements & Corporate Placement Companies -->
-  <Achievements />
+  <!-- 5. Honours, Events & Careers -->
+  <Achievements showMilestones={false} />
 
   <!-- 6. Gallery -->
-  <Gallery limit={6} showFilters={true} showAllLink={true} />
+  <Gallery limit={6} showFilters={false} showAllLink={true} />
 
   <!-- 7. Video Testimonials -->
-  <VideoTestimonials limit={3} showAllLink={true} />
+  <VideoTestimonials limit={3} />
 
   <!-- 8. Student Reviews -->
   <Reviews limit={6} />

@@ -7,8 +7,8 @@ interface Props {
   showAllLink?: boolean;
 }
 
-const { limit = 6, showFilters = true, showAllLink = false } = Astro.props;
-const { categories, items } = galleryData;
+const { limit = 6, showAllLink = false } = Astro.props;
+const { items } = galleryData;
 const displayItems = limit ? items.slice(0, limit) : items;
 ---
 
@@ -24,42 +24,26 @@ const displayItems = limit ? items.slice(0, limit) : items;
       </p>
     </div>
 
-    <!-- Category Filter Tabs -->
-    {showFilters && (
-      <div class="gallery-filters" role="tablist" aria-label="Gallery Categories">
-        {categories.map((cat, idx) => (
-          <button
-            type="button"
-            class:list={['filter-btn', { 'filter-btn--active': idx === 0 }]}
-            data-filter={cat === 'All' ? '*' : cat}
-            role="tab"
-            aria-selected={idx === 0 ? 'true' : 'false'}
-          >
-            {cat}
-          </button>
-        ))}
-      </div>
-    )}
-
     <!-- Gallery Grid -->
     <div class="gallery-grid" id="gallery-grid">
-      {displayItems.map((item) => (
-        <figure class="gallery-item" data-category={item.category}>
+      {displayItems.map((item, idx) => (
+        <figure class="gallery-item">
           <div class="gallery-image-wrap">
             <img
               src={item.image}
-              alt={item.title}
-              width="600"
-              height="450"
+              alt={`Life at GLOBAL photograph ${idx + 1}`}
+              width="900"
+              height="675"
               loading="lazy"
               class="gallery-image"
             />
-            <span class="gallery-item-badge">{item.category}</span>
           </div>
-          <figcaption class="gallery-caption">
-            <h3 class="gallery-item-title">{item.title}</h3>
-            <p class="gallery-item-desc">{item.caption}</p>
-          </figcaption>
+          {(item.title || item.caption) && (
+            <figcaption class="gallery-caption">
+              {item.title && <h3 class="gallery-item-title">{item.title}</h3>}
+              {item.caption && <p class="gallery-item-desc">{item.caption}</p>}
+            </figcaption>
+          )}
         </figure>
       ))}
     </div>
@@ -73,36 +57,6 @@ const displayItems = limit ? items.slice(0, limit) : items;
     )}
   </div>
 </section>
-
-<script is:inline>
-  document.addEventListener('DOMContentLoaded', () => {
-    const filterBtns = document.querySelectorAll('.gallery-filters .filter-btn');
-    const galleryItems = document.querySelectorAll('#gallery-grid .gallery-item');
-
-    filterBtns.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        // Toggle active button state
-        filterBtns.forEach((b) => {
-          b.classList.remove('filter-btn--active');
-          b.setAttribute('aria-selected', 'false');
-        });
-        btn.classList.add('filter-btn--active');
-        btn.setAttribute('aria-selected', 'true');
-
-        const filter = btn.getAttribute('data-filter');
-
-        galleryItems.forEach((item) => {
-          const category = item.getAttribute('data-category');
-          if (filter === '*' || filter === category) {
-            item.style.display = 'block';
-          } else {
-            item.style.display = 'none';
-          }
-        });
-      });
-    });
-  });
-</script>
 
 <style>
   .gallery-section {

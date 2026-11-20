@@ -4,12 +4,11 @@ import siteData from '../data/site.json';
 
 interface Props {
   limit?: number;
-  showAllLink?: boolean;
 }
 
-const { limit, showAllLink = false } = Astro.props;
-const { name, socials, contact } = siteData;
-const googleReview = socials.find(s => s.platform === 'Google Reviews');
+const { limit } = Astro.props;
+const { name, socials } = siteData;
+const instagram = socials.find(s => s.platform === 'Instagram');
 
 const allTestimonials = videosData.testimonials || [];
 const displayTestimonials = limit
@@ -29,78 +28,169 @@ const displayTestimonials = limit
       </p>
     </div>
 
-    <!-- Video Testimonials Grid -->
-    <div class="testimonials-grid">
-      {displayTestimonials.map((item) => (
-        <article class="testimonial-card">
-          <div 
-            class="video-preview-wrapper"
-            data-video-url={item.videoUrl}
-            data-video-title={`${item.student} – ${item.course}`}
-            role="button"
-            tabindex="0"
-            aria-label={`Play video testimonial: ${item.student}`}
-          >
-            <img
-              src={item.thumbnail}
-              alt={item.student}
-              width="480"
-              height="480"
-              loading="lazy"
-              class="video-poster"
-            />
-            <div class="video-overlay">
-              <button type="button" class="play-btn" aria-label="Play Video" tabindex="-1">
-                <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
-                  <path d="M8 5v14l11-7z"/>
-                </svg>
-              </button>
-              <span class="video-duration">{item.duration}</span>
-            </div>
+    <div class="video-carousel" data-carousel>
+      <button type="button" class="carousel-nav carousel-nav--prev" data-carousel-dir="prev" aria-label="Previous testimonial">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+          <path d="M15 18l-6-6 6-6"/>
+        </svg>
+      </button>
+
+      <div class="carousel-viewport">
+        <div class="carousel-track">
+          <div class="carousel-group">
+            {displayTestimonials.map((item) => (
+              <article class="testimonial-card">
+                <div
+                  class="video-preview-wrapper"
+                  data-video-url={item.videoUrl}
+                  data-video-title={item.student}
+                  role="button"
+                  tabindex="0"
+                  aria-label={`Play video testimonial: ${item.student}`}
+                >
+                  <img
+                    src={item.thumbnail}
+                    alt={item.student}
+                    width="480"
+                    height="480"
+                    loading="lazy"
+                    class="video-poster"
+                  />
+                  <div class="video-overlay">
+                    <button type="button" class="play-btn" aria-label="Play Video" tabindex="-1">
+                      <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                        <path d="M8 5v14l11-7z"/>
+                      </svg>
+                    </button>
+                    <span class="video-duration">{item.duration}</span>
+                  </div>
+                </div>
+
+                <div class="testimonial-info">
+                  <h3 class="testimonial-name">{item.student}</h3>
+                </div>
+              </article>
+            ))}
           </div>
 
-          <div class="testimonial-info">
-            <span class="testimonial-badge">{item.course}</span>
-            <h3 class="testimonial-name">{item.student}</h3>
-            <p class="testimonial-quote">"{item.quote}"</p>
+          <div class="carousel-group" aria-hidden="true">
+            {displayTestimonials.map((item) => (
+              <article class="testimonial-card">
+                <div
+                  class="video-preview-wrapper"
+                  data-video-url={item.videoUrl}
+                  data-video-title={item.student}
+                  role="button"
+                  tabindex="-1"
+                >
+                  <img
+                    src={item.thumbnail}
+                    alt=""
+                    width="480"
+                    height="480"
+                    loading="lazy"
+                    class="video-poster"
+                  />
+                  <div class="video-overlay">
+                    <button type="button" class="play-btn" tabindex="-1" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor">
+                        <path d="M8 5v14l11-7z"/>
+                      </svg>
+                    </button>
+                    <span class="video-duration">{item.duration}</span>
+                  </div>
+                </div>
+
+                <div class="testimonial-info">
+                  <h3 class="testimonial-name">{item.student}</h3>
+                </div>
+              </article>
+            ))}
           </div>
-        </article>
-      ))}
+        </div>
+      </div>
+
+      <button type="button" class="carousel-nav carousel-nav--next" data-carousel-dir="next" aria-label="Next testimonial">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+          <path d="M9 18l6-6-6-6"/>
+        </svg>
+      </button>
     </div>
 
-    <!-- Actions & Links -->
     <div class="testimonials-footer">
-      {showAllLink && (
-        <a href="/testimonials" class="btn btn-outline-yellow btn-lg">
-          <span>Watch All Student Stories &rarr;</span>
-        </a>
-      )}
-
-      {googleReview && (
-        <a 
-          href={googleReview.url} 
-          target="_blank" 
-          rel="noopener noreferrer" 
+      {instagram && (
+        <a
+          href={instagram.url}
+          target="_blank"
+          rel="noopener noreferrer"
           class="btn btn-yellow btn-lg"
         >
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-            <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.853 3.187-1.787 4.133-1.147 1.147-2.933 2.4-6.053 2.4-4.827 0-8.6-3.893-8.6-8.72s3.773-8.72 8.6-8.72c2.6 0 4.507 1.027 5.907 2.347l2.307-2.307C18.747 1.44 16.133 0 12.48 0 5.867 0 .307 5.387.307 12s5.56 12 12.173 12c3.573 0 6.267-1.173 8.373-3.36 2.16-2.16 2.84-5.213 2.84-7.667 0-.76-.053-1.467-.173-2.053H12.48z"/>
-          </svg>
-          <span>Read Verified Google Reviews &rarr;</span>
+          <span>Watch on Instagram &rarr;</span>
         </a>
       )}
-
-      <a 
-        href={`https://wa.me/${contact.whatsappClean}?text=${encodeURIComponent('Hello Global Spoken English, I would like to enquire about course admissions.')}`}
-        target="_blank" 
-        rel="noopener noreferrer" 
-        class="btn btn-whatsapp btn-lg"
-      >
-        <span>Connect on WhatsApp</span>
-      </a>
     </div>
   </div>
 </section>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('[data-carousel]').forEach((root) => {
+      const track = root.querySelector('.carousel-track');
+      const group = root.querySelector('.carousel-group');
+      if (!track || !group) return;
+
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const speed = 24; // pixels per second - slow and subtle
+      let x = 0;
+      let last = 0;
+
+      const groupWidth = () => group.getBoundingClientRect().width || 1;
+      const stepWidth = () => {
+        const card = group.querySelector('.testimonial-card');
+        if (!card) return 300;
+        const gap = parseFloat(getComputedStyle(group).gap) || 0;
+        return card.getBoundingClientRect().width + gap;
+      };
+      const wrap = () => {
+        const w = groupWidth();
+        while (x <= -w) x += w;
+        while (x > 0) x -= w;
+      };
+      const draw = () => {
+        track.style.transform = `translate3d(${x}px, 0, 0)`;
+      };
+      const isPaused = () =>
+        reduceMotion ||
+        root.matches(':hover') ||
+        root.querySelector('.carousel-viewport').contains(document.activeElement) ||
+        document.body.classList.contains('video-modal-active');
+
+      const frame = (time) => {
+        if (!last) last = time;
+        const delta = Math.min((time - last) / 1000, 0.1);
+        last = time;
+        if (!isPaused()) {
+          x -= speed * delta;
+          wrap();
+          draw();
+        }
+        requestAnimationFrame(frame);
+      };
+
+      root.querySelectorAll('[data-carousel-dir]').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          x += btn.getAttribute('data-carousel-dir') === 'next' ? -stepWidth() : stepWidth();
+          wrap();
+          draw();
+        });
+      });
+
+      wrap();
+      draw();
+      requestAnimationFrame(frame);
+    });
+  });
+</script>
 
 <style>
   .video-testimonials-section {
@@ -108,26 +198,35 @@ const displayTestimonials = limit
     color: #FFFFFF;
   }
 
-  .testimonials-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--space-8);
+  .video-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
     margin-bottom: var(--space-12);
   }
 
-  @media (min-width: 640px) {
-    .testimonials-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  .carousel-viewport {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
   }
 
-  @media (min-width: 1024px) {
-    .testimonials-grid {
-      grid-template-columns: repeat(3, 1fr);
-    }
+  .carousel-track {
+    display: flex;
+    width: max-content;
+    will-change: transform;
+  }
+
+  .carousel-group {
+    display: flex;
+    flex: 0 0 auto;
+    gap: var(--space-8);
+    padding-right: var(--space-8);
   }
 
   .testimonial-card {
+    flex: 0 0 auto;
+    width: 360px;
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: var(--radius-xl);
@@ -141,6 +240,18 @@ const displayTestimonials = limit
     transform: translateY(-4px);
     border-color: rgba(255, 201, 40, 0.4);
     box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  @media (max-width: 1023px) {
+    .testimonial-card {
+      width: 320px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .testimonial-card {
+      width: min(86vw, 360px);
+    }
   }
 
   .video-preview-wrapper {
@@ -220,31 +331,11 @@ const displayTestimonials = limit
     }
   }
 
-  .testimonial-badge {
-    align-self: flex-start;
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: var(--color-accent-yellow);
-    background: rgba(255, 201, 40, 0.12);
-    border: 1px solid rgba(255, 201, 40, 0.25);
-    padding: 0.2rem 0.6rem;
-    border-radius: var(--radius-full);
-    margin-bottom: var(--space-2);
-  }
-
   .testimonial-name {
     font-size: 1.05rem;
     font-weight: 700;
     color: #FFFFFF;
     margin-bottom: var(--space-2);
-  }
-
-  .testimonial-quote {
-    font-size: var(--text-sm);
-    color: #CBD5E1;
-    line-height: var(--leading-relaxed);
-    font-style: italic;
-    margin: 0;
   }
 
   .testimonials-footer {
@@ -265,14 +356,48 @@ const displayTestimonials = limit
     }
   }
 
-  .btn-outline-yellow {
-    border: 2px solid var(--color-accent-yellow);
+  .carousel-nav {
+    position: absolute;
+    top: 42%;
+    transform: translateY(-50%);
+    z-index: 5;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 201, 40, 0.45);
+    background-color: rgba(7, 29, 61, 0.85);
     color: var(--color-accent-yellow);
-    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
   }
 
-  .btn-outline-yellow:hover {
+  .carousel-nav:hover {
     background-color: var(--color-accent-yellow);
     color: var(--color-primary-navy);
+  }
+
+  .carousel-nav--prev {
+    left: -6px;
+  }
+
+  .carousel-nav--next {
+    right: -6px;
+  }
+
+  @media (max-width: 640px) {
+    .carousel-nav {
+      width: 32px;
+      height: 32px;
+      top: 40%;
+    }
+    .carousel-nav--prev {
+      left: -2px;
+    }
+    .carousel-nav--next {
+      right: -2px;
+    }
   }
 </style>

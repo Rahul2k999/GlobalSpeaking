@@ -17,7 +17,7 @@
           id="video-modal-player"
           controls
           playsinline
-          preload="metadata"
+          preload="none"
           class="video-modal__media"
           style="display: none;"
         ></video>
@@ -75,6 +75,7 @@
     videoModal.classList.add('video-modal--open');
     videoModal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
+    document.body.classList.add('video-modal-active');
   }
 
   function closeVideoModal() {
@@ -91,6 +92,7 @@
       videoIframe.style.display = 'none';
     }
     document.body.style.overflow = '';
+    document.body.classList.remove('video-modal-active');
   }
 
   if (videoCloseBtn) videoCloseBtn.addEventListener('click', closeVideoModal);

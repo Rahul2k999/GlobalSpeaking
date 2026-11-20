@@ -1,7 +1,12 @@
 ---
 import siteData from '../data/site.json';
 
-const { trainer, whyChooseUs, contact } = siteData;
+interface Props {
+  showWhyChoose?: boolean;
+}
+
+const { showWhyChoose = true } = Astro.props;
+const { trainer, whyChooseUs } = siteData;
 
 const whyIcons: Record<string, string> = {
   expert: "👨‍🏫",
@@ -14,18 +19,18 @@ const whyIcons: Record<string, string> = {
 <section class="section trainer-section" id="trainer" aria-labelledby="trainer-heading">
   <div class="container">
     <!-- Trainer Profile Showcase -->
-    <div class="trainer-card">
+    <div class:list={['trainer-card', { 'trainer-card--standalone': !showWhyChoose }]}>
       <div class="trainer-card__grid">
         <!-- Trainer Photo / Badge Column -->
         <div class="trainer-card__media">
           <div class="trainer-image-wrap">
             <picture>
-              <source srcset="/images/trainer-faizan-portrait.webp" type="image/webp" />
+              <source srcset="/images/trainer-faizan-portrait-2026.webp" type="image/webp" />
               <img
-                src="/images/trainer-faizan-portrait.webp"
+                src="/images/trainer-faizan-portrait-2026.webp"
                 alt={`${trainer.name} - ${trainer.designation}`}
-                width="500"
-                height="560"
+                width="1000"
+                height="1333"
                 loading="lazy"
                 class="trainer-photo"
               />
@@ -41,87 +46,19 @@ const whyIcons: Record<string, string> = {
         <div class="trainer-card__content">
           <div class="section-tag section-tag--blue">Director &amp; Chief Coach</div>
           <h2 id="trainer-heading" class="trainer-name">{trainer.name}</h2>
-          <p class="trainer-designation">{trainer.designation}</p>
 
-          <p class="trainer-bio-lead">
-            {trainer.shortBio}
-          </p>
-
-          <p class="trainer-bio-body">
-            {trainer.fullBio}
-          </p>
-
-          <!-- Vision Quote -->
-          <div class="trainer-vision-box">
-            <span class="vision-label">Vision:</span>
-            <p class="vision-text">"{trainer.vision}"</p>
+          <div class="trainer-final-bio">
+            {trainer.finalBio.map((line) => (
+              <p class="trainer-bio-line">{line}</p>
+            ))}
           </div>
 
-          <!-- Awards & Recognitions -->
-          <div class="trainer-awards-section">
-            <h4 class="credentials-heading">Awards &amp; Recognitions:</h4>
-            <div class="awards-badge-grid">
-              {trainer.awards.map((award) => (
-                <div class="award-badge-card">
-                  <div class="award-badge-icon">🎖️</div>
-                  <div class="award-badge-content">
-                    <strong class="award-badge-title">{award.title}</strong>
-                    <span class="award-badge-desc">{award.description}</span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <!-- Areas of Expertise -->
-          <div class="trainer-expertise-section">
-            <h4 class="credentials-heading">Areas of Expertise:</h4>
-            <div class="expertise-tags">
-              {trainer.expertise.map((exp) => (
-                <span class="expertise-tag">{exp}</span>
-              ))}
-            </div>
-          </div>
-
-          <!-- Professional Achievements Highlights -->
-          <div class="trainer-credentials">
-            <h4 class="credentials-heading">Professional Achievements:</h4>
-            <ul class="credentials-list">
-              {trainer.achievements.map((item) => (
-                <li class="cred-item">
-                  <svg class="cred-icon" viewBox="0 0 20 20" fill="currentColor">
-                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                  </svg>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <!-- Actions -->
-          <div class="trainer-actions">
-            <a href="#enquiry-section" class="btn btn-yellow btn-lg">
-              Book Free Demo &amp; Counselling
-            </a>
-
-            <a 
-              href={`https://wa.me/${contact.whatsappClean}?text=${encodeURIComponent('Hello Coach Faizan Khan, I want to inquire about training at Global Spoken English.')}`} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              class="btn btn-whatsapp btn-lg"
-            >
-              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-              </svg>
-              <span>WhatsApp Coach</span>
-            </a>
-          </div>
         </div>
       </div>
     </div>
 
-    <!-- Why Choose Global? 4 Pillar Grid -->
-    <div class="why-choose-wrap">
+    {showWhyChoose && (
+      <div class="why-choose-wrap">
       <div class="section-header">
         <span class="section-tag">{whyChooseUs.subtitle}</span>
         <h3 class="section-title">
@@ -142,7 +79,8 @@ const whyIcons: Record<string, string> = {
           </div>
         ))}
       </div>
-    </div>
+      </div>
+    )}
   </div>
 </section>
 
@@ -159,6 +97,10 @@ const whyIcons: Record<string, string> = {
     box-shadow: 0 20px 45px rgba(11, 47, 99, 0.16);
     border: 1px solid rgba(255, 255, 255, 0.1);
     margin-bottom: var(--space-20);
+  }
+
+  .trainer-card--standalone {
+    margin-bottom: 0;
   }
 
   .trainer-card__grid {
@@ -265,35 +207,29 @@ const whyIcons: Record<string, string> = {
   }
 
   .trainer-name {
-    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-size: clamp(1.6rem, 3vw, 2.25rem);
     font-weight: 900;
     color: #FFFFFF;
-    margin: var(--space-2) 0 var(--space-1);
+    margin: var(--space-2) 0 var(--space-3);
     line-height: 1.15;
   }
 
-  .trainer-designation {
-    font-size: var(--text-sm);
-    color: var(--color-accent-yellow);
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    margin-bottom: var(--space-4);
-    line-height: var(--leading-normal);
+  .trainer-final-bio {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
-  .trainer-bio-lead {
-    font-size: var(--text-base);
-    color: #FFFFFF;
-    line-height: var(--leading-relaxed);
-    margin-bottom: var(--space-3);
-    font-weight: 500;
-  }
-
-  .trainer-bio-body {
+  .trainer-bio-line {
     font-size: var(--text-sm);
     color: #CBD5E1;
     line-height: var(--leading-relaxed);
-    margin-bottom: var(--space-5);
+    margin: 0;
+  }
+
+  .trainer-bio-line:first-child {
+    color: #FFFFFF;
+    font-weight: 600;
   }
 
   /* Vision Box */

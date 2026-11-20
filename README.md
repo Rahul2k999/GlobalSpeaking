@@ -1,6 +1,6 @@
 # GLOBAL Institute — Spoken English & Personality Development Website
 
-A complete, high-performance static website for **GLOBAL Institute** built with **Astro 5**, **Bun**, and vanilla CSS design tokens. 
+A complete, high-performance static website for **GLOBAL Institute** built with **Astro 5**, **Bun**, and vanilla CSS design tokens. Canonical domain: `https://globalspokenenglish.in`. 
 
 Designed for North India's premier English communication institute led by Coach Faizan Khan (15,000+ alumni, 1,700+ MNC placements, 1,000+ teachers placed).
 
@@ -13,7 +13,7 @@ Designed for North India's premier English communication institute led by Coach 
   2. **Achievement Statistics:** Key metrics ribbon (15K+ alumni, 1,700+ corporate hires, 1,000+ teachers, 12 levels).
   3. **Our Courses:** Showcase for Spoken English, Personality Development, and Interview Preparation with key features and links to dedicated dynamic pages.
   4. **Meet Our Trainer & Why Choose Us:** Profile of Coach Faizan Khan, Kamal, and the 12-Level neuro-linguistic conversational methodology.
-  5. **Our Achievements:** Landmark milestones, corporate hiring partners (Amazon, Infosys, TCS, Deloitte, Genpact, etc.).
+  5. **Our Achievements:** Honours & accolades, award photographs, Events & Activity, and a company-logos image with an informational disclaimer.
   6. **Life at GLOBAL Institute (Gallery):** Interactive gallery with category filtering (All, Campus, Speaking, Podiums, Awards) and modal previews.
   7. **Video Testimonials:** Student story cards with integrated video modal player for masterclasses and alumni reviews.
   8. **Student Reviews & Social Proof:** 4.9/5 star rating banner, Google review cards with verified badges.

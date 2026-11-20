@@ -1,7 +1,12 @@
 ---
 import achievementsData from '../data/achievements.json';
 
-const { milestones, awards, careersSection, highlights, eventPhotos } = achievementsData;
+interface Props {
+  showMilestones?: boolean;
+}
+
+const { showMilestones = true } = Astro.props;
+const { milestones, awards, careersSection, eventPhotos, achievementPhotos } = achievementsData;
 
 const milestoneIcons: Record<string, string> = {
   trophy: "🏆",
@@ -10,8 +15,9 @@ const milestoneIcons: Record<string, string> = {
 };
 ---
 
-<section class="section section--light-grey achievements-section" id="achievements" aria-labelledby="achievements-heading">
+<section class="section section--light-grey achievements-section" id="achievements" aria-labelledby={showMilestones ? 'achievements-heading' : 'honours-heading'}>
   <div class="container">
+    {showMilestones && (
     <div class="section-header">
       <span class="section-tag">Track Record of Success</span>
       <h2 id="achievements-heading" class="section-title">
@@ -36,12 +42,13 @@ const milestoneIcons: Record<string, string> = {
         </div>
       ))}
     </div>
+    )}
 
     <!-- National Awards & Recognitions Bar -->
     <div class="awards-container">
       <div class="awards-header">
         <span class="awards-tag">Honours &amp; Accolades</span>
-        <h3 class="awards-main-title">Prestigious Recognitions Awarded to Coach Faizan Khan</h3>
+        <h3 id="honours-heading" class="awards-main-title">Prestigious Recognitions Awarded to Coach Faizan Khan</h3>
       </div>
       <div class="awards-grid">
         {awards.map((award) => (
@@ -56,26 +63,41 @@ const milestoneIcons: Record<string, string> = {
       </div>
     </div>
 
-    <!-- Real Event Milestones Visual Showcase -->
+    <!-- Coach Photos (Honours & Accolades) -->
+    <div class="achievement-photos-grid">
+      {achievementPhotos.map((src, idx) => (
+        <figure class="achievement-photo-card">
+          <img
+            src={src}
+            alt={`Coach Faizan Khan award and event photograph ${idx + 1}`}
+            width="1000"
+            height="707"
+            loading="lazy"
+            class="achievement-photo-img"
+          />
+        </figure>
+      ))}
+    </div>
+
+    <!-- Events & Activity -->
     {eventPhotos && eventPhotos.length > 0 && (
       <div class="event-photos-container">
-        <div class="event-photos-grid">
-          {eventPhotos.map((item) => (
+        <div class="section-header">
+          <h3 class="section-title">Events &amp; <span class="highlight-yellow">Activity</span></h3>
+        </div>
+        <div class="event-photos-grid event-photos-grid--six">
+          {eventPhotos.map((item, idx) => (
             <figure class="event-photo-card">
               <div class="event-photo-wrap">
                 <img
                   src={item.image}
-                  alt={item.title}
-                  width="600"
-                  height="400"
+                  alt={`Institute event and activity photograph ${idx + 1}`}
+                  width="900"
+                  height="675"
                   loading="lazy"
                   class="event-photo-img"
                 />
               </div>
-              <figcaption class="event-photo-caption">
-                <h4 class="event-photo-title">{item.title}</h4>
-                <p class="event-photo-desc">{item.caption}</p>
-              </figcaption>
             </figure>
           ))}
         </div>
@@ -92,36 +114,15 @@ const milestoneIcons: Record<string, string> = {
         </p>
       </div>
 
-      <div class="categories-grid">
-        {careersSection.categories.map((cat) => (
-          <div class="category-card">
-            <div class="category-header">
-              <h4 class="category-title">{cat.category}</h4>
-            </div>
-            <ul class="companies-list">
-              {cat.companies.map((company) => (
-                <li class="company-item">
-                  <span class="company-bullet">•</span>
-                  <span class="company-name">{company}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))}
-      </div>
-    </div>
-
-    <!-- Placement Highlights Banner -->
-    <div class="highlights-box">
-      <div class="highlights-grid">
-        {highlights.map((item) => (
-          <div class="highlight-item">
-            <svg class="highlight-icon" viewBox="0 0 20 20" fill="currentColor">
-              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-            </svg>
-            <span>{item}</span>
-          </div>
-        ))}
+      <div class="company-logos-wrap">
+        <img
+          src={careersSection.logoImage}
+          alt="Logos of organisations where trained candidates are working"
+          width="1200"
+          height="675"
+          loading="lazy"
+          class="company-logos-img"
+        />
       </div>
     </div>
   </div>
@@ -503,5 +504,65 @@ const milestoneIcons: Record<string, string> = {
     height: 20px;
     color: #20B45B;
     flex-shrink: 0;
+  }
+
+  .achievement-photos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+    margin-bottom: var(--space-12);
+  }
+
+  @media (min-width: 768px) {
+    .achievement-photos-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .achievement-photos-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .achievement-photo-card {
+    margin: 0;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    background-color: var(--color-bg-light-blue);
+  }
+
+  .achievement-photo-img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+  }
+
+  @media (min-width: 768px) {
+    .achievement-photo-img {
+      height: 220px;
+    }
+  }
+
+  .event-photos-grid--six {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 768px) {
+    .event-photos-grid--six {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .company-logos-wrap {
+    width: 100%;
+  }
+
+  .company-logos-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--radius-lg);
   }
 </style>
