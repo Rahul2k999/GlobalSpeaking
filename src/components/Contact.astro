@@ -32,7 +32,7 @@ const { contact, branches, name, socials } = siteData;
               <div class="branch-card" id={branch.id}>
                 <div class="branch-card__header">
                   <span class="branch-badge">Branch 0{idx + 1}</span>
-                  <h4 class="branch-name">{branch.name}</h4>
+                  <h4 class="branch-name">{branch.name.replace(/^Branch\s*\d+\s*—\s*/, '')}</h4>
                 </div>
                 <p class="branch-address">{branch.address}</p>
                 <div class="branch-actions">
