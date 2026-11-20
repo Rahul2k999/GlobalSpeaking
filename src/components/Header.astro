@@ -518,7 +518,8 @@ const { contact, tagline, establishedText } = siteData;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    /* Stop above the fixed mobile CTA bar so it stays visible and usable */
+    height: calc(100% - (58px + env(safe-area-inset-bottom, 0px)));
     z-index: 200;
     visibility: hidden;
     pointer-events: none;
@@ -536,7 +537,9 @@ const { contact, tagline, establishedText } = siteData;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #071D3D;
+    background-color: rgba(7, 29, 61, 0.42);
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
     opacity: 0;
     transition: opacity 0.3s ease;
   }
@@ -549,8 +552,8 @@ const { contact, tagline, establishedText } = siteData;
     position: absolute;
     top: 0.5rem;
     right: 0;
-    width: 82%;
-    max-width: 340px;
+    width: 68%;
+    max-width: 260px;
     height: auto;
     max-height: calc(100% - 1rem);
     background-color: #FFFFFF;
@@ -560,7 +563,7 @@ const { contact, tagline, establishedText } = siteData;
     transform: translateX(100%);
     transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     overflow-y: auto;
-    padding: var(--space-3) var(--space-4);
+    padding: var(--space-3);
   }
 
   .mobile-drawer--open .mobile-drawer__content {
@@ -595,7 +598,7 @@ const { contact, tagline, establishedText } = siteData;
 
   .mobile-drawer__link {
     display: block;
-    padding: 0.5rem 0.65rem;
+    padding: 0.5rem 0.55rem;
     font-size: 0.95rem;
     font-weight: 600;
     color: var(--color-text-main);
